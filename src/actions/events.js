@@ -1,6 +1,10 @@
 import { normalizeResponseErrors } from "./utils";
 import {SubmissionError} from 'redux-form';
 // ALL OF THE EVENTS
+export const FETCH_EVENTS_REQUEST = 'FETCH_EVENTS_DATA_REQUEST';
+export const fetchEventsRequest = () =>({
+    type: FETCH_EVENTS_REQUEST
+});
 export const FETCH_EVENTS_DATA_SUCCESS = 'FETCH_EVENTS_DATA_SUCCESS';
 export const fetchEventsDataSuccess = data => ({
     type: FETCH_EVENTS_DATA_SUCCESS,
@@ -12,10 +16,7 @@ export const fetchEventsDataError = error => ({
     type: FETCH_EVENTS_DATA_ERROR,
     error
 });
-export const FETCH_EVENTS_REQUEST = 'FETCH_EVENTS_DATA_REQUEST';
-export const fetchEventsRequest = () =>({
-    type: FETCH_EVENTS_REQUEST
-})
+
 // SINGLE EVENT
 export const FETCH_EVENT_REQUEST = 'FETCH_EVENT_REQUEST';
 export const fetchSingleEventRequest = () => ({
@@ -35,7 +36,7 @@ export const fetchEventSuccess = data => ({
 
 
 
-
+// POST ENDPOINT FOR ADDING AN EXERCISE EVENT
 export const addEventsData = dispatch =>{
     alert('form being dispatched');
     console.log(dispatch);
@@ -61,15 +62,14 @@ export const addEventsData = dispatch =>{
              console.log(err)
         });
 };
-
-export const fetchEventsData = () => (dispatch, getState)=> {
+// GET ENDPOINT FOR GETTING ALL EVENTS
+export const fetchEventsData = (id) => (dispatch)  => {
     dispatch(fetchEventsRequest());
-    return fetch(`http://localhost:8080/exercise`, {
+    return fetch('http://localhost:8080/exercise/' + id, {
         method: 'GET'
     })
         .then(res => res.json())
         .then(data =>  dispatch(fetchEventsDataSuccess(data)))
-       // .then(({data}) => dispatch(fetchEventsDataSuccess(data)))
         .catch(err => {
             dispatch(fetchEventsDataError(err));
         });

@@ -1,13 +1,14 @@
 import BigCalendar from 'react-big-calendar';
 import React from 'react';
 import moment from 'moment';
+import requiresLogin from './requires-login';
 import {connect} from 'react-redux';
 import {fetchEventsData} from '../actions/events';
 import DisplayEvent from './display-event'
 
 export class Calendar extends React.Component {
   componentDidMount() {
-    this.props.dispatch(fetchEventsData());
+    this.props.dispatch(fetchEventsData(this.props.id));
 }
 
 render(){
@@ -18,7 +19,7 @@ BigCalendar.setLocalizer(BigCalendar.momentLocalizer(moment));
       <BigCalendar
       selectable
       events={this.props.eventsData}
-        views={"allViews"}
+        views={allViews}
         step={60}
         showMultiDayTimes
         defaultDate={new Date(2018, 4, 29)}
@@ -39,10 +40,12 @@ BigCalendar.setLocalizer(BigCalendar.momentLocalizer(moment));
 }
 
 const mapStateToProps = state => {
+  const {currentUser} = state.auth;
   return {
-      eventsData: state.eventsData.data
+      eventsData: state.eventsData.data,
+      id: `${currentUser.id}`
   };
 };
 
 
-export default connect(mapStateToProps)(Calendar);
+export default requiresLogin()(connect(mapStateToProps)(Calendar));
