@@ -3,6 +3,7 @@ import {reducer as formReducer} from 'redux-form';
 import thunk from 'redux-thunk';
 import {loadAuthToken} from './local-storage';
 import authReducer from './reducers/auth';
+import weightBmiReducer from './reducers/weightbmi';
 import protectedDataReducer from './reducers/protected-data';
 import eventsDataReducer from './reducers/events';
 import {setAuthToken, refreshAuthToken} from './actions/auth';
@@ -12,7 +13,8 @@ const store = createStore(
         form: formReducer,
         auth: authReducer,
         protectedData: protectedDataReducer,
-        eventsData: eventsDataReducer
+        eventsData: eventsDataReducer,
+        weightBmi: weightBmiReducer
     }),
     applyMiddleware(thunk)
 );

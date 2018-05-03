@@ -1,7 +1,7 @@
 import React from 'react';
 import Input from './input';
 import {Field, reduxForm, focus} from 'redux-form';
-import {addEventsData} from '../actions/events';
+import {addEventsData} from '../reducers/events';
 import {required, nonEmpty} from '../validators';
 export class ExerciseForm extends React.Component {
     onSubmit(values){
@@ -22,6 +22,8 @@ export class ExerciseForm extends React.Component {
             );
     }
     return(
+        <div className="exercise-form-container">
+        <button onClick={() => this.props.history.push('/dashboard')}> Go back to Dashboard </button>
         <form
             className="exercise-form"
             onSubmit={this.props.handleSubmit(values => this.onSubmit(values)
@@ -66,6 +68,7 @@ export class ExerciseForm extends React.Component {
             submitting
             </button>
         </form>
+        </div>
     );
 }
 }
