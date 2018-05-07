@@ -2,19 +2,28 @@ import React from 'react';
 import requiresLogin from './requires-login';
 import {connect} from 'react-redux';
 
+import {withRouter} from 'react-router-dom';
 //import {fetchEventsData} from '../reducers/events';
 import {fetchEventById} from '../reducers/events';
+import {deleteSingleEvent} from '../reducers/events';
 export class DisplayEvent extends React.Component {
-constructor(props){
-    super(props);
-    console.log(this.props.match.params.id);
-   
-    } 
 
 
+    clickedEdit(){
+        console.log('in edit func');
+        
 
+    }
+    clickedDelete(){
+        console.log('clicked on delete button');
+        this.props.dispatch(deleteSingleEvent(this.props.match.params.id));
+        if(this.props.isDeleting === false){
+           return this.props.history.push('/dashboard');
+        };
+    
+    }
     componentWillMount() {
-   this.props.dispatch( fetchEventById(this.props.match.params.id))
+        this.props.dispatch(fetchEventById(this.props.match.params.id)); 
     }
   
     render(){
@@ -22,20 +31,18 @@ constructor(props){
         const title = this.props.eventsData.singleEvent["0"].title;
         const start = this.props.eventsData.singleEvent["0"].start;
         const startdate = new Date(start);
-        const enddate = new Date(start);
        const startdateDate = (startdate.getUTCDate());
        const startdateMonth = (startdate.getUTCMonth() +1);
        const startdateYear = (startdate.getUTCFullYear());
-       const enddateDate = (enddate.getUTCDate());
-       const enddateMonth = (enddate.getUTCMonth() +1);
-       const enddateYear = (enddate.getUTCFullYear());
-        const end = this.props.eventsData.singleEvent["0"].end.toLocaleString();
+       const time = this.props.eventsData.singleEvent["0"].time;
+
         return <div>
              <button onClick={() => this.props.history.push('/dashboard')}> Go back to Dashboard </button>
             <h1>Exercise: {title}</h1>
             <h1>Start Date: {startdateMonth}/{startdateDate}/{startdateYear}</h1>
-            <h1>End Date: {enddateMonth}/{enddateDate}/{enddateYear}</h1>
-            <button>Edit</button>
+            <h1> Time Spent: {time} </h1>
+            <button onClick={() => this.clickedEdit()}>Edit</button>
+            <button onClick={()=> this.clickedDelete()}>Delete</button>
             </div>;
         }
         return<h1>Loading..</h1>; 
@@ -49,8 +56,9 @@ const mapStateToProps = state => {
     return {
         singleEvent: state.eventsData.singleEvent,
         eventsData: state.eventsData,
-        isFetching: state.eventsData.isFetching
+        isFetching: state.eventsData.isFetching,
+        isDeleting: state.eventsData.isDelete
     }
   };
   
-export default requiresLogin()(connect(mapStateToProps)(DisplayEvent));
+export default requiresLogin()(connect(mapStateToProps)(withRouter(DisplayEvent)));

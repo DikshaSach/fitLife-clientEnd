@@ -1,12 +1,17 @@
 import React from 'react';
 import Input from './input';
+import {withRouter} from 'react-router-dom';
 import {Field, reduxForm, focus} from 'redux-form';
 import {addEventsData} from '../reducers/events';
 import {required, nonEmpty} from '../validators';
+
 import requiresLogin from './requires-login';
 import {connect} from 'react-redux';
 export class StrengthTrainingForm extends React.Component {
-   
+    constructor(props){
+        super(props);
+        this.onDashboardClicked = this.onDashboardClicked.bind(this);
+      }
 
     render(){
         let error;
@@ -34,4 +39,4 @@ const mapStateToProps = state => {
 export default  requiresLogin()(connect(mapStateToProps)(reduxForm({
     form: 'strengthexercise',
     onSubmitFail: (errors, dispatch) => dispatch(focus('strengthexercise', 'title'))
-})(StrengthTrainingForm)));
+})(withRouter(StrengthTrainingForm))));

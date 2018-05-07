@@ -11,11 +11,19 @@ export class DisplayWeightBmi extends React.Component{
     handleClick(id) {
         console.log(id);
          this.props.dispatch(deleteWeightBmi(id));
+        if(this.props.isDeleting === false){
+           return this.props.history.push('/display-weight-bmi');
+        }
     }
   
     render(){
-        const userWeightBmiData = this.props.weightBmi;
+    
 
+        
+            const userWeightBmiData = this.props.weightBmi;
+            console.log(userWeightBmiData);
+
+        
         return(
             
             <div className="displayweightbmi-container">
@@ -50,12 +58,15 @@ export class DisplayWeightBmi extends React.Component{
     }
 }
 const mapStateToProps = state => {
+    console.log(state.weightBmi.isFetching);
     const {currentUser} = state.auth;
     return {
         username: state.auth.currentUser.username,
         name: `${currentUser.firstName} ${currentUser.lastName}`,
         id: `${currentUser.id}`,
         weightBmi: state.weightBmi.data,
+        isDeleting: state.weightBmi.isDeleting,
+        isFetching: state.weightBmi.isFetching
     };
 };
 export default requiresLogin()(connect(mapStateToProps)(DisplayWeightBmi));

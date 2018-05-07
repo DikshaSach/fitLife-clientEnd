@@ -6,6 +6,6 @@
     top: 0;
     left: 0;
 }
-.rbc-btn-group{
- 
+.rbc-event:hover{
+background-color: pink;
 }

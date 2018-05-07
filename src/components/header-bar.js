@@ -4,9 +4,9 @@ import {clearAuth} from '../actions/auth';
 import {clearAuthToken} from '../local-storage';
 import requiresLogin from './requires-login';
 import {withRouter} from 'react-router-dom';
-import logo from './logo.png';
+
 import './header-bar.css';
-import { ExerciseForm } from './exercise-form';
+
 
 export class HeaderBar extends React.Component {
     logOut() {
@@ -16,13 +16,14 @@ export class HeaderBar extends React.Component {
 
     render() {
         // Only render the log out button if we are logged in
-        let logOutButton, exerciseForm, DisplayWeightBmi, Dashboard; 
+        let logOutButton, exerciseForm, DisplayWeightBmi, Dashboard, WeightBmiForm; 
         if (this.props.loggedIn) {
             logOutButton = (
                 <a className="logout-bttn" onClick={() => this.logOut()}>Log out</a>
             );
             exerciseForm = ( <a className="exerciseForm-bttn" onClick={() => {this.props.history.push('/exerciseForm')}}>Add Exercise</a>);
-            DisplayWeightBmi = ( <a className="weightBmi-bttn" onClick={() => {this.props.history.push('/display-weight-bmi')}}>Weigh/BMI</a>);
+            DisplayWeightBmi = ( <a className="weightBmi-bttn" onClick={() => {this.props.history.push('/display-weight-bmi')}}>Weight/BMI</a>);
+            WeightBmiForm = (<a className="weightBmiForm-bttn" onClick={() => {this.props.history.push('/weight-bmi-form')}}> Add Weight/BMI</a>);
             Dashboard = ( <a className="dashboard-bttn" onClick={() => {this.props.history.push('/dashboard')}}>Home</a>);
         }
         return (
@@ -32,6 +33,7 @@ export class HeaderBar extends React.Component {
                 {Dashboard}
                 {exerciseForm}
                 {DisplayWeightBmi}
+                {WeightBmiForm}
                 {logOutButton}
                 </div>
                 <div className="test" ></div>

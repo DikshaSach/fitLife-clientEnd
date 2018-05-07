@@ -1,8 +1,5 @@
 import React from 'react';
-import Input from './input';
-import {Field, reduxForm, focus} from 'redux-form';
-import {addEventsData} from '../reducers/events';
-import {required, nonEmpty} from '../validators';
+
 import requiresLogin from './requires-login';
 import {connect} from 'react-redux';
 import StrengthTrainingForm from './strengthTrainingForm';
@@ -16,7 +13,7 @@ export class ExerciseForm extends React.Component {
         }
     }
     showcustom(){
-        console.log('in method');
+        console.log('In Show custom exercise Form method');
         this.setState({
             customExerciseClicked: true
         });
@@ -66,7 +63,4 @@ const mapStateToProps = state => {
     };
 };
 
-export default  requiresLogin()(connect(mapStateToProps)(reduxForm({
-    form: 'exercise',
-    onSubmitFail: (errors, dispatch) => dispatch(focus('exercise', 'title'))
-})(ExerciseForm)));
+export default  requiresLogin()(connect(mapStateToProps)(ExerciseForm));

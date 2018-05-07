@@ -17,7 +17,8 @@ import { normalizeResponseErrors } from "../actions/utils";
 
 const initialState = {
     data: [],
-    isFetching: false
+    isFetching: false,
+    isDeleting: true/false
 }
 export default function reducer(state = initialState, action) {
     if(action.type === FETCH_WEIGHTBMI_REQUEST){
@@ -37,22 +38,23 @@ export default function reducer(state = initialState, action) {
           error: action.error  
         });
     } else if(action.type === ADD_WEIGHTBMI_SUCCESSFUL){
-
         return Object.assign({}, state, {
           data: [...state.data, action.data],
-
         });
-    } else if(action.type ===ADD_WEIGHTBMI_FAILED ){
+    } else if(action.type ===ADD_WEIGHTBMI_FAILED ){  
         return Object.assign({}, state, {
             error: action.error
         });
     } else if(action.type === DELETE_WEIGHTBMI_SUCCESS){
-        return Object.assign({}, state,{
-            data: [action.data]
+        console.log('in success');
+        return Object.assign({}, state, {
+            data: action.data,
+            isDeleting: false
         });
     } else if(action.type === DELETE_WEIGHTBMI_FAILED){
-        return Object.assign({}, state,{
-            error:action.error
+        console.log('in error');
+        return Object.assign({}, state ,{
+            error: action.error
         });
     }
     return state;
@@ -62,7 +64,7 @@ export const deleteWeightBmi = (id) => dispatch => {
     return fetch ('http://localhost:8080/weightandbmi/delete/' + id, {
         method: 'DELETE'
     })
-    .then(res =>res.json())
+
     .then (data => dispatch(deleteWeightBmiSuccess(data)))
     .catch(err =>{
         dispatch(deleteWeightBmiFailed(err));
@@ -82,7 +84,6 @@ export const fetchWeightBmi = (id) => dispatch => {
 };
 
 export const addWeightBmi = (weightbmi) => dispatch => {
-    alert('form being dispatched');
     console.log(weightbmi);
     return fetch('http://localhost:8080/weightandbmi/add/weightbmi', {
         method: 'POST',

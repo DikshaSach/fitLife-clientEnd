@@ -9,7 +9,7 @@ import {connect} from 'react-redux';
 import {fetchEventsData} from '../reducers/events';
 import {fetchEventById} from '../reducers/events';
 //import DisplayEvent from './display-event';
-import requiresLogin from './requires-login';
+
 
 export class Calendar extends React.Component {
   constructor(props){
@@ -18,20 +18,19 @@ export class Calendar extends React.Component {
   }
 
   onDashboardClicked(event){
-    console.log(event._id)
+
     this.props.dispatch(fetchEventById(event._id)); 
      this.props.history.push(`/display-single-exercise/${event._id}`);
   }
 
     componentDidMount() {
       this.props.dispatch(fetchEventsData(this.props.id));
-  }
+   }
 
   render(){
-  let allViews = Object.keys(BigCalendar.Views).map(k => BigCalendar.Views[k])
+
 
   BigCalendar.setLocalizer(BigCalendar.momentLocalizer(moment));
-    console.log(this.props.eventsData);
     return(
 
       

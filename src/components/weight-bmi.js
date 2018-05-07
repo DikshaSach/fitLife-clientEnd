@@ -8,10 +8,10 @@ import {addWeightBmi} from '../reducers/weightbmi';
 export class WeightAndBmiForm extends React.Component {
     onSubmit(values){
         const creator = this.props.id;
-        alert(values);
        const {weight, bmi, month} = values;
         const userWeightBmi = {weight, bmi, creator, month};
-        this.props.dispatch(addWeightBmi(userWeightBmi))
+        this.props.dispatch(addWeightBmi(userWeightBmi));
+
         this.props.history.push('/display-weight-bmi');
 
                 
@@ -27,10 +27,6 @@ export class WeightAndBmiForm extends React.Component {
         }
         return (
             <div className="weight-bmi-form-container">
-            <button className="display-weight-bmi"
-                    onClick={() => {this.props.history.push('/display-weight-bmi')}}> Display your weight bmi logs
-                </button>
-            <button onClick={() => this.props.history.push('/dashboard')}> Go back to Dashboard </button>
             <form
                 className="weight-bmi-form"
                 onSubmit={this.props.handleSubmit(values => this.onSubmit(values)
@@ -71,7 +67,8 @@ export class WeightAndBmiForm extends React.Component {
 const mapStateToProps = state => {
     const {currentUser} = state.auth;
     return {
-        id: `${currentUser.id}`
+        id: `${currentUser.id}`,
+        isFetching: state.weightBmi.isFetching
     };
 };
 

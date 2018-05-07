@@ -1,21 +1,25 @@
 import React from 'react';
 import Input from './input';
+import {withRouter} from 'react-router-dom';
 import {Field, reduxForm, focus} from 'redux-form';
 import {addEventsData} from '../reducers/events';
 import {required, nonEmpty} from '../validators';
 import requiresLogin from './requires-login';
 import {connect} from 'react-redux';
+import {makeDateFromISOString} from '../utils';
+import Select from './select';
 export class CustomExerciseForm extends React.Component {
     onSubmit(values){
         const creator = this.props.id;
-        
-        const formattedStartTime = new Date(2018, 5, 20, 5, 30, 0, 0);
-        const formattedEndTime = new Date(2018, 5, 20, 5, 30, 0, 0);
-        const {title} = values;
-        const exercise = {title, creator, formattedStartTime, formattedEndTime};
+        const start = makeDateFromISOString(new Date(values.start).toISOString());
+        console.log(start);
+        const end = start;
+        const {title, time} = values;
+        const exercise = {title, creator, start, end, time};
         this.props.dispatch(addEventsData(exercise))
         this.props.history.push('/dashboard');
     }
+    
 
     render(){
         let error;
@@ -26,6 +30,8 @@ export class CustomExerciseForm extends React.Component {
                 </div>
             );
     }
+    const Time = [{time: '10 minutes'}, {time: '20 minutes'}, {time: '30 minutes'}, {time: '40 minutes'},
+    {time: '50 minutes'}, {time: '60 minutes'},{time: '90 minutes'}];
     return(
         <div className="exercise-form-container">
         <form
@@ -40,7 +46,24 @@ export class CustomExerciseForm extends React.Component {
                 name="title"
                 id="title"
                 validate={[required, nonEmpty]}
-            />           
+            />  
+            <label>Time Spent</label>
+            <Field
+                type="text"
+                id="time"
+                name="time"
+                component={Select}
+                options={{
+                "10-minutes": '10 minutes', 
+                "20-minutes":'20 minutes', 
+                "30-minutes": '30 minutes',
+                "40-minutes": '40 minutes', 
+                "50-minutes": '50 minutes', 
+                "60-minutes": '60 minutes'
+                }}
+                valueField="value"
+            />
+       
             <label htmlFor="start">start</label>
             <Field 
                 component={Input}
@@ -49,14 +72,7 @@ export class CustomExerciseForm extends React.Component {
                 id="start"
                 validate={[required, nonEmpty]}
             />
-            <label htmlFor="end">End</label>
-            <Field 
-                component={Input}
-                type="Date"
-                name="end"
-                id="end"
-                validate={[required, nonEmpty]}
-            />
+          
            
             
             <button disabled={this.props.pristine || this.props.submitting}>
@@ -79,4 +95,4 @@ const mapStateToProps = state => {
 export default  requiresLogin()(connect(mapStateToProps)(reduxForm({
     form: 'customexercise',
     onSubmitFail: (errors, dispatch) => dispatch(focus('customexercise', 'title'))
-})(CustomExerciseForm)));
+})(withRouter(CustomExerciseForm))));

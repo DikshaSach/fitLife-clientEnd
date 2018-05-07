@@ -13,6 +13,7 @@ import WeightAndBmiForm from './weight-bmi';
 import RegistrationPage from './registration-page';
 import {refreshAuthToken} from '../actions/auth';
 
+
 export class App extends React.Component {
     componentDidUpdate(prevProps) {
         if (!prevProps.loggedIn && this.props.loggedIn) {
@@ -54,6 +55,7 @@ export class App extends React.Component {
                 <Route exact path="/weight-bmi-form" component={WeightAndBmiForm} />
                 <Route exact path="/display-weight-bmi" component={DisplayWeightBmi} />
                 <Route exact path="/display-single-exercise/:id" component={DisplayEvent} />
+                
                 
             </div>
         );

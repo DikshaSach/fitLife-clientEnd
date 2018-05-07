@@ -15,6 +15,18 @@ import {FETCH_EVENTS_REQUEST,
         addEventsDataSuccessful,
         ADD_EVENT_FAILED,
         addEventsDataFailed,
+        EDIT_SINGLE_EVENT_REQUEST,
+        editSingleEventRequest,
+        EDIT_SINGLE_EVENT_SUCCESS,
+        editSingleEventSuccess,
+        EDIT_SINGLE_EVENT_FAILED,
+        editSingleEventFailed,
+        DELETE_SINGLE_EVENT_REQUEST,
+        deleteSingleEventRequest,
+        DELETE_SINGLE_EVENT_SUCCESS,
+        deleteSingleEventSuccess,
+        DELETE_SINGLE_EVENT_FAILED,
+        deleteSingleEventFailed,
          } from '../actions/events';
 import { normalizeResponseErrors } from "../actions/utils";
 import {SubmissionError} from 'redux-form';
@@ -25,7 +37,7 @@ const initialState = {
     singleEvent: [],
     error: null,
     isEditing: false,
-    isDelete: false,
+    isDelete: true/false,
     isFetching: true/false
     
 };
@@ -42,7 +54,7 @@ export default function reducer(state = initialState, action){
     }
     else if (action.type === FETCH_EVENTS_DATA_SUCCESS){
     return Object.assign({}, state, {
-         data: action.data,
+         data:  action.data,
          error: null,
          isEditing: false,
          isDelete: false,
@@ -81,6 +93,25 @@ export default function reducer(state = initialState, action){
         return Object.assign({}, state, {
             error: action.error
         });
+    }else if(action.type === DELETE_SINGLE_EVENT_REQUEST){
+        console.log('in request for deletion action');
+        return Object.assign({}, state, {
+            isDelete: true,
+        });
+    }else if(action.type === DELETE_SINGLE_EVENT_SUCCESS){
+        console.log('in success');
+
+        return Object.assign({}, state, {
+            isDelete: false,
+            singleEvent: {},
+            data: [...state.data]
+        });
+ 
+    }else if(action.type === DELETE_SINGLE_EVENT_FAILED){
+        console.log('in error');
+        return Object.assign({}, state, {
+            error: action.error
+        });
     }
 
     return state;
@@ -88,7 +119,6 @@ export default function reducer(state = initialState, action){
 
 // POST ENDPOINT FOR ADDING AN EXERCISE EVENT
 export const addEventsData = (exercise) => dispatch =>{
-    alert('form being dispatched');
     console.log(exercise);
     return fetch('http://localhost:8080/exercise/add/exercise', {
         method: 'POST',
@@ -132,11 +162,21 @@ export const fetchEventById = (eventId) => (dispatch) => {
             });
     };
 
-
+export const deleteSingleEvent = (id) => (dispatch) => {
+    console.log('in delete function');
+    dispatch(deleteSingleEventRequest());
+    return fetch('http://localhost:8080/exercise/delete/' + id, {
+        method: 'DELETE'
+    })
+    .then(data => dispatch(deleteSingleEventSuccess(data)))
+    .catch(err => dispatch(deleteSingleEventFailed(err)))
+};
 
 
 export const editEventsData = (id) => dispatch => {
-    console.log(dispatch)
+    console.log(dispatch);
+    console.log('in edit function');
+    dispatch(editSingleEventRequest());
     return fetch('http://localhost:8080/exercise/edit/' + id,{
         method: 'PUT',
         body: JSON.stringify(dispatch),

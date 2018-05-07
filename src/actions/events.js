@@ -41,6 +41,35 @@ export const fetchEventSuccess = data => ({
     type: FETCH_SINGLE_EVENT_DATA_SUCCESS,
     data
 });
+export const EDIT_SINGLE_EVENT_REQUEST = 'EDIT_SINGLE_EVENT_REQUEST';
+export const editSingleEventRequest = () => ({
+    type: EDIT_SINGLE_EVENT_REQUEST
+});
+export const EDIT_SINGLE_EVENT_SUCCESS = 'EDIT_SINGLE_EVENT_SUCCESS';
+export const editSingleEventSuccess = data => ({
+    tyep: EDIT_SINGLE_EVENT_SUCCESS,
+    data
+});
+export const EDIT_SINGLE_EVENT_FAILED = 'EDIT_SINGLE_EVENT_FAILED';
+export const editSingleEventFailed = error => ({
+    type: EDIT_SINGLE_EVENT_FAILED,
+    error
+})
+export const DELETE_SINGLE_EVENT_REQUEST = 'DELETE_SINGLE_EVENT_REQUEST';
+export const deleteSingleEventRequest = () => ({
+    type: DELETE_SINGLE_EVENT_REQUEST
+});
+export const DELETE_SINGLE_EVENT_SUCCESS = 'DELETE_SINGLE_EVENT_SUCCESS';
+export const deleteSingleEventSuccess = data => ({
+    type: DELETE_SINGLE_EVENT_SUCCESS,
+    data
+});
+export const DELETE_SINGLE_EVENT_FAILED = 'DELETE_SINGLE_EVENT_FAILED';
+export const deleteSingleEventFailed = error => ({
+    type: DELETE_SINGLE_EVENT_FAILED,
+    error
+})
+
 
 
 

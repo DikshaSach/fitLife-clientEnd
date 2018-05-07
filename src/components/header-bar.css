@@ -9,12 +9,14 @@ clear: both;
     float: left;
  
 }
-.logout-bttn, .exerciseForm-bttn, .weightBmi-bttn, .dashboard-bttn{
-margin-top: 30px;
+.logout-bttn, .exerciseForm-bttn, .weightBmi-bttn, .dashboard-bttn, .weightBmiForm-bttn{
+text-align: center;
+    margin-top: 30px;
 display: inline-block;
 width: 80px;
 }
 .title{
+   
     float:right;
     padding: 0;
     padding-right: 20px;
@@ -24,6 +26,7 @@ width: 80px;
    -webkit-text-stroke-color: rgb(30, 40, 37);
     font-family: 'Damion', cursive;
     font-size: 50px;
+    margin-top: 20px;
 }
 .title:hover{
   color:#82E1D1;  
@@ -78,7 +81,7 @@ a:hover::before, a:focus::before {
 
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
     .bttn-container{
         float: none;
         text-align: center;
