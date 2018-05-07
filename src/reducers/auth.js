@@ -1,3 +1,6 @@
+import Store from '../store';
+import * as Reducers from './events';
+
 import {
     SET_AUTH_TOKEN,
     CLEAR_AUTH,
@@ -13,7 +16,7 @@ const initialState = {
     error: null
 };
 
-export default function reducer(state = initialState, action) {
+export default async function reducer(state = initialState, action) {
     if (action.type === SET_AUTH_TOKEN) {
         return Object.assign({}, state, {
             authToken: action.authToken
@@ -29,6 +32,7 @@ export default function reducer(state = initialState, action) {
             error: null
         });
     } else if (action.type === AUTH_SUCCESS) {
+        await Reducers.fetchEventsData(action.currentUser.id);
         return Object.assign({}, state, {
             loading: false,
             currentUser: action.currentUser

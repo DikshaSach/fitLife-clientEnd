@@ -5,7 +5,7 @@ import {loadAuthToken} from './local-storage';
 import authReducer from './reducers/auth';
 import weightBmiReducer from './reducers/weightbmi';
 import protectedDataReducer from './reducers/protected-data';
-import eventsDataReducer from './reducers/events';
+import eventsDataReducer, { fetchEventsData } from './reducers/events';
 import {setAuthToken, refreshAuthToken} from './actions/auth';
 
 const store = createStore(
