@@ -19,13 +19,14 @@ import {FETCH_EVENTS_REQUEST,
 import { normalizeResponseErrors } from "../actions/utils";
 import {SubmissionError} from 'redux-form';
 
+
 const initialState = {
     data: [],
-    singleEvent: {},
+    singleEvent: [],
     error: null,
     isEditing: false,
     isDelete: false,
-    isFetching: false
+    isFetching: true/false
     
 };
 
@@ -53,7 +54,7 @@ export default function reducer(state = initialState, action){
         });
     
     } else if(action.type=== FETCH_SINGLE_EVENT_REQUEST){
-        console.log('Fetching single exercise')
+        console.log('in success of fetching single event')
         return Object.assign({}, state, {
             singleEvent: {},
             isEditing: false,
@@ -62,8 +63,6 @@ export default function reducer(state = initialState, action){
         });
 
     }else if(action.type === FETCH_SINGLE_EVENT_DATA_SUCCESS ){
-
-        console.log('in success function for single exercise');
         return Object.assign({}, state, {
             isEditing: false,
             isDelete: false,
@@ -122,13 +121,18 @@ export const fetchEventById = (eventId) => (dispatch) => {
         dispatch(fetchSingleEventRequest());
             return fetch('http://localhost:8080/exercise/singleExercise/' + eventId,{
                 method: 'GET'
+
             })
             .then(res => res.json())
-            .then(data => dispatch(fetchEventSuccess(data)))
+            .then(data => dispatch(fetchEventSuccess(data)) 
+        )
+
             .catch(err => {
                 dispatch(fetchEventFailed(err));
             });
     };
+
+
 
 
 export const editEventsData = (id) => dispatch => {

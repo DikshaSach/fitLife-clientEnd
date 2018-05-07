@@ -3,14 +3,15 @@ import {Field, reduxForm, focus} from 'redux-form';
 import {registerUser} from '../actions/users';
 import {login} from '../actions/auth';
 import Input from './input';
+import Select from './select';
 import {required, nonEmpty, matches, length, isTrimmed} from '../validators';
 const passwordLength = length({min: 10, max: 72});
 const matchesPassword = matches('password');
 
 export class RegistrationForm extends React.Component {
     onSubmit(values) {
-        const {username, password, firstName, lastName} = values;
-        const user = {username, password, firstName, lastName};
+        const {username, password, firstName, lastName, timezone} = values;
+        const user = {username, password, firstName, lastName, timezone};
         return this.props
             .dispatch(registerUser(user))
             .then(() => this.props.dispatch(login(username, password)));
@@ -47,6 +48,18 @@ export class RegistrationForm extends React.Component {
                     type="password"
                     name="passwordConfirm"
                     validate={[required, nonEmpty, matchesPassword]}
+                />
+                <label htmlFor="timezone">Select your Timezone</label>
+                <Field  
+                    component={Select}
+                    type="timezone"
+                    name="timezone"
+                    options={{
+                        est: 'est',
+                        pst: 'pst',
+                        mst: 'mst',
+                        cst: 'cst'
+                    }}
                 />
                 <button
                     type="submit"

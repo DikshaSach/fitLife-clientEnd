@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
 import Calendar from './calendar';
+import './dashboard.css';
 //import ExerciseForm from './exercise-form';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 
@@ -11,15 +12,8 @@ export class Dashboard extends React.Component {
         return (
             <div className="dashboard">
                 <div className="dashboard-username">
-                    Username: {this.props.username}
+                    Hello {this.props.username}
                 </div>
-                <div className="dashboard-name">Name: {this.props.name}</div>
-                <button className="add-exercise-event"
-                    onClick={() => {this.props.history.push('/exerciseForm')}}> Add Exercise 
-                </button>
-                <button className="display-weight-bmi"
-                    onClick={() => {this.props.history.push('/display-weight-bmi')}}> Display your weight bmi logs
-                </button>
               <Calendar />
              
             </div>

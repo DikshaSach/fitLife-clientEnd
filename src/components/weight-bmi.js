@@ -7,12 +7,13 @@ import requiresLogin from './requires-login';
 import {addWeightBmi} from '../reducers/weightbmi';
 export class WeightAndBmiForm extends React.Component {
     onSubmit(values){
-
-        const {weight, bmi, creator, month} = values;
+        const creator = this.props.id;
+        alert(values);
+       const {weight, bmi, month} = values;
         const userWeightBmi = {weight, bmi, creator, month};
-        return this.props
-                .dispatch(addWeightBmi(userWeightBmi))
-                .then(alert('form submitted'))
+        this.props.dispatch(addWeightBmi(userWeightBmi))
+        this.props.history.push('/display-weight-bmi');
+
                 
     }
     render() {
@@ -51,18 +52,6 @@ export class WeightAndBmiForm extends React.Component {
                     id="bmi"
                     validate={[required, nonEmpty]}
                 />
-                
-                <label htmlFor="creator">Creator</label>
-                <Field 
-                    component={Input}
-                    type="text"
-                    name="creator"
-                    id="creator"
-                    validate={[required, nonEmpty]}>
-                   
-                </ Field>
-               
-               
                 <label htmlFor="month">Month</label>
                 <Field 
                     component={Input}

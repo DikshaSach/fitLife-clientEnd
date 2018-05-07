@@ -3,76 +3,70 @@ import Input from './input';
 import {Field, reduxForm, focus} from 'redux-form';
 import {addEventsData} from '../reducers/events';
 import {required, nonEmpty} from '../validators';
+import requiresLogin from './requires-login';
+import {connect} from 'react-redux';
+import StrengthTrainingForm from './strengthTrainingForm';
+import CustomExerciseForm from './custom-exercise-form';
 export class ExerciseForm extends React.Component {
-    onSubmit(values){
-        const {title, creator, start, end} = values;
-        const exercise = {title, creator, start, end};
-        return this.props
-                .dispatch(addEventsData(exercise))
-                .then(alert('form submitted'))
+    constructor(props){
+        super(props);
+        this.state ={
+            customExerciseClicked: false,
+            strengthTrainingClicked: false
+        }
     }
-
-    render(){
-        let error;
-        if (this.props.error) {
-            error = (
-                <div className="form-error" aria-live="polite">
-                    {this.props.error}
-                </div>
-            );
+    showcustom(){
+        console.log('in method');
+        this.setState({
+            customExerciseClicked: true
+        });
+    }
+    showRepSetsForm(){
+        console.log('in show rep sets method');
+        this.setState({
+            strengthTrainingClicked: true
+        })
+    }
+    resetState(){
+        this.setState({
+            customExerciseClicked: false,
+            strengthTrainingClicked: false 
+        });
+    }
+render(){
+    if(this.state.customExerciseClicked === true){
+        return ( 
+            <div> 
+            <CustomExerciseForm /> 
+            <button onClick={()=> this.resetState()}>Cancel</button>
+            </div>
+            )
+    }else if(this.state.strengthTrainingClicked === true){
+        return (
+            <div> 
+            <StrengthTrainingForm/>
+            <button onClick={()=> this.resetState()}>Cancel</button>
+            </div>)
     }
     return(
-        <div className="exercise-form-container">
-        <button onClick={() => this.props.history.push('/dashboard')}> Go back to Dashboard </button>
-        <form
-            className="exercise-form"
-            onSubmit={this.props.handleSubmit(values => this.onSubmit(values)
-            )}>
-            {error}
-            <label htmlFor="title">Title</label>
-            <Field 
-                component={Input}
-                type="text"
-                name="title"
-                id="title"
-                validate={[required, nonEmpty]}
-            />
-            <label htmlFor="creator">Creator</label>
-            <Field 
-                component={Input}
-                type="text"
-                name="creator"
-                id="creator"
-                validate={[required, nonEmpty]}
-            />
-           
-            <label htmlFor="start">start</label>
-            <Field 
-                component={Input}
-                type="Date"
-                name="start"
-                id="start"
-                validate={[required, nonEmpty]}
-            />
-            <label htmlFor="end">End</label>
-            <Field 
-                component={Input}
-                type="Date"
-                name="end"
-                id="end"
-                validate={[required, nonEmpty]}
-            />
-           
-            
-            <button disabled={this.props.pristine || this.props.submitting}>
-            submitting
-            </button>
-        </form>
+        <div>
+        <button onClick={()=> this.showcustom()}>Custom Exercise</button>
+        <button onClick={() => this.showRepSetsForm()}>Add Strength Training Exercise </button>
         </div>
     );
 }
 }
-export default reduxForm({
+
+
+const mapStateToProps = state => {
+    
+    const {currentUser} = state.auth;
+    return {
+        id: `${currentUser.id}`
+    };
+};
+
+export default  requiresLogin()(connect(mapStateToProps)(reduxForm({
     form: 'exercise',
     onSubmitFail: (errors, dispatch) => dispatch(focus('exercise', 'title'))
-})(ExerciseForm);
+})(ExerciseForm)));

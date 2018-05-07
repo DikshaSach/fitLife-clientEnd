@@ -5,13 +5,14 @@ import {fetchWeightBmi} from '../reducers/weightbmi';
 import {deleteWeightBmi} from '../reducers/weightbmi';
 export class DisplayWeightBmi extends React.Component{
     componentDidMount(){
+        console.log(this.props.id);
         this.props.dispatch(fetchWeightBmi(this.props.id));
     }
     handleClick(id) {
         console.log(id);
          this.props.dispatch(deleteWeightBmi(id));
-         
     }
+  
     render(){
         const userWeightBmiData = this.props.weightBmi;
 
@@ -22,10 +23,7 @@ export class DisplayWeightBmi extends React.Component{
                     Username: {this.props.username}
                 </div>
                 <div className="dashboard-name">Name: {this.props.name}</div>
-                <button onClick={() => this.props.history.push('/dashboard')}> Go back to Dashboard </button>
-                <button className="display-weight-bmi"
-                    onClick={() => {this.props.history.push('/weight-bmi-form')}}> Add your weight and bmi for this month
-                </button>
+                
                 <ul>
                     {
                         userWeightBmiData.map((eachItem, index) => {
