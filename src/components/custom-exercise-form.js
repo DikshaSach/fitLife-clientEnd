@@ -30,7 +30,8 @@ export class CustomExerciseForm extends React.Component {
                 </div>
             );
     }
-    
+    const Time = [{time: '10 minutes'}, {time: '20 minutes'}, {time: '30 minutes'}, {time: '40 minutes'},
+    {time: '50 minutes'}, {time: '60 minutes'},{time: '90 minutes'}];
     return(
         <div className="exercise-form-container">
         <form

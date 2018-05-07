@@ -7,15 +7,11 @@ import {withRouter} from 'react-router-dom';
 import {fetchEventById} from '../reducers/events';
 import {deleteSingleEvent} from '../reducers/events';
 export class DisplayEvent extends React.Component {
-constructor(props){
-    super(props);
 
-}
 
     clickedEdit(){
         console.log('in edit func');
-        console.log('/edit-exercise/' + this.props.match.params.id);
-        this.props.history.push('/edit-exercise/' + this.props.match.params.id); 
+        
 
     }
     clickedDelete(){
@@ -56,7 +52,7 @@ constructor(props){
 }; 
 
 const mapStateToProps = state => {
-    console.log(state.eventsData.singleEvent);
+    //const {currentUser} = state.auth;
     return {
         singleEvent: state.eventsData.singleEvent,
         eventsData: state.eventsData,

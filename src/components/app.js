@@ -10,7 +10,6 @@ import DisplayWeightBmi from './displayweightbmi';
 import ExerciseForm from './exercise-form';
 import DisplayEvent from './display-event';
 import WeightAndBmiForm from './weight-bmi';
-import EditForm from './edit-form';
 import RegistrationPage from './registration-page';
 import {refreshAuthToken} from '../actions/auth';
 
@@ -56,7 +55,6 @@ export class App extends React.Component {
                 <Route exact path="/weight-bmi-form" component={WeightAndBmiForm} />
                 <Route exact path="/display-weight-bmi" component={DisplayWeightBmi} />
                 <Route exact path="/display-single-exercise/:id" component={DisplayEvent} />
-                <Route exact path="/edit-exercise/:id" component={EditForm} />
                 
                 
             </div>
