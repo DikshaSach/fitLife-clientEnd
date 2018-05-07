@@ -50,10 +50,14 @@ BigCalendar.setLocalizer(BigCalendar.momentLocalizer(moment));
 }
 
 const mapStateToProps = state => {
-  const {currentUser} = state.auth;
+  const {currentUser} = state.auth;   
+        let id = null;  
+        if(currentUser != null){
+            id =currentUser.id;
+        }
   return {
       eventsData: state.eventsData.data,
-      id: `${currentUser.id}`
+      id: id
   };
 };
 

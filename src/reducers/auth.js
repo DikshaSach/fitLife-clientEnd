@@ -32,7 +32,7 @@ export default async function reducer(state = initialState, action) {
             error: null
         });
     } else if (action.type === AUTH_SUCCESS) {
-        await Reducers.fetchEventsData(action.currentUser.id);
+
         return Object.assign({}, state, {
             loading: false,
             currentUser: action.currentUser

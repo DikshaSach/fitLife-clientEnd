@@ -10,7 +10,8 @@ import {makeDateFromISOString} from '../utils';
 import Select from './select';
 export class EditForm extends React.Component {
     
-render(){ let error;
+render(){ 
+    let error;
     if (this.props.error) {
         error = (
             <div className="form-error" aria-live="polite">

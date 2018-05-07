@@ -12,6 +12,7 @@ export class HeaderBar extends React.Component {
     logOut() {
         this.props.dispatch(clearAuth());
         clearAuthToken();
+        this.props.history.push('/');
     }
 
     render() {
@@ -19,7 +20,7 @@ export class HeaderBar extends React.Component {
         let logOutButton, exerciseForm, DisplayWeightBmi, Dashboard, WeightBmiForm; 
         if (this.props.loggedIn) {
             logOutButton = (
-                <a className="logout-bttn" onClick={() => this.logOut()}>Log out</a>
+                <a className="logout-bttn" href="#" onClick={() => this.logOut()}>Log out</a>
             );
             exerciseForm = ( <a className="exerciseForm-bttn" onClick={() => {this.props.history.push('/exerciseForm')}}>Add Exercise</a>);
             DisplayWeightBmi = ( <a className="weightBmi-bttn" onClick={() => {this.props.history.push('/display-weight-bmi')}}>Display Weight & BMI</a>);
@@ -47,7 +48,6 @@ const mapStateToProps = state => {
     const {currentUser} = state.auth;
     return {
         loggedIn: state.auth.currentUser !== null,
-        username: state.auth.currentUser.username,
         name: `${currentUser.firstName} ${currentUser.lastName}`,
         id: `${currentUser.id}`
     };

@@ -22,13 +22,13 @@ export class Dashboard extends React.Component {
 }
 
 const mapStateToProps = state => {
-    
     const {currentUser} = state.auth;
     return {
+        loggedIn: state.auth.currentUser !== null,
         username: state.auth.currentUser.username,
         name: `${currentUser.firstName} ${currentUser.lastName}`,
         id: `${currentUser.id}`
     };
+   
 };
-
 export default requiresLogin()(connect(mapStateToProps)(Dashboard));
