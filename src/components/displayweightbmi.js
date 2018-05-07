@@ -21,7 +21,7 @@ export class DisplayWeightBmi extends React.Component{
 
         
             const userWeightBmiData = this.props.weightBmi;
-            console.log(userWeightBmiData);
+
 
         
         return(
@@ -58,7 +58,7 @@ export class DisplayWeightBmi extends React.Component{
     }
 }
 const mapStateToProps = state => {
-    console.log(state.weightBmi.isFetching);
+
     const {currentUser} = state.auth;
     return {
         username: state.auth.currentUser.username,

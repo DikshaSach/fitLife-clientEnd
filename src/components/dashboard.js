@@ -2,10 +2,10 @@ import React from 'react';
 import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
 import Calendar from './calendar';
-import './dashboard.css';
+
 //import ExerciseForm from './exercise-form';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
-
+import './dashboard.css';
 export class Dashboard extends React.Component {
     
     render() {

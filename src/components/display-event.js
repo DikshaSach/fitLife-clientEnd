@@ -37,9 +37,9 @@ export class DisplayEvent extends React.Component {
        const time = this.props.eventsData.singleEvent["0"].time;
 
         return <div>
-             <button onClick={() => this.props.history.push('/dashboard')}> Go back to Dashboard </button>
+           
             <h1>Exercise: {title}</h1>
-            <h1>Start Date: {startdateMonth}/{startdateDate}/{startdateYear}</h1>
+            <h1>Date: {startdateMonth}/{startdateDate}/{startdateYear}</h1>
             <h1> Time Spent: {time} </h1>
             <button onClick={() => this.clickedEdit()}>Edit</button>
             <button onClick={()=> this.clickedDelete()}>Delete</button>

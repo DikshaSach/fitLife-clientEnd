@@ -24,6 +24,8 @@ export class RegistrationForm extends React.Component {
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}>
+                <div className="fields-container">
+                <h2>FitLife</h2>
                 <label htmlFor="firstName">First name</label>
                 <Field component={Input} type="text" name="firstName" />
                 <label htmlFor="lastName">Last name</label>
@@ -66,6 +68,7 @@ export class RegistrationForm extends React.Component {
                     disabled={this.props.pristine || this.props.submitting}>
                     Register
                 </button>
+                </div>
             </form>
         );
     }

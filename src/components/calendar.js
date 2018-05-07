@@ -18,7 +18,6 @@ export class Calendar extends React.Component {
   }
 
   onDashboardClicked(event){
-
     this.props.dispatch(fetchEventById(event._id)); 
      this.props.history.push(`/display-single-exercise/${event._id}`);
   }
@@ -26,9 +25,10 @@ export class Calendar extends React.Component {
     componentDidMount() {
       this.props.dispatch(fetchEventsData(this.props.id));
    }
+ 
 
   render(){
-
+const event = this.props.eventsData;
 
   BigCalendar.setLocalizer(BigCalendar.momentLocalizer(moment));
     return(
@@ -44,6 +44,7 @@ export class Calendar extends React.Component {
           showMultiDayTimes
           defaultDate={new Date()}
           onSelectEvent={this.onDashboardClicked}
+          eventPropGetter={event => ({className: event.title.toLowerCase()})}
           onSelectSlot={slotInfo =>
             console.log(
               `selected slot: \n\nstart ${slotInfo.start} ` +
@@ -60,6 +61,7 @@ export class Calendar extends React.Component {
   }
 
 const mapStateToProps = state => {
+  console.log(state)
   const {currentUser} = state.auth;
   return {
       eventsData: state.eventsData.data,
