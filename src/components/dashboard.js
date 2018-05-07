@@ -12,7 +12,7 @@ export class Dashboard extends React.Component {
         return (
             <div className="dashboard">
                 <div className="dashboard-username">
-                    Hello {this.props.username}
+                    Hello {this.props.name}
                 </div>
               <Calendar />
              

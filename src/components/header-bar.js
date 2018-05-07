@@ -22,12 +22,13 @@ export class HeaderBar extends React.Component {
                 <a className="logout-bttn" onClick={() => this.logOut()}>Log out</a>
             );
             exerciseForm = ( <a className="exerciseForm-bttn" onClick={() => {this.props.history.push('/exerciseForm')}}>Add Exercise</a>);
-            DisplayWeightBmi = ( <a className="weightBmi-bttn" onClick={() => {this.props.history.push('/display-weight-bmi')}}>Weight/BMI</a>);
-            WeightBmiForm = (<a className="weightBmiForm-bttn" onClick={() => {this.props.history.push('/weight-bmi-form')}}> Add Weight/BMI</a>);
+            DisplayWeightBmi = ( <a className="weightBmi-bttn" onClick={() => {this.props.history.push('/display-weight-bmi')}}>Display Weight & BMI</a>);
+            WeightBmiForm = (<a className="weightBmiForm-bttn" onClick={() => {this.props.history.push('/weight-bmi-form')}}> Add Weight & BMI</a>);
             Dashboard = ( <a className="dashboard-bttn" onClick={() => {this.props.history.push('/dashboard')}}>Home</a>);
         }
         return (
             <div className="header-bar">
+   
                 <h1 className="title">FitLife</h1>
                 <div className="bttn-container">
                 {Dashboard}

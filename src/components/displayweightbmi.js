@@ -27,10 +27,6 @@ export class DisplayWeightBmi extends React.Component{
         return(
             
             <div className="displayweightbmi-container">
-                <div className="dashboard-username">
-                    Username: {this.props.username}
-                </div>
-                <div className="dashboard-name">Name: {this.props.name}</div>
                 
                 <ul>
                     {

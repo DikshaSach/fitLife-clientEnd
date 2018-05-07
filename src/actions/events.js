@@ -60,9 +60,8 @@ export const deleteSingleEventRequest = () => ({
     type: DELETE_SINGLE_EVENT_REQUEST
 });
 export const DELETE_SINGLE_EVENT_SUCCESS = 'DELETE_SINGLE_EVENT_SUCCESS';
-export const deleteSingleEventSuccess = data => ({
-    type: DELETE_SINGLE_EVENT_SUCCESS,
-    data
+export const deleteSingleEventSuccess = () => ({
+    type: DELETE_SINGLE_EVENT_SUCCESS
 });
 export const DELETE_SINGLE_EVENT_FAILED = 'DELETE_SINGLE_EVENT_FAILED';
 export const deleteSingleEventFailed = error => ({

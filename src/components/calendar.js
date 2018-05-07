@@ -19,7 +19,7 @@ export class Calendar extends React.Component {
 
   onDashboardClicked(event){
     this.props.dispatch(fetchEventById(event._id)); 
-     this.props.history.push(`/display-single-exercise/${event._id}`);
+    this.props.history.push(`/display-single-exercise/${event._id}`);
   }
 
     componentDidMount() {
@@ -61,7 +61,6 @@ const event = this.props.eventsData;
   }
 
 const mapStateToProps = state => {
-  console.log(state)
   const {currentUser} = state.auth;
   return {
       eventsData: state.eventsData.data,

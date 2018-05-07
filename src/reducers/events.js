@@ -103,8 +103,8 @@ export default function reducer(state = initialState, action){
 
         return Object.assign({}, state, {
             isDelete: false,
-            singleEvent: {},
-            data: [...state.data]
+            singleEvent: {}
+            
         });
  
     }else if(action.type === DELETE_SINGLE_EVENT_FAILED){
