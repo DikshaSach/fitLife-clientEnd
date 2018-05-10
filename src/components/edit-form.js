@@ -20,6 +20,7 @@ render(){ let error;
 }
   return(
     <div className="exercise-form-container">
+    <h1>Edit Form</h1>
     <form
         className="exercise-form"
         onSubmit={this.props.handleSubmit(values => this.onSubmit(values)
@@ -58,9 +59,6 @@ render(){ let error;
             id="start"
             validate={[required, nonEmpty]}
         />
-      
-       
-        
         <button disabled={this.props.pristine || this.props.submitting}>
         submitting
         </button>

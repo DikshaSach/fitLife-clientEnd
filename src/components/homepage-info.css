@@ -24,25 +24,20 @@
 .first-container{
 
     float: left;
-    width: 25%;
+    width: 33.33%;
 
 }
 .second-container{
 
-    width: 25%;
+    width: 33.33%;
     float: left;
    
 }
 .third-container{
 
-    width: 25%;
+    width: 33.33%;
     float: left;
  
-}
-.fourth-container{
-
-    width: 25%;
-    float: left;
 }
 .login-form-container{
     padding-bottom: 300px;

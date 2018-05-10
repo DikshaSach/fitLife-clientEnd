@@ -64,7 +64,7 @@ export class HeaderBar extends React.Component {
                 <div className="title"><img className="logo-image-narrow" src={Logo3} height="auto" width="150"/></div>
                 <div className="narrowLinks">
                 {Dashboard}
-                 {exerciseForm}
+                {exerciseForm}
                 {DisplayWeightBmi}
                 {WeightBmiForm}
                 {Progress}
