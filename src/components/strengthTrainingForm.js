@@ -35,6 +35,64 @@ render(){
             );
     }
     
+    let duplicatedFields = [];
+    for (let i=0; i<3; i++) {
+        duplicatedFields.push(
+                <div>
+                    <Field 
+                        component={Input}
+                        type="Date"
+                        name="start"
+                        key={'start'+i}
+                        validate={[required, nonEmpty]}
+                    />
+                    <label htmlFor="strengthExercisetitle">Strength Exercise Name</label>
+                    <Field 
+                        component={Input}
+                        type="text"
+                        name="strengthExercisetitle"
+                        id="strengthExercisetitle"
+                        validate={[required, nonEmpty]}
+                    /> 
+                    <label>Reps</label>
+                    <Field
+                        type="text"
+                        id="reps"
+                        name="reps"
+                        component={Select}
+                        options={{
+                        "5 reps": '5 reps', 
+                        "10 reps": '10 reps', 
+                        "15 reps": '15 reps', 
+                        "20 reps": '20 reps', 
+                        "max reps": 'max reps'  
+
+                        }}
+                        valueField="value"
+                    />  
+                    <label>Sets</label>
+                    <Field
+                        type="text"
+                        id="sets"
+                        name="sets"
+                        component={Select}
+                        options={{
+                        "1 set": '1 set', 
+                        "2 sets": '2 sets', 
+                        "3 sets": '3 sets', 
+                        "4 set": '4 set',
+                        "5 set": '5 set', 
+                        "6 set": '6 set',
+                        "7 set": '7 set',
+                        "8 set": '8 set',
+                        "9 set": '9 set',
+                        "10 set": '10 set'
+                        }}
+                        valueField="value"
+                    />
+                </div>);
+    }
+
     return(
         <div className="exercise-form-container-strength">
         <h1>Enter the details for Strength Exercise:</h1>
@@ -60,68 +118,16 @@ render(){
                 valueField="value"
             /> 
             <label htmlFor="start">Date</label>
-            <Field 
-                component={Input}
-                type="Date"
-                name="start"
-                id="start"
-                validate={[required, nonEmpty]}
-            />
-            <label htmlFor="strengthExercisetitle">Strength Exercise Name</label>
-            <Field 
-                component={Input}
-                type="text"
-                name="strengthExercisetitle"
-                id="strengthExercisetitle"
-                validate={[required, nonEmpty]}
-            /> 
-             <label>Reps</label>
-            <Field
-                type="text"
-                id="reps"
-                name="reps"
-                component={Select}
-                options={{
-                "5 reps": '5 reps', 
-                "10 reps": '10 reps', 
-                "15 reps": '15 reps', 
-                "20 reps": '20 reps', 
-                "max reps": 'max reps'  
-
-                }}
-                valueField="value"
-            />  
-            <label>Sets</label>
-            <Field
-                type="text"
-                id="sets"
-                name="sets"
-                component={Select}
-                options={{
-                "1 set": '1 set', 
-                "2 sets": '2 sets', 
-                "3 sets": '3 sets', 
-                "4 set": '4 set',
-                "5 set": '5 set', 
-                "6 set": '6 set',
-                "7 set": '7 set',
-                "8 set": '8 set',
-                "9 set": '9 set',
-                "10 set": '10 set'
-                }}
-                valueField="value"
-            />  
+            {duplicatedFields}
             <button disabled={this.props.pristine || this.props.submitting}>
             submitting
             </button>
         </form>
         </div>  
     );
-      
-      
-    
     }
 } 
+
 const mapStateToProps = state => {
     
     const {currentUser} = state.auth;
