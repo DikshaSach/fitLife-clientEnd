@@ -1,0 +1,28 @@
+.exercise-form-title{
+text-align: center;
+}
+.exercise-form-btn-custom{
+width: 45%;
+height: 30px;
+border-radius: 5px;
+margin-right: 5px;
+}
+.exercise-form-btn-strength{
+width: 45%;
+height: 30px;
+border-radius: 5px;
+margin-left: 5px;
+}
+.exercise-form-btn-container{
+    width: 80%;
+   margin: 0 auto;
+   text-align: center;
+}
+.custom-exercise-form-container{
+width: 100%;
+text-align: center;
+}
+.strength-exercise-form-container{
+width: 100%;
+text-align: center;
+}

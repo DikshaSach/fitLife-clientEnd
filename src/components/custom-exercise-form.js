@@ -8,6 +8,7 @@ import requiresLogin from './requires-login';
 import {connect} from 'react-redux';
 import {makeDateFromISOString} from '../utils';
 import Select from './select';
+import './custom-exercise-form.css';
 export class CustomExerciseForm extends React.Component {
     onSubmit(values){
         const creator = this.props.id;
@@ -33,7 +34,8 @@ export class CustomExerciseForm extends React.Component {
     }
     
     return(
-        <div className="exercise-form-container">
+        <div className="exercise-form-container-custom">
+        <h1>Enter the details for Custom Exercise:</h1>
         <form
             className="exercise-form"
             onSubmit={this.props.handleSubmit(values => this.onSubmit(values)
@@ -72,9 +74,6 @@ export class CustomExerciseForm extends React.Component {
                 id="start"
                 validate={[required, nonEmpty]}
             />
-          
-           
-            
             <button disabled={this.props.pristine || this.props.submitting}>
             submitting
             </button>

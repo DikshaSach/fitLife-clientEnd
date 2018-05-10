@@ -9,6 +9,7 @@ import requiresLogin from './requires-login';
 import {connect} from 'react-redux';
 import Select from './select';
 import {makeDateFromISOString} from '../utils';
+import './strengthTrainingForm.css';
 export class StrengthTrainingForm extends React.Component {
 
 onSubmit(values){
@@ -22,8 +23,7 @@ onSubmit(values){
     const end = start;
     const exercise = {title, creator, start, end, strengthExercise};
     this.props.dispatch(addEventsData(exercise))
-    .then(()=> {this.props.history.push('/dashboard')});
-    
+    .then(()=> {this.props.history.push('/dashboard')});   
 }
 render(){
     let error;
@@ -36,7 +36,8 @@ render(){
     }
     
     return(
-        <div className="exercise-form-container">
+        <div className="exercise-form-container-strength">
+        <h1>Enter the details for Strength Exercise:</h1>
         <form
             className="strengthexercise"
             onSubmit={this.props.handleSubmit(values => this.onSubmit(values)
@@ -49,11 +50,11 @@ render(){
                 name="title"
                 component={Select}
                 options={{
-                "Shoulder": 'Shoulder', 
-                "Back":'Back', 
-                "Legs": 'Legs',
-                "Abs": 'Abs', 
-                "Arms": 'Arms', 
+                "Shoulder Day": 'Shoulder Day', 
+                "Back Day":'Back Day', 
+                "Legs Day": 'Legs Day',
+                "Abs Day": 'Abs Day', 
+                "Arms Day": 'Arms Day', 
 
                 }}
                 valueField="value"

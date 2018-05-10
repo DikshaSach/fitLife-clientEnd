@@ -28,6 +28,7 @@ export class WeightAndBmiForm extends React.Component {
         }
         return (
             <div className="weight-bmi-form-container">
+            <h1>Enter the details below:</h1>
             <form
                 className="weight-bmi-form"
                 onSubmit={this.props.handleSubmit(values => this.onSubmit(values)

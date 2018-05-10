@@ -6,11 +6,26 @@ background-color: pink;
     background-color: red;
 }
 .running{
-    background-color: aqua;
+    background-color: rgb(57, 140, 140);
 }
 .testing{
     background-color: palegreen;
 }
 .jogging{
 background-color: olivedrab;
+}
+.arms{
+background-color: palevioletred
+}
+.abs{
+background-color: palegreen
+}
+.back{
+background-color: moccasin
+}
+.legs{
+background-color: mediumseagreen
+}
+.shoulder{
+background-color: maroon;
 }

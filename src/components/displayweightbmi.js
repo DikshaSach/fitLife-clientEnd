@@ -16,8 +16,9 @@ export class DisplayWeightBmi extends React.Component {
 
     render() {
         const userWeightBmiData = this.props.weightBmi;
-        return ( <div className = "displayweightbmi-container" >
-
+        return ( 
+        <div className = "displayweightbmi-container" >
+            <h1>Your weight/bmi Details:</h1>
             <ul> {
                 userWeightBmiData.map((eachItem, index) => {
 

@@ -25,15 +25,26 @@ export class HeaderBar extends React.Component {
     }
     render() {
         // Only render the log out button if we are logged in
-        let logOutButton, exerciseForm, DisplayWeightBmi, Dashboard, WeightBmiForm; 
+        let logOutButton, exerciseForm, DisplayWeightBmi, Dashboard, WeightBmiForm, Progress; 
         if (this.props.loggedIn) {
             logOutButton = (
                 <a className="logout-bttn" href="#" onClick={() => this.logOut()}>Log out</a>
             );
-            exerciseForm = ( <a className="exerciseForm-bttn" href="#" onClick={() => {this.props.history.push('/exerciseForm')}}>Add Exercise</a>);
-            DisplayWeightBmi = ( <a className="weightBmi-bttn" href="#" onClick={() => {this.props.history.push('/display-weight-bmi')}}>Display Weight & BMI</a>);
-            WeightBmiForm = (<a className="weightBmiForm-bttn" href="#" onClick={() => {this.props.history.push('/weight-bmi-form')}}> Add Weight & BMI</a>);
-            Dashboard = ( <a className="dashboard-bttn" href="#" onClick={() => {this.props.history.push('/dashboard')}}>Home</a>);
+            exerciseForm = ( <a className="exerciseForm-bttn" href="#" onClick={() => {
+                this.burgerToggle();
+                this.props.history.push('/exerciseForm')}}>Add Exercise</a>);
+            DisplayWeightBmi = ( <a className="weightBmi-bttn" href="#" onClick={() => {
+                this.burgerToggle(); 
+                this.props.history.push('/display-weight-bmi'); }}>Display Weight & BMI</a>);
+            WeightBmiForm = (<a className="weightBmiForm-bttn" href="#" onClick={() => {
+                this.burgerToggle(); 
+                this.props.history.push('/weight-bmi-form')}}> Add Weight & BMI</a>);
+            Progress = (<a className="progress-page-bttn" href="#" onClick={()=>{
+                this.burgerToggle(); 
+                this.props.history.push('/progress')}}>Progress</a>);
+            Dashboard = ( <a className="dashboard-bttn" href="#" onClick={() => {
+                this.burgerToggle(); 
+                this.props.history.push('/dashboard')}}>Home</a>);
         }
         return (
             <nav>
@@ -44,6 +55,7 @@ export class HeaderBar extends React.Component {
                  {exerciseForm}
                 {DisplayWeightBmi}
                 {WeightBmiForm}
+                {Progress}
                 {logOutButton}
                 </div>
             </div>
@@ -55,6 +67,7 @@ export class HeaderBar extends React.Component {
                  {exerciseForm}
                 {DisplayWeightBmi}
                 {WeightBmiForm}
+                {Progress}
                 {logOutButton}
                 </div>
             </div>

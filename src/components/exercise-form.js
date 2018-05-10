@@ -4,6 +4,7 @@ import requiresLogin from './requires-login';
 import {connect} from 'react-redux';
 import StrengthTrainingForm from './strengthTrainingForm';
 import CustomExerciseForm from './custom-exercise-form';
+import './exercise-form.css';
 export class ExerciseForm extends React.Component {
     constructor(props){
         super(props);
@@ -33,22 +34,25 @@ export class ExerciseForm extends React.Component {
 render(){
     if(this.state.customExerciseClicked === true){
         return ( 
-            <div> 
+            <div className="custom-exercise-form-container"> 
             <CustomExerciseForm /> 
-            <button onClick={()=> this.resetState()}>Cancel</button>
+            <button className="exercise-form-cancel" onClick={()=> this.resetState()}>Cancel</button>
             </div>
             )
     }else if(this.state.strengthTrainingClicked === true){
         return (
-            <div> 
+            <div className="strength-exercise-form-container"> 
             <StrengthTrainingForm/>
-            <button onClick={()=> this.resetState()}>Cancel</button>
+            <button className="exercise-form-cancel"  onClick={()=> this.resetState()}>Cancel</button>
             </div>)
     }
     return(
         <div>
-        <button onClick={()=> this.showcustom()}>Custom Exercise</button>
-        <button onClick={() => this.showRepSetsForm()}>Add Strength Training Exercise </button>
+            <h1 className="exercise-form-title">What kind of Exercise do you want to log?</h1>
+            <div className="exercise-form-btn-container">
+        <button className="exercise-form-btn-custom" onClick={()=> this.showcustom()}>Custom Exercise</button>
+        <button className="exercise-form-btn-strength" onClick={() => this.showRepSetsForm()}>Add Strength Training Exercise </button>
+        </div>
         </div>
     );
 }
