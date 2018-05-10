@@ -1,4 +1,3 @@
-
 // ALL OF THE EVENTS
 export const FETCH_EVENTS_REQUEST = 'FETCH_EVENTS_DATA_REQUEST';
 export const fetchEventsRequest = () =>({

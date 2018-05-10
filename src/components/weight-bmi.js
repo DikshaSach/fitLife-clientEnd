@@ -5,6 +5,7 @@ import {required, nonEmpty} from '../validators';
 import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
 import {addWeightBmi} from '../reducers/weightbmi';
+import Select from './select';
 export class WeightAndBmiForm extends React.Component {
     onSubmit(values){
         const creator = this.props.id;
@@ -50,11 +51,25 @@ export class WeightAndBmiForm extends React.Component {
                 />
                 <label htmlFor="month">Month</label>
                 <Field 
-                    component={Input}
                     type="text"
                     name="month"
                     id="month"
-                    validate={[required, nonEmpty]}
+                    component={Select}
+                    options={{
+                    "January": 'January', 
+                    "February":'February', 
+                    "March": 'March',
+                    "April": 'April', 
+                    "May": 'May', 
+                    "June": 'June',
+                    "July": 'July',
+                    "August": 'August',
+                    "September": 'September',
+                    "October": 'October',
+                    "November": 'November',
+                    "December": 'December'
+                    }}
+                    valueField="value"
                 />
                 <button disabled={this.props.pristine || this.props.submitting}>
                 submitting

@@ -2,6 +2,7 @@ import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
 import {registerUser} from '../actions/users';
 import {login} from '../actions/auth';
+import {Link, Redirect} from 'react-router-dom';
 import Input from './input';
 import Select from './select';
 import {required, nonEmpty, matches, length, isTrimmed} from '../validators';
@@ -10,8 +11,8 @@ const matchesPassword = matches('password');
 
 export class RegistrationForm extends React.Component {
     onSubmit(values) {
-        const {username, password, firstName, lastName, timezone} = values;
-        const user = {username, password, firstName, lastName, timezone};
+        const {username, password, firstName, lastName} = values;
+        const user = {username, password, firstName, lastName};
         return this.props
             .dispatch(registerUser(user))
             .then(() => this.props.dispatch(login(username, password)));
@@ -24,12 +25,16 @@ export class RegistrationForm extends React.Component {
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}>
+                <div className="links-container">
+                <Link className="link-to-register-on-register" to="/register"><button>Register</button></Link>
+                <Link className="link-to-login" to="/"><button>Login</button></Link>
+                </div>
+                <h1>Register</h1>
                 <div className="fields-container">
-                <h2>FitLife</h2>
                 <label htmlFor="firstName">First name</label>
-                <Field component={Input} type="text" name="firstName" />
+                <Field component={Input} type="text" name="firstName" id="firstName" />
                 <label htmlFor="lastName">Last name</label>
-                <Field component={Input} type="text" name="lastName" />
+                <Field component={Input} type="text" name="lastName"  id="lastName" />
                 <label htmlFor="username">Username</label>
                 <Field
                     component={Input}
@@ -49,20 +54,10 @@ export class RegistrationForm extends React.Component {
                     component={Input}
                     type="password"
                     name="passwordConfirm"
+                    id="passwordConfirm"
                     validate={[required, nonEmpty, matchesPassword]}
                 />
-                <label htmlFor="timezone">Select your Timezone</label>
-                <Field  
-                    component={Select}
-                    type="timezone"
-                    name="timezone"
-                    options={{
-                        est: 'est',
-                        pst: 'pst',
-                        mst: 'mst',
-                        cst: 'cst'
-                    }}
-                />
+               
                 <button
                     type="submit"
                     disabled={this.props.pristine || this.props.submitting}>

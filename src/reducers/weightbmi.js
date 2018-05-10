@@ -18,7 +18,7 @@ import { normalizeResponseErrors } from "../actions/utils";
 const initialState = {
     data: [],
     isFetching: false,
-    isDeleting: true/false
+    isDeleting: false
 }
 export default function reducer(state = initialState, action) {
     if(action.type === FETCH_WEIGHTBMI_REQUEST){
@@ -46,9 +46,8 @@ export default function reducer(state = initialState, action) {
             error: action.error
         });
     } else if(action.type === DELETE_WEIGHTBMI_SUCCESS){
-        console.log('in success');
-        return Object.assign({}, state, {
-            data: action.data,
+       return Object.assign({}, state, {
+            data:  [...state.data.filter(item => item._id !== action.data)],
             isDeleting: false
         });
     } else if(action.type === DELETE_WEIGHTBMI_FAILED){
@@ -64,8 +63,7 @@ export const deleteWeightBmi = (id) => dispatch => {
     return fetch ('http://localhost:8080/weightandbmi/delete/' + id, {
         method: 'DELETE'
     })
-
-    .then (data => dispatch(deleteWeightBmiSuccess(data)))
+    .then (dispatch(deleteWeightBmiSuccess(id)))
     .catch(err =>{
         dispatch(deleteWeightBmiFailed(err));
     });

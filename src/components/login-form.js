@@ -4,6 +4,7 @@ import Input from './input';
 import {login} from '../actions/auth';
 import {required, nonEmpty} from '../validators';
 import './login-form.css';
+import {Link, Redirect} from 'react-router-dom';
 
 export class LoginForm extends React.Component {
     onSubmit(values) {
@@ -20,18 +21,24 @@ export class LoginForm extends React.Component {
             );
         }
         return (
+           
             <form
                 className="login-form"
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}>
                 {error}
-
+                <div className="links-container">
+                <Link className="link-to-login-on-login" to="/"><button>Login</button></Link>
+                <Link className="link-to-register" to="/register"><button>Register</button></Link>
+                </div>
+                <h1>Login</h1>
                 <div className="fields-container">
-                <h1>FitLife</h1>
                 <label htmlFor="username">Username</label>
                 <Field
+                
                     component={Input}
+                    placeholder="Username"
                     type="text"
                     name="username"
                     id="username"
@@ -40,6 +47,7 @@ export class LoginForm extends React.Component {
                 <label htmlFor="password">Password</label>
                 <Field
                     component={Input}
+                    placeholder="Password"
                     type="password"
                     name="password"
                     id="password"

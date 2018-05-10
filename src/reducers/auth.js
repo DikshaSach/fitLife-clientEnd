@@ -1,5 +1,4 @@
-import Store from '../store';
-import * as Reducers from './events';
+
 
 import {
     SET_AUTH_TOKEN,
@@ -15,8 +14,7 @@ const initialState = {
     loading: false,
     error: null
 };
-
-export default async function reducer(state = initialState, action) {
+export default function reducer(state = initialState, action)  {
     if (action.type === SET_AUTH_TOKEN) {
         return Object.assign({}, state, {
             authToken: action.authToken

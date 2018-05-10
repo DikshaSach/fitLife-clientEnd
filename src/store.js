@@ -5,8 +5,9 @@ import {loadAuthToken} from './local-storage';
 import authReducer from './reducers/auth';
 import weightBmiReducer from './reducers/weightbmi';
 import protectedDataReducer from './reducers/protected-data';
-import eventsDataReducer, { fetchEventsData } from './reducers/events';
+import eventsDataReducer from './reducers/events';
 import {setAuthToken, refreshAuthToken} from './actions/auth';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 const store = createStore(
     combineReducers({
@@ -15,9 +16,9 @@ const store = createStore(
         protectedData: protectedDataReducer,
         eventsData: eventsDataReducer,
         weightBmi: weightBmiReducer
-    }),
+    }),composeWithDevTools(
     applyMiddleware(thunk)
-);
+));
 
 // Hydrate the authToken from localStorage if it exist
 const authToken = loadAuthToken();

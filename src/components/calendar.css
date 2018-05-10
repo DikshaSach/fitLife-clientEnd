@@ -1,0 +1,49 @@
+.rbc-date-cell:hover, .rbc-date-cell:focus, .rbc-date-cell:active {
+    color: #99C9ED;
+    text-decoration: none;
+}
+
+.rbc-date-cell {
+    font-family: Lato, 'Helvetica Neue', Helvetica, sans-serif;
+    font-weight: lighter;
+    text-decoration: none;
+
+    transition: color 0.1s, background-color 0.1s;
+}
+.rbc-date-cell {
+    position: relative;
+    display: block;
+    padding: 16px 0;
+    margin: 0 12px;
+    letter-spacing: 1px;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: color 0.1s,background-color 0.1s,padding 0.2s ease-in;
+    color: #99C9ED;
+}
+.rbc-date-cell::before {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 3px;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background-color: #99C9ED;
+    transform-origin: right top;
+    transform: scale(0, 1);
+    transition: color 0.1s,transform 0.2s ease-out;
+}
+
+.rbc-date-cell:active::before {
+    background-color: #99C9ED;
+}
+
+.rbc-date-cell:hover::before, .rbc-date-cell:focus::before {
+    transform-origin: left top;
+    transform: scale(1, 1);
+    background-color: #292B2F;
+}
+

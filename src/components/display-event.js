@@ -10,17 +10,15 @@ export class DisplayEvent extends React.Component {
 
 
     clickedEdit(){
-        console.log('in edit func');
-        
+        this.props.history.push('/edit-exercise/' + this.props.match.params.id); 
 
     }
     clickedDelete(){
         console.log('clicked on delete button');
-        this.props.dispatch(deleteSingleEvent(this.props.match.params.id));
-        if(this.props.isDeleting === false){
-           return this.props.history.push('/dashboard');
-        };
-    
+        this.props.dispatch(deleteSingleEvent(this.props.match.params.id))
+        .then(()=> {
+            return this.props.history.push('/dashboard')
+        })     
     }
     componentWillMount() {
         this.props.dispatch(fetchEventById(this.props.match.params.id)); 
@@ -35,14 +33,19 @@ export class DisplayEvent extends React.Component {
        const startdateMonth = (startdate.getUTCMonth() +1);
        const startdateYear = (startdate.getUTCFullYear());
        const time = this.props.eventsData.singleEvent["0"].time;
-
+       const strengthExercise = this.props.eventsData.singleEvent["0"].strengthExercise;
+     const listView = strengthExercise.map((itm,index)=>
+    <li key={itm.index}>Exercise Name: {itm.name} Reps: {itm.reps} Sets: {itm.sets}</li>);
+  
+          
         return <div>
            
-            <h1>Exercise: {title}</h1>
+            <h1>{title}</h1>
             <h1>Date: {startdateMonth}/{startdateDate}/{startdateYear}</h1>
             <h1> Time Spent: {time} </h1>
             <button onClick={() => this.clickedEdit()}>Edit</button>
             <button onClick={()=> this.clickedDelete()}>Delete</button>
+            <ul>{listView}</ul>
             </div>;
         }
         return<h1>Loading..</h1>; 
@@ -52,7 +55,6 @@ export class DisplayEvent extends React.Component {
 }; 
 
 const mapStateToProps = state => {
-    //const {currentUser} = state.auth;
     return {
         singleEvent: state.eventsData.singleEvent,
         eventsData: state.eventsData,
