@@ -3,7 +3,6 @@ import requiresLogin from './requires-login';
 import {connect} from 'react-redux';
 
 import {withRouter} from 'react-router-dom';
-//import {fetchEventsData} from '../reducers/events';
 import {fetchEventById} from '../reducers/events';
 import {deleteSingleEvent} from '../reducers/events';
 export class DisplayEvent extends React.Component {
@@ -34,15 +33,17 @@ export class DisplayEvent extends React.Component {
        const startdateYear = (startdate.getUTCFullYear());
        const time = this.props.eventsData.singleEvent["0"].time;
        const strengthExercise = this.props.eventsData.singleEvent["0"].strengthExercise;
-     const listView = strengthExercise.map((itm,index)=>
-    <li key={itm.index}>Exercise Name: {itm.name} Reps: {itm.reps} Sets: {itm.sets}</li>);
-  
-          
+       const listView = strengthExercise.map((itm,index)=>
+        <li key={itm.index}>
+        Exercise Name: {itm.name} 
+        Reps: {itm.reps} 
+        Sets: {itm.sets}
+        </li>); 
         return <div>
            
             <h1>{title}</h1>
             <h1>Date: {startdateMonth}/{startdateDate}/{startdateYear}</h1>
-            <h1> Time Spent: {time} </h1>
+            {this.props.eventsData.singleEvent["0"].time ? <h1>Time Spent: {time} </h1> : null}
             <button onClick={() => this.clickedEdit()}>Edit</button>
             <button onClick={()=> this.clickedDelete()}>Delete</button>
             <ul>{listView}</ul>

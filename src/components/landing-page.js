@@ -17,7 +17,7 @@ export function LandingPage(props) {
     } 
 
     return (
-        <div ClasName="homepage-container">
+        <div ClassName="homepage-container">
         <div className="home">
         <img className="logo-image-homepage" src={Logo3}/>
         <div className="login-form-container">

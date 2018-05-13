@@ -6,6 +6,7 @@ import authReducer from './reducers/auth';
 import weightBmiReducer from './reducers/weightbmi';
 import protectedDataReducer from './reducers/protected-data';
 import eventsDataReducer from './reducers/events';
+import waterReducer from './reducers/water';
 import {setAuthToken, refreshAuthToken} from './actions/auth';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
@@ -15,7 +16,8 @@ const store = createStore(
         auth: authReducer,
         protectedData: protectedDataReducer,
         eventsData: eventsDataReducer,
-        weightBmi: weightBmiReducer
+        weightBmi: weightBmiReducer,
+        water: waterReducer
     }),composeWithDevTools(
     applyMiddleware(thunk)
 ));
