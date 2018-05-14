@@ -8,7 +8,7 @@ import './dashboard.css';
 import WaterIntakeForm from './water-intake-form';
 import DisplayWater from './display-water';
 import WaterIntakeFormEdit from './water-intake-form-edit';
-import {fetchWeightBmi} from '../reducers/weightbmi';
+import {fetchWeightBmi} from '../actions/weightbmi';
 export class Dashboard extends React.Component {
   componentWillMount(){
     this.props.dispatch(fetchWeightBmi(this.props.id));

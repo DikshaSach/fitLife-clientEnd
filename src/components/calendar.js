@@ -6,8 +6,8 @@ import {withRouter} from 'react-router-dom';
 //import { Link, browserHistory } from 'react-router-dom';
 //import { Router, Route, IndexRoute, hashHistory } from 'react-router'
 import {connect} from 'react-redux';
-import {fetchEventsData} from '../reducers/events';
-import {fetchEventById} from '../reducers/events';
+import {fetchEventsData} from '../actions/events';
+import {fetchEventById} from '../actions/events';
 //import DisplayEvent from './display-event';
 import './calendar.css';
 

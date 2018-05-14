@@ -1,8 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
-import {fetchWeightBmi} from '../reducers/weightbmi';
-import {deleteWeightBmi} from '../reducers/weightbmi';
+import {fetchWeightBmi} from '../actions/weightbmi';
+import {deleteWeightBmi} from '../actions/weightbmi';
 import './display-weight-bmi.css';
 export class DisplayWeightBmi extends React.Component {
     componentDidMount() {

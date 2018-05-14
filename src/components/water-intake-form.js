@@ -1,7 +1,7 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom';
 import {Field, reduxForm, focus} from 'redux-form';
-import {addWater} from '../reducers/water';
+import {addWater} from '../actions/water';
 import requiresLogin from './requires-login';
 import {connect} from 'react-redux';
 import Select from './select';

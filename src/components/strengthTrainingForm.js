@@ -2,7 +2,7 @@ import React from 'react';
 import Input from './input';
 import {withRouter} from 'react-router-dom';
 import {Field, reduxForm, focus} from 'redux-form';
-import {addEventsData} from '../reducers/events';
+import {addEventsData} from '../actions/events';
 import {required, nonEmpty} from '../validators';
 import requiresLogin from './requires-login';
 import {connect} from 'react-redux';

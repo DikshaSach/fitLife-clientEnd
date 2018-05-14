@@ -1,5 +1,3 @@
-
-
 import {
     SET_AUTH_TOKEN,
     CLEAR_AUTH,

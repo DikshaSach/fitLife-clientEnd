@@ -3,8 +3,8 @@ import requiresLogin from './requires-login';
 import {connect} from 'react-redux';
 
 import {withRouter} from 'react-router-dom';
-import {fetchEventById} from '../reducers/events';
-import {deleteSingleEvent} from '../reducers/events';
+import {fetchEventById} from '../actions/events';
+import {deleteSingleEvent} from '../actions/events';
 export class DisplayEvent extends React.Component {
 
 

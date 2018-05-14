@@ -4,7 +4,7 @@ import {Field, reduxForm, focus} from 'redux-form';
 import {required, nonEmpty} from '../validators';
 import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
-import {addWeightBmi} from '../reducers/weightbmi';
+import {addWeightBmi} from '../actions/weightbmi';
 import Select from './select';
 import './weight-bmi.css';
 

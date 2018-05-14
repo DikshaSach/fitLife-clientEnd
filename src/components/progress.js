@@ -3,7 +3,7 @@ import {withRouter} from 'react-router-dom';
 import {Line} from 'react-chartjs-2';
 import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
-import {fetchWeightBmi} from '../reducers/weightbmi';
+import {fetchWeightBmi} from '../actions/weightbmi';
 export class Progress extends React.Component {
 
     componentDidMount(){

@@ -4,7 +4,7 @@ import {Field, reduxForm, focus} from 'redux-form';
 import requiresLogin from './requires-login';
 import {connect} from 'react-redux';
 import Select from './select';
-import {editWater} from '../reducers/water';
+import {editWater} from '../actions/water';
 import './water-intake-form-edit.css';
 export class WaterIntakeFormEdit extends React.Component {
     onSubmit(values){   
