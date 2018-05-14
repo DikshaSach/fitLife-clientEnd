@@ -29,3 +29,23 @@ background-color: mediumseagreen
 .shoulder{
 background-color: maroon;
 }
+.waterIntakeFormEdit{
+width: 30%;
+background-color: white;
+border: 2px solid black;
+}
+.waterintakeformedit-bttn-div{
+    float: right;
+}
+br{
+    clear: right;
+}
+.edit-waterintake-bttn{
+    float: right;
+    height: 44px;
+}
+.popup-content{
+    width: 200px !important;
+    z-index: 10 !important;
+    border: 3px solid rgb(209, 95, 95)  !important ;
+}

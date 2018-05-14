@@ -1,5 +1,6 @@
 body, html {margin: 0;padding: 0;}
 .home{
+    font-family: 'Comfortaa', cursive;
     background-image: url('./testingbackground.jpg');
     background-repeat: no-repeat;
    background-position: 99% 50%;

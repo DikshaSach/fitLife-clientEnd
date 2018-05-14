@@ -14,30 +14,23 @@ import {FETCH_WATER_REQUEST,
         editWaterFailed} from '../actions/water';
 
         const initialState = {
+            data: [],
             error: null,
-            singleDayIntake: null
+            singleDayIntake: null,
+            WaterDataForDayExists: false
         };
 
 export default function reducer(state = initialState, action) {
     if(action.type === FETCH_WATER_REQUEST){
         return Object.assign({}, state, {
-            data: [],
             isFetching: true
         });
     } else if(action.type === FETCH_WATER_SUCCESS){
-        var today = new Date();
-        var dd = today.getDate();
-        var mm = today.getMonth()+1;//January is 0!`    
-        var yyyy = today.getFullYear();
-        if(dd<10){dd='0'+dd}
-        if(mm<10){mm='0'+mm}
-        let todaysDate = mm+''+dd+''+yyyy;
-        let todaysDateIntake = action.data.filter(e => e.waterDate === todaysDate);
-
         return Object.assign({}, state, {
+            data: action.data,
             isFetching: false,
-            singleDayIntake: todaysDateIntake["0"].waterIntake
-
+            singleDayIntake: action.data["0"].waterIntake,
+            WaterDataForDayExists: true
         });
     } else if(action.type ===FETCH_WATER_ERROR ){
         console.log(action.error);
@@ -46,7 +39,8 @@ export default function reducer(state = initialState, action) {
         });
     } else if(action.type === ADD_WATER_SUCCESSFUL){
         return Object.assign({}, state, {
-          singleDayIntake: action.data.waterIntake
+          singleDayIntake: action.data.waterIntake,
+          WaterDataForDayExists: true
         });
     } else if(action.type ===ADD_WATER_FAILED ){  
         return Object.assign({}, state, {
@@ -66,9 +60,8 @@ export default function reducer(state = initialState, action) {
 }
 
 export const fetchWater = (idDate) => dispatch => {
-console.log(idDate);
     dispatch(fetchWaterRequest());
-    return fetch('http://localhost:8080/water/waterintake/' + idDate, {
+    return fetch('http://localhost:8080/water/waterintake/' + idDate , {
         method: 'GET'
     })
     .then(res => res.json())

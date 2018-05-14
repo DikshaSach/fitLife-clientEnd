@@ -8,6 +8,7 @@ import {connect} from 'react-redux';
 import {makeDateFromISOString} from '../utils';
 import Select from './select';
 import {editWater} from '../reducers/water';
+import './water-intake-form-edit.css';
 export class WaterIntakeFormEdit extends React.Component {
     onSubmit(values){   
         console.log(values.waterIntake);
@@ -27,13 +28,12 @@ export class WaterIntakeFormEdit extends React.Component {
     
     return(
         <div className="water-intake-form--editcontainer">
-        <h1>Edit:</h1>
         <form
             className="water-intake-form-edit"
             onSubmit={this.props.handleSubmit(values => this.onSubmit(values)
             )}>
             {error}
-            <label htmlFor="water">How many glasses of water?</label>
+            <label htmlFor="water">How many glasses of water did you drink so far?</label>
             <Field
                 type="text"
                 id="waterIntake"

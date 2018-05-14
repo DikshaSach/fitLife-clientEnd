@@ -5,6 +5,8 @@ import {connect} from 'react-redux';
 import StrengthTrainingForm from './strengthTrainingForm';
 import CustomExerciseForm from './custom-exercise-form';
 import './exercise-form.css';
+import StrengthImage from './strength.png';
+import CardioImage from './cardio.png';
 export class ExerciseForm extends React.Component {
     constructor(props){
         super(props);
@@ -50,8 +52,19 @@ render(){
         <div>
             <h1 className="exercise-form-title">What kind of Exercise do you want to log?</h1>
             <div className="exercise-form-btn-container">
-        <button className="exercise-form-btn-custom" onClick={()=> this.showcustom()}>Custom Exercise</button>
-        <button className="exercise-form-btn-strength" onClick={() => this.showRepSetsForm()}>Add Strength Training Exercise </button>
+            <div className="exercise-form-btn-custom-container">
+            <img src={CardioImage}  />
+           <br/>
+        <button className="exercise-form-btn-custom" onClick={()=> this.showcustom()}>Cardio/Custom Exercise</button>
+       
+        </div>
+        <div className="exercise-form-btn-strength-container">
+        <img src={StrengthImage} />
+        <br />
+        <button className="exercise-form-btn-strength" onClick={() => this.showRepSetsForm()}>Strength Exercise </button>
+        
+        </div>
+        <br />
         </div>
         </div>
     );

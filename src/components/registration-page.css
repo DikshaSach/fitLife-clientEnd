@@ -3,6 +3,15 @@
     width: 80px;
     margin: 0 auto;
 }
+.submit-bttn{
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    margin: 10px;
+}
+.submit-bttn:hover{
+    background-color: #ff7755bf;
+}
 #firstName, #lastName, #passwordConfirm{
     font-size: 20px;
     width: 90%;
@@ -11,7 +20,7 @@
     text-align: center;
 }
 .link-to-register-on-register button{
-    background-color: #9a908e;
+    background-color:  #ff7755bf;
     color: white;
     margin-top: 10px;
     width: 45%;
@@ -22,7 +31,7 @@
 }
 .link-to-login button {
     color: white;
-    background-color: #4b474a;
+    background-color: #ffaa88c2;
     width: 45%;
     height: 50px;
     font-size: 20px;

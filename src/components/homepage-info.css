@@ -1,58 +1,94 @@
+.homepage-info{
+    background-color: #EAEDEC;
+}
 .keys-to-success{
     width: 100%;
-    height: 200px;
+padding-bottom: 20px;
     text-align: center;
-
-    
+    background-color: #2E2C2B;
+    color: white;
+    margin-bottom: 20px;
+    font-family: 'Comfortaa', cursive;
 
 }
 
 .keys-to-success h1{
     padding-top: 20px;
-    font-size: 2em;
+    font-size: 30px;
     width: 70%;
     margin: 0 auto;
+   
 }
+
+
+
 .container-for-info-divs{
-    width: 100%;
-    text-align: center;
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Ubuntu', sans-serif;
+  background-color: #EAEDEC;
 }
 .container-for-info-divs br{
     clear: left;
+    text-align: center;
+    margin: 0 auto;
     
 }
 .first-container{
-
     float: left;
-    width: 33.33%;
-
+    width: 33%;
+   
+}
+.first-container >h1 {
+    font-family: 'Comfortaa', cursive;
+    margin: 0;
+padding-top: 10px;
+    padding-bottom: 10px;
+   
 }
 .second-container{
-
-    width: 33.33%;
+    width: 33%;
     float: left;
    
 }
+.second-container >h1 {
+    font-family: 'Comfortaa', cursive;
+    
+    margin: 0;
+padding-top: 10px;
+    padding-bottom: 10px;
+  
+}
 .third-container{
-
-    width: 33.33%;
+   
+    width: 33%;
     float: left;
+   
  
 }
+.third-container >h1 {
+    font-family: 'Comfortaa', cursive;
+    margin: 0;
+padding-top: 10px;
+    padding-bottom: 10px;
+   
+}
 .login-form-container{
-    padding-bottom: 300px;
+    padding-bottom: 200px;
     width: 100%;
     text-align: center;
     margin: 0 auto;
 }
 
-@media only screen and (max-width: 600px) {
-    .keys-to-success{
-        padding-bottom: 40px;
-        
+@media only screen and (max-width: 700px) {
+    
+    .keys-to-success > h1 {
+        font-size: 18px;
     }
     .first-container, .second-container, .third-container, .fourth-container{ 
         float: none;
+         border-bottom: 1px solid black;
         width: 70%;
         margin: 0 auto;
         height: auto;

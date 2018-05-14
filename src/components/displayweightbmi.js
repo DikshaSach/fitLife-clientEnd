@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
 import {fetchWeightBmi} from '../reducers/weightbmi';
 import {deleteWeightBmi} from '../reducers/weightbmi';
+import './display-weight-bmi.css';
 export class DisplayWeightBmi extends React.Component {
     componentDidMount() {
         this.props.dispatch(fetchWeightBmi(this.props.id));
@@ -23,10 +24,16 @@ export class DisplayWeightBmi extends React.Component {
                 userWeightBmiData.map((eachItem, index) => {
 
                     return ( <li key = {`item-${index}`} >
+                        <div className="month-item">
+                        {eachItem.month} 
+                        </div>
+                        <div className="weight-item">
                         Weight: {eachItem.weight} {' '}
+                        </div>
+                        <div className="bmi-item">
                         Bmi: {eachItem.bmi} {' '}
-                        Month: {eachItem.month} 
-                        <button onClick = {
+                        </div>
+                        <button className="delete-bttn-weightbmi" onClick = {
                             () => this.handleClick(eachItem._id)
                         }> Delete </button> 
                         </li>

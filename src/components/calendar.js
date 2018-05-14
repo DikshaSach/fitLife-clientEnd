@@ -45,7 +45,7 @@ const event = this.props.eventsData;
           showMultiDayTimes
           defaultDate={new Date()}
           onSelectEvent={this.onDashboardClicked}
-          //eventPropGetter={event => ({className: event.title.toLowerCase()})}
+          eventPropGetter={event => ({className: event.title.toLowerCase()})}
           onSelectSlot={slotInfo =>
             console.log(
               `selected slot: \n\nstart ${slotInfo.start} ` +

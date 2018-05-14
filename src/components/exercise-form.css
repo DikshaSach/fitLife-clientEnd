@@ -1,17 +1,36 @@
 .exercise-form-title{
 text-align: center;
 }
-.exercise-form-btn-custom{
+.exercise-form-btn-container{
+    width: 100%
+}
+.exercise-form-btn-custom-container{
+    float: left;
 width: 45%;
 height: 30px;
 border-radius: 5px;
 margin-right: 5px;
 }
-.exercise-form-btn-strength{
+.exercise-form-btn-strength, .exercise-form-btn-custom{
+background-color: white;
+height: 30px;
+border-radius: 5px;
+}
+.exercise-form-btn-custom-container >img {
+    height: 200px;
+    width: auto;
+}
+.exercise-form-btn-strength-container >img {
+    height: 200px;
+    width: auto;
+}
+.exercise-form-btn-strength-container{
+    float: left;
 width: 45%;
 height: 30px;
 border-radius: 5px;
 margin-left: 5px;
+
 }
 .exercise-form-btn-container{
     width: 80%;
@@ -21,8 +40,21 @@ margin-left: 5px;
 .custom-exercise-form-container{
 width: 100%;
 text-align: center;
+
 }
 .strength-exercise-form-container{
 width: 100%;
 text-align: center;
+
+}
+@media only screen and (max-width: 500px) {
+    .exercise-form-btn-custom-container >img {
+        height: 150px;
+        width: auto;
+    }
+    .exercise-form-btn-strength-container >img {
+        height: 150px;
+        width: auto;
+    }  
+
 }

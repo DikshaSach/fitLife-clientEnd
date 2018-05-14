@@ -4,7 +4,7 @@ import './footer.css';
 export class Footer extends React.Component {
     render(){
     return(
-        <h1 className="footer-text">Designed by Diksha Sach</h1>
+        <p className="footer-text">  &#x3C; Diksha Sach /&#x3E; </p>
     );
     }
 }

@@ -1,8 +1,9 @@
 .login-form{ 
+    font-family: 'Comfortaa', cursive;
     margin: auto;
     border-top: 8px solid black;
     border-radius: 5px;
-    background: rgb(255, 255, 255, 0.3);
+    background: rgb(255, 255, 255, 0.8);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding-bottom: 20px;
  width: 40%;
@@ -35,7 +36,7 @@
    text-align: center;
 }
 .link-to-login-on-login button{
-    background-color: #9a908e;
+    background-color: #ff7755bf;
     margin-top: 10px;
     width: 45%;
     height: 50px;
@@ -45,7 +46,7 @@
     color: white;
 }
 .link-to-register button{
-    background-color: #4b474a;
+    background-color:  #ffaa88c2;
     color: white;
     width: 45%;
     height: 50px;

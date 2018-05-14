@@ -12,7 +12,7 @@ export function RegistrationPage(props) {
         return <Redirect to="/dashboard" />;
     }
     return (
-        <div ClasName="homepage-container">
+        <div className="homepage-container">
         <div className="home">
         <img className="logo-image-homepage" src={Logo3} height="auto" width="500"/>
         <div className="registration-form-container ">

@@ -11,38 +11,33 @@ export class HomepageInfo extends React.Component {
             <div className="homepage-info">
         <div className="keys-to-success">
             <h1>Track and log your workouts ,
-             water-intake and other activities to make sure you make the best of today</h1>
+             water-intake and weight to make sure you make the best of today</h1>
         </div>
+      
         <div className="container-for-info-divs">
 
         <div className="first-container">
-        <img className="hydration" src={hydration} height="auto" width="100"/>
-        <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-        when an unknown printer took a galley of type and scrambled it to make a type specimen 
-        book. It has survived not only five centuries, but also the leap into electronic 
-        typesetting, remaining essentially unchanged.</p> </div> 
+        <h1>Hydration</h1>
+        <img className="hydration" src={hydration} height="80" width="100"/>
+        <p>Water helps all of your bodily functions.  It improves your health, fitness, 
+            weight control, mood and even your energy levels.
+        </p> </div> 
         <div className="second-container">
-        <img className="exercise" src={exercise} height="auto" width="90"/>
+        <h1>Exercise</h1>
+        <img className="exercise" src={exercise} height="80" width="90"/>
         <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-        when an unknown printer took a galley of type and scrambled it to make a type specimen 
-        book. It has survived not only five centuries, but also the leap into electronic 
-        typesetting, remaining essentially unchanged.</p></div>
+        Exercise is an important part of a healthy lifestyle. Exercise prevents health problems, builds strength, boosts energy, 
+        and can help you reduce stress. It can also help you maintain a healthy body weight and curb your appetite.</p></div>
         
         <div className="third-container">
-        <img className="weight" src={weight} height="auto" width="100"/>
+        <h1>Weight</h1>
+        <img className="weight" src={weight} height="80" width="100"/>
         <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-        when an unknown printer took a galley of type and scrambled it to make a type specimen 
-        book. It has survived not only five centuries, but also the leap into electronic 
-        typesetting, remaining essentially unchanged.</p> 
+        Controlling your weight helps you stay healthy now and in the future.</p> 
         </div>
         <br />
         </div>
+        
         <Footer/>
         </div>
         );

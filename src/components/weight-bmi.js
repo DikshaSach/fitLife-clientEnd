@@ -6,10 +6,17 @@ import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
 import {addWeightBmi} from '../reducers/weightbmi';
 import Select from './select';
+import './weight-bmi.css';
+
 export class WeightAndBmiForm extends React.Component {
     onSubmit(values){
         const creator = this.props.id;
-       const {weight, bmi, month} = values;
+        const height = this.props.height;
+        const convertWeight = (values.weight * 0.45);
+        const convertHeight = (height * 0.025);
+        const heightSquared = (convertHeight* convertHeight);
+        const bmi = Math.round(convertWeight/heightSquared);
+       const {weight,  month} = values;
         const userWeightBmi = {weight, bmi, creator, month};
         this.props.dispatch(addWeightBmi(userWeightBmi));
 
@@ -34,22 +41,6 @@ export class WeightAndBmiForm extends React.Component {
                 onSubmit={this.props.handleSubmit(values => this.onSubmit(values)
                 )}>
                 {error}
-                <label htmlFor="weight">Enter your weight</label>
-                <Field 
-                    component={Input}
-                    type="number"
-                    name="weight"
-                    id="weight"
-                    validate={[required, nonEmpty]}
-                />
-                <label htmlFor="bmi">BMI</label>
-                <Field 
-                    component={Input}
-                    type="number"
-                    name="bmi"
-                    id="bmi"
-                    validate={[required, nonEmpty]}
-                />
                 <label htmlFor="month">Month</label>
                 <Field 
                     type="text"
@@ -72,6 +63,14 @@ export class WeightAndBmiForm extends React.Component {
                     }}
                     valueField="value"
                 />
+                <label htmlFor="weight">Enter your weight</label>
+                <Field 
+                    component={Input}
+                    type="number"
+                    name="weight"
+                    id="weight"
+                    validate={[required, nonEmpty]}
+                />
                 <button disabled={this.props.pristine || this.props.submitting}>
                 submitting
                 </button>
@@ -84,7 +83,8 @@ const mapStateToProps = state => {
     const {currentUser} = state.auth;
     return {
         id: `${currentUser.id}`,
-        isFetching: state.weightBmi.isFetching
+        isFetching: state.weightBmi.isFetching,
+        height: `${currentUser.height}`
     };
 };
 
