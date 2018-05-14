@@ -9,7 +9,7 @@ import Dashboard from './dashboard';
 import DisplayWeightBmi from './displayweightbmi';
 import ExerciseForm from './exercise-form';
 import DisplayEvent from './display-event';
-import WeightAndBmiForm from './weight-bmi';
+import WeightAndBmiForm from './weight-bmi-form';
 import EditForm from './edit-form';
 import RegistrationPage from './registration-page';
 import Progress from './progress';

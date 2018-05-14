@@ -6,7 +6,7 @@ import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
 import {addWeightBmi} from '../actions/weightbmi';
 import Select from './select';
-import './weight-bmi.css';
+import './weight-bmi-form.css';
 
 export class WeightAndBmiForm extends React.Component {
     onSubmit(values){
@@ -90,6 +90,6 @@ const mapStateToProps = state => {
 
 
 export default requiresLogin()(connect(mapStateToProps)(reduxForm({
-    form: 'weightBmi',
-    onSubmitFail: (errors, dispatch) => dispatch(focus('weightBmi', 'weight'))
+    form: 'weightBmiForm',
+    onSubmitFail: (errors, dispatch) => dispatch(focus('weightBmiForm', 'weight'))
 })(WeightAndBmiForm)));

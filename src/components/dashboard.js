@@ -9,6 +9,7 @@ import WaterIntakeForm from './water-intake-form';
 import DisplayWater from './display-water';
 import WaterIntakeFormEdit from './water-intake-form-edit';
 import {fetchWeightBmi} from '../actions/weightbmi';
+import AddWater from '../images/addwater.png';
 export class Dashboard extends React.Component {
   componentWillMount(){
     this.props.dispatch(fetchWeightBmi(this.props.id));
@@ -19,7 +20,7 @@ export class Dashboard extends React.Component {
         return (
             <div className="dashboard">
             <div className="waterintakeformedit-bttn-div">
-            <Popup trigger={<button className="button"> Add </button>} modal>
+            <Popup trigger={<button className="addwater-button"> <img src={AddWater} height="35px" width="auto" /> </button>} modal>
     {close => (
       <div className="modal">
         <a className="close" onClick={close}>

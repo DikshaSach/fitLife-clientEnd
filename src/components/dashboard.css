@@ -49,3 +49,12 @@ br{
     z-index: 10 !important;
     border: 3px solid rgb(209, 95, 95)  !important ;
 }
+.addwater-button{
+    margin-top: 4px;
+    background-color: white;
+    border: none;
+}
+.addwater-button:hover{
+    border: 2px solid rgba(85, 157, 220, 0.708);
+    border-radius: 25px;
+}
