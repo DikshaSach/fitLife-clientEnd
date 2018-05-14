@@ -1,10 +1,9 @@
 import React from 'react';
 import Input from './input';
 import {withRouter} from 'react-router-dom';
-import {Field, reduxForm, focus, FieldArray} from 'redux-form';
+import {Field, reduxForm, focus} from 'redux-form';
 import {addEventsData} from '../reducers/events';
 import {required, nonEmpty} from '../validators';
-import validate from './validate';
 import requiresLogin from './requires-login';
 import {connect} from 'react-redux';
 import Select from './select';

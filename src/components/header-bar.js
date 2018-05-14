@@ -4,8 +4,7 @@ import {clearAuth} from '../actions/auth';
 import {clearAuthToken} from '../local-storage';
 import requiresLogin from './requires-login';
 import {withRouter} from 'react-router-dom';
-import ResponsiveMenu from 'react-responsive-navbar';
-import Logo3 from './logoneww.png';
+import Logo3 from '../images/logo.png';
 import './header-bar.css';
 
 
@@ -49,7 +48,7 @@ export class HeaderBar extends React.Component {
         return (
             <nav>
             <div className="navWide">
-            <div className="navWide-title"><img className="logo-image" src={Logo3} height="auto" width="500"/></div>
+            <div className="navWide-title"><img alt="logo" className="logo-image" src={Logo3} height="auto" width="500"/></div>
                 <div className="wideDiv">
                 {Dashboard}
                  {exerciseForm}
@@ -61,7 +60,7 @@ export class HeaderBar extends React.Component {
             </div>
             <div className="navNarrow">
                 <i className="fa fa-bars fa-2x" onClick={this.burgerToggle}></i>
-                <div className="title"><img className="logo-image-narrow" src={Logo3} height="auto" width="150"/></div>
+                <div className="title"><img className="logo-image-narrow" alt="logo" src={Logo3} height="auto" width="150"/></div>
                 <div className="narrowLinks">
                 {Dashboard}
                 {exerciseForm}

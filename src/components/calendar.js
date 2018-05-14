@@ -29,8 +29,6 @@ export class Calendar extends React.Component {
  
 
   render(){
-const event = this.props.eventsData;
-
   BigCalendar.setLocalizer(BigCalendar.momentLocalizer(moment));
     return(
 

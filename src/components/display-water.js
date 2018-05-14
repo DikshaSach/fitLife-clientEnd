@@ -2,15 +2,15 @@ import React from 'react';
 import requiresLogin from './requires-login';
 import {connect} from 'react-redux';
 import {fetchWater} from '../reducers/water';
-import EmptyBottle from './empty-bottle.png';
-import Glass1 from './glass1.png';
-import Glass2 from './glass2.png';
-import Glass3 from './glass3.png';
-import Glass4 from './glass4.png';
-import Glass5 from './glass5.png';
-import Glass6 from './glass6.png';
-import Glass7 from './glass7.png';
-import Glass8 from './glass8.png';
+import EmptyBottle from '../images/empty-bottle.png';
+import Glass1 from '../images/glass1.png';
+import Glass2 from '../images//glass2.png';
+import Glass3 from '../images/glass3.png';
+import Glass4 from '../images/glass4.png';
+import Glass5 from '../images/glass5.png';
+import Glass6 from '../images/glass6.png';
+import Glass7 from '../images/glass7.png';
+import Glass8 from '../images/glass8.png';
 import './display-water.css';
 
 
@@ -33,43 +33,43 @@ render(){
     if(this.props.singleDayIntake === "1 cup"){
         return (
             <div className="bottle" >
-            <img src={Glass1}  />
+            <img alt="Glass 1" src={Glass1}  />
             </div>
         );
     }
     else if(this.props.singleDayIntake === "2 cups"){
         return (<div className="bottle" >
-        <img src={Glass2}   />
+        <img alt="Glass 2" src={Glass2}   />
         </div>);
     }else if(this.props.singleDayIntake === "3 cups"){
         return (<div className="bottle" >
-        <img src={Glass3}  />
+        <img alt="Glass 3" src={Glass3}  />
         </div>);
     }else if(this.props.singleDayIntake === "4 cups"){
         return (<div className="bottle" >
-        <img src={Glass4}   />
+        <img alt="Glass 4" src={Glass4}   />
         </div>);
     }else if(this.props.singleDayIntake === "5 cups"){
         return (<div className="bottle" >
-        <img src={Glass5}   />
+        <img alt="Glass 5" src={Glass5}   />
         </div>);
     }else if(this.props.singleDayIntake === "6 cups"){
         return (
             <div className="bottle" >
-            <img src={Glass6}  />
+            <img alt="Glass 6" src={Glass6}  />
             </div>);
     }else if(this.props.singleDayIntake === "7 cups"){
         return (<div className="bottle" >
-        <img src={Glass7}  />
+        <img alt="Glass 7" src={Glass7}  />
         </div>);
     }else if(this.props.singleDayIntake === "8 cups"){
         return (<div className="bottle" >
-        <img src={Glass8}   />
+        <img alt="Glass " src={Glass8}   />
         </div>);
     }
     else {
         return ( <div className="bottle" >
-        <img src={EmptyBottle}   />
+        <img alt="empty glass" src={EmptyBottle}   />
         </div>)
     }
 }

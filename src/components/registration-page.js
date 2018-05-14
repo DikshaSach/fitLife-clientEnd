@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Link, Redirect} from 'react-router-dom';
-import Logo3 from './logoneww.png';
+import {Redirect} from 'react-router-dom';
+import Logo3 from '../images/logo.png';
 import RegistrationForm from './registration-form';
 import './registration-page.css';
 import HomepageInfo from './homepage-info';
@@ -14,7 +14,7 @@ export function RegistrationPage(props) {
     return (
         <div className="homepage-container">
         <div className="home">
-        <img className="logo-image-homepage" src={Logo3} height="auto" width="500"/>
+        <img className="logo-image-homepage" src={Logo3} alt="logo" height="auto" width="500"/>
         <div className="registration-form-container ">
             <RegistrationForm />
             </div>

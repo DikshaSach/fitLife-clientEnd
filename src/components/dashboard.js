@@ -2,15 +2,17 @@ import React from 'react';
 import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
 import Calendar from './calendar';
-import ReactDom from 'react-dom';
 import Popup from "reactjs-popup";
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import './dashboard.css';
 import WaterIntakeForm from './water-intake-form';
 import DisplayWater from './display-water';
 import WaterIntakeFormEdit from './water-intake-form-edit';
+import {fetchWeightBmi} from '../reducers/weightbmi';
 export class Dashboard extends React.Component {
-    
+  componentWillMount(){
+    this.props.dispatch(fetchWeightBmi(this.props.id));
+}
   
     render() {
 
@@ -58,9 +60,7 @@ const mapStateToProps = state => {
         username: state.auth.currentUser.username,
         name: `${currentUser.firstName} ${currentUser.lastName}`,
         id: `${currentUser.id}`,
-        WaterDataForDayExists: state.water. WaterDataForDayExists
-
-
+        WaterDataForDayExists: state.water.WaterDataForDayExists
     };
     
 };

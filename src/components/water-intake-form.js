@@ -1,12 +1,9 @@
 import React from 'react';
-import Input from './input';
 import {withRouter} from 'react-router-dom';
 import {Field, reduxForm, focus} from 'redux-form';
 import {addWater} from '../reducers/water';
-import {required, nonEmpty} from '../validators';
 import requiresLogin from './requires-login';
 import {connect} from 'react-redux';
-import {makeDateFromISOString} from '../utils';
 import Select from './select';
 export class WaterIntakeForm extends React.Component {
     onSubmit(values){

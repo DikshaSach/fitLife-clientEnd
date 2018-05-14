@@ -1,8 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Link, Redirect} from 'react-router-dom';
+import {Redirect} from 'react-router-dom';
 import './landing-page.css';
-import Logo3 from './logoneww.png';
+import Logo3 from '../images/logo.png';
 import LoginForm from './login-form';
 import {withRouter} from 'react-router-dom';
 
@@ -19,7 +19,7 @@ export function LandingPage(props) {
     return (
         <div className="homepage-container">
         <div className="home">
-        <img className="logo-image-homepage" src={Logo3}/>
+        <img className="logo-image-homepage" alt="logo" src={Logo3}/>
         <div className="login-form-container">
         <LoginForm /> 
         </div>
