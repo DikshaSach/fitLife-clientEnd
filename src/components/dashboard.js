@@ -10,9 +10,11 @@ import DisplayWater from "./display-water";
 import WaterIntakeFormEdit from "./water-intake-form-edit";
 import { fetchWeightBmi } from "../actions/weightbmi";
 import AddWater from "../images/addwater.png";
+import { fetchAllWaterDates } from "../actions/water";
 export class Dashboard extends React.Component {
   componentWillMount() {
     this.props.dispatch(fetchWeightBmi(this.props.id));
+    this.props.dispatch(fetchAllWaterDates(this.props.id))
   }
 
   render() {
@@ -35,9 +37,15 @@ export class Dashboard extends React.Component {
           >
             {close => (
               <div className="modal">
-                <a className="close" onClick={close}>
-                  &times;
-                </a>
+                <button
+                    className="close-button-water-intake-form"
+                    onClick={() => {
+                      console.log("modal closed ");
+                      close();
+                    }}
+                  >
+                  Close
+                  </button>
                 <div className="content">
                   {this.props.WaterDataForDayExists === true ? (
                     <WaterIntakeFormEdit />
@@ -46,15 +54,7 @@ export class Dashboard extends React.Component {
                   )}
                 </div>
                 <div className="actions">
-                  <button
-                    className="button"
-                    onClick={() => {
-                      console.log("modal closed ");
-                      close();
-                    }}
-                  >
-                    close modal
-                  </button>
+                 
                 </div>
               </div>
             )}

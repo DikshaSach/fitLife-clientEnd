@@ -1,33 +1,36 @@
-
+.dashboard{
+    border: 1px solid black;
+    font-family: 'Comfortaa', cursive;
+}
 .rbc-event:hover{
 background-color: pink;
 }
 .zumba{
-    background-color: red;
+    background-color: rgb(162, 81, 136);
 }
 .running{
-    background-color: rgb(57, 140, 140);
+    background-color: rgb(129, 172, 124);
 }
 .testing{
-    background-color: palegreen;
+    background-color: rgb(220, 210, 98);
 }
 .jogging{
-background-color: olivedrab;
+background-color: rgb(116, 142, 64);
 }
 .arms{
 background-color: palevioletred
 }
 .abs{
-background-color: palegreen
+background-color: #B3B3AF;
 }
 .back{
-background-color: moccasin
+background-color: #E4CDB4;
 }
 .legs{
-background-color: mediumseagreen
+background-color: #EE5B40;
 }
 .shoulder{
-background-color: maroon;
+background-color: rgb(57, 142, 208);
 }
 .waterIntakeFormEdit{
 width: 30%;
@@ -47,7 +50,8 @@ br{
 .popup-content{
     width: 200px !important;
     z-index: 10 !important;
-    border: 3px solid rgb(209, 95, 95)  !important ;
+    border: 3px solid rgb(44, 91, 160)  !important ;
+
 }
 .addwater-button{
     margin-top: 4px;
@@ -57,4 +61,15 @@ br{
 .addwater-button:hover{
     border: 2px solid rgba(85, 157, 220, 0.708);
     border-radius: 25px;
+}
+.close-button-water-intake-form{
+    border-radius: 5px;
+    background-color: #EE5B40;
+    height: 20px;
+    width: 50px;
+    color: white;
+}
+.close-button-water-intake-form:hover{
+    background-color: rgb(147, 55, 39);
+    transform: scale(1.1);
 }

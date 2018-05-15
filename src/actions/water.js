@@ -1,3 +1,4 @@
+import {API_BASE_URL} from '../config';
 export const FETCH_WATER_REQUEST = 'FETCH_WATER_REQUEST';
 export const fetchWaterRequest = () => ({
     type: FETCH_WATER_REQUEST
@@ -12,6 +13,22 @@ export const fetchWaterSuccess = data => ({
 export const FETCH_WATER_ERROR = 'FETCH_WATER_ERROR';
 export const fetchWaterError = error => ({
     type: FETCH_WATER_ERROR,
+    error
+});
+export const FETCH_ALL_WATER_REQUEST = 'FETCH_ALL_WATER_REQUEST';
+export const fetchAllWaterRequest = () => ({
+    type: FETCH_ALL_WATER_REQUEST
+});
+
+export const FETCH_ALL_WATER_SUCCESS= 'FETCH_ALL_WATER_SUCCESS';
+export const fetchAllWaterSuccess = data => ({
+    type:FETCH_ALL_WATER_SUCCESS,
+    data
+});
+
+export const FETCH_ALL_WATER_ERROR = 'FETCH_ALL_WATER_ERROR';
+export const fetchAllWaterError = error => ({
+    type: FETCH_ALL_WATER_ERROR,
     error
 });
 export const ADD_WATER_SUCCESSFUL = 'ADD_WATER_SUCCESSFUL';
@@ -36,10 +53,22 @@ export const editWaterFailed = error => ({
     type: EDIT_WATER_FAILED,
     error
 });
+export const fetchAllWaterDates = (id) => dispatch => {
+    dispatch(fetchAllWaterRequest());
+    return fetch(`${API_BASE_URL}/water/waterintake/all/` + id , {
+        method: 'GET'
+    })
+    .then(res => res.json())
+
+    .then(data => dispatch(fetchAllWaterSuccess(data)))
+    .catch(err => {
+        dispatch(fetchAllWaterError(err));
+    });
+}
 
 export const fetchWater = (idDate) => dispatch => {
     dispatch(fetchWaterRequest());
-    return fetch('http://localhost:8080/water/waterintake/' + idDate , {
+    return fetch(`${API_BASE_URL}/water/waterintake/` + idDate , {
         method: 'GET'
     })
     .then(res => res.json())
@@ -51,7 +80,7 @@ export const fetchWater = (idDate) => dispatch => {
 };
 
 export const addWater = (water) => dispatch => {
-    return fetch('http://localhost:8080/water/add', {
+    return fetch(`${API_BASE_URL}/water/add`, {
         method: 'POST',
         body: JSON.stringify(water),
         headers: {
@@ -64,6 +93,7 @@ export const addWater = (water) => dispatch => {
 
 }
 export const editWater = (water) => dispatch => {
+    console.log(dispatch);
     var today = new Date();
     var dd = today.getDate();
     var mm = today.getMonth()+1;//January is 0!`    
@@ -72,7 +102,7 @@ export const editWater = (water) => dispatch => {
     if(mm<10){mm='0'+mm}
     let waterDate = mm+''+dd+''+yyyy;
 
-    return fetch('http://localhost:8080/water/waterintake/edit/' + waterDate,{
+    return fetch(`${API_BASE_URL}/water/waterintake/edit/` + waterDate,{
     method: 'PUT',
     body: JSON.stringify({"waterIntake": water}),
     headers: {

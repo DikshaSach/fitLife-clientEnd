@@ -14,7 +14,6 @@ const initialState = {
 }
 export default function reducer(state = initialState, action) {
     if(action.type === FETCH_WEIGHTBMI_REQUEST){
-        console.log('fetching');
         return Object.assign({}, state, {
             data: [],
             isFetching: true
@@ -25,7 +24,6 @@ export default function reducer(state = initialState, action) {
             isFetching: false
         });
     } else if(action.type ===FETCH_WEIGHTBMI_ERROR ){
-        console.log(action.error);
         return Object.assign({}, state, {
           error: action.error  
         });
@@ -43,7 +41,6 @@ export default function reducer(state = initialState, action) {
             isDeleting: false
         });
     } else if(action.type === DELETE_WEIGHTBMI_FAILED){
-        console.log('in error');
         return Object.assign({}, state ,{
             error: action.error
         });

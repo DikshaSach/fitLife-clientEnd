@@ -2,3 +2,9 @@
     font-family: 'Comfortaa', cursive;
     text-align: center;
 }
+.weigthScale-pic{
+    margin-top: 50px;
+    width: 20vw;
+    min-width: 200px;
+    height: auto;
+}

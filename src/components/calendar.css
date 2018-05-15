@@ -2,6 +2,12 @@
     color: #99C9ED;
     text-decoration: none;
 }
+.rbc-event-content:hover{
+    transform: scale(1.1);
+}
+.rbc-event-content{
+    text-align: center;
+}
 
 .rbc-date-cell {
     font-family: Lato, 'Helvetica Neue', Helvetica, sans-serif;
@@ -50,8 +56,13 @@
 .rbc-toolbar-label{
     color: rgb(39, 35, 92);
     font-size: 25px;
+    
 }
 .rbc-date-cell {
     color: black;
     font-size: 18px;
+}
+div.popup-overlay > div{
+    font-size: 18px;
+    width: 300px !important;
 }

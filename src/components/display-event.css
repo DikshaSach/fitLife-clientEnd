@@ -1,0 +1,76 @@
+.display-event-container{
+    font-family: 'Comfortaa', cursive;
+}
+.exercise-title{
+    text-align: center;
+}
+.exercise-date{
+    text-align: center;
+    font-size: 18px;
+}
+.display-event-bttn-container{
+    margin-top: 10px;
+    text-align: center;
+    
+}
+.exercise-delete-bttn{
+font-size: 15px;
+font-family: 'Comfortaa', cursive;
+border-radius: 5px;
+background-color: red;
+width: 80px;
+height: 30px;
+border: 1px solid black;
+color: white;
+}
+.exercise-delete-bttn:hover{
+    transform: scale(1.1);
+    background-color: rgb(150, 72, 72);
+}
+.exercise-edit-bttn{
+color: white;
+font-size: 15px;
+font-family: 'Comfortaa', cursive;
+border-radius: 5px;
+margin-right: 10px;
+border: 1px solid black;
+background-color: rgb(34, 81, 235);
+width: 80px;
+height: 30px;
+}
+.exercise-edit-bttn:hover{
+    transform: scale(1.1);
+background-color: rgb(172, 188, 240);
+}
+.strength-exercise-list{
+    padding: 0;
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    list-style-type: none;
+}
+.exercise-event-list-item{
+    width: 100%;
+    margin-bottom: 30px;
+
+}
+.exercise-time-spent{
+    text-align: center;
+    font-size: 15px;
+}
+.exercise-event-list-item:hover{
+background-color: rgb(190, 237, 236);
+border-radius: 10px;
+}
+.muscle-icon{
+   float: left;
+}
+.muscle-icon-right{
+    float: right;
+}
+.strength-exercise-name{
+    font-size: 20px;
+    color: rgb(121, 247, 101);
+    text-decoration: underline;
+}
+

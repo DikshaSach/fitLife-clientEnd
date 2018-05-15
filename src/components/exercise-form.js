@@ -16,13 +16,11 @@ export class ExerciseForm extends React.Component {
     };
   }
   showcustom() {
-    console.log("In Show custom exercise Form method");
     this.setState({
       customExerciseClicked: true
     });
   }
   showRepSetsForm() {
-    console.log("in show rep sets method");
     this.setState({
       strengthTrainingClicked: true
     });
@@ -37,30 +35,26 @@ export class ExerciseForm extends React.Component {
     if (this.state.customExerciseClicked === true) {
       return (
         <div className="custom-exercise-form-container">
-          <CustomExerciseForm />
-          <button
+         <button
             className="exercise-form-cancel"
             onClick={() => this.resetState()}
-          >
-            Cancel
-          </button>
+          > Cancel </button>
+          <CustomExerciseForm />
         </div>
       );
     } else if (this.state.strengthTrainingClicked === true) {
       return (
         <div className="strength-exercise-form-container">
-          <StrengthTrainingForm />
-          <button
+        <button
             className="exercise-form-cancel"
             onClick={() => this.resetState()}
-          >
-            Cancel
-          </button>
+          > Cancel </button>
+          <StrengthTrainingForm />
         </div>
       );
     }
     return (
-      <div>
+      <div className="exercise-form-container">
         <h1 className="exercise-form-title">
           What kind of Exercise do you want to log?
         </h1>

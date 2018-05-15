@@ -30,49 +30,49 @@ export class DisplayWater extends React.Component {
     this.props.dispatch(fetchWater(this.props.id + todaysDate));
   }
   render() {
-    if (this.props.singleDayIntake === "1 cup") {
+    if (this.props.singleDayIntake === "1") {
       return (
         <div className="bottle">
           <img alt="Glass 1" src={Glass1} />
         </div>
       );
-    } else if (this.props.singleDayIntake === "2 cups") {
+    } else if (this.props.singleDayIntake === "2") {
       return (
         <div className="bottle">
           <img alt="Glass 2" src={Glass2} />
         </div>
       );
-    } else if (this.props.singleDayIntake === "3 cups") {
+    } else if (this.props.singleDayIntake === "3") {
       return (
         <div className="bottle">
           <img alt="Glass 3" src={Glass3} />
         </div>
       );
-    } else if (this.props.singleDayIntake === "4 cups") {
+    } else if (this.props.singleDayIntake === "4") {
       return (
         <div className="bottle">
           <img alt="Glass 4" src={Glass4} />
         </div>
       );
-    } else if (this.props.singleDayIntake === "5 cups") {
+    } else if (this.props.singleDayIntake === "5") {
       return (
         <div className="bottle">
           <img alt="Glass 5" src={Glass5} />
         </div>
       );
-    } else if (this.props.singleDayIntake === "6 cups") {
+    } else if (this.props.singleDayIntake === "6") {
       return (
         <div className="bottle">
           <img alt="Glass 6" src={Glass6} />
         </div>
       );
-    } else if (this.props.singleDayIntake === "7 cups") {
+    } else if (this.props.singleDayIntake === "7") {
       return (
         <div className="bottle">
           <img alt="Glass 7" src={Glass7} />
         </div>
       );
-    } else if (this.props.singleDayIntake === "8 cups") {
+    } else if (this.props.singleDayIntake === "8") {
       return (
         <div className="bottle">
           <img alt="Glass " src={Glass8} />

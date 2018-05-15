@@ -34,7 +34,7 @@ export class CustomExerciseForm extends React.Component {
 
     return (
       <div className="exercise-form-container-custom">
-        <h1>Enter the details for Custom Exercise:</h1>
+        <h1>Enter the details for your Custom/Cardio Exercise:</h1>
         <form
           className="exercise-form"
           onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}

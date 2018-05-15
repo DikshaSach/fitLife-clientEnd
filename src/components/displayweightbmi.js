@@ -9,7 +9,6 @@ export class DisplayWeightBmi extends React.Component {
     this.props.dispatch(fetchWeightBmi(this.props.id));
   }
   handleClick(id) {
-    console.log(id);
     this.props.dispatch(deleteWeightBmi(id)).then(() => {
       return this.props.history.push("/display-weight-bmi");
     });
@@ -44,7 +43,6 @@ export class DisplayWeightBmi extends React.Component {
   }
 }
 const mapStateToProps = state => {
-  console.log(state);
   const { currentUser } = state.auth;
   return {
     username: state.auth.currentUser.username,

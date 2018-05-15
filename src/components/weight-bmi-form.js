@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 import requiresLogin from "./requires-login";
 import { addWeightBmi } from "../actions/weightbmi";
 import Select from "./select";
+import WeightScale from '../images/weightscale.png';
 import "./weight-bmi-form.css";
 
 export class WeightAndBmiForm extends React.Component {
@@ -73,6 +74,7 @@ export class WeightAndBmiForm extends React.Component {
             submitting
           </button>
         </form>
+        <img src={WeightScale} className="weigthScale-pic" />
       </div>
     );
   }

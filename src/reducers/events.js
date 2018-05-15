@@ -52,14 +52,12 @@ return Object.assign({}, state, {
 
 } else if(action.type=== FETCH_SINGLE_EVENT_REQUEST){
     return Object.assign({}, state, {
-        singleEvent: {},
         isEditing: false,
         isDelete: false,
         isFetching: true
     });
 
 }else if(action.type === FETCH_SINGLE_EVENT_DATA_SUCCESS ){
-    console.log(action.data);
     return Object.assign({}, state, {
         isEditing: false,
         isDelete: false,
@@ -79,12 +77,10 @@ return Object.assign({}, state, {
         error: action.error
     });
 }else if(action.type === DELETE_SINGLE_EVENT_REQUEST){
-    console.log(state);
     return Object.assign({}, state, {
         isDelete: true,
     });
 }else if(action.type === DELETE_SINGLE_EVENT_SUCCESS){
-    console.log('in delete success');
     return Object.assign({}, state, {
         isDelete: false,
         data:  [...state.data.filter(item => item._id !== action.data)]
@@ -92,7 +88,21 @@ return Object.assign({}, state, {
     });
 
 }else if(action.type === DELETE_SINGLE_EVENT_FAILED){
-    console.log('in error');
+    return Object.assign({}, state, {
+        error: action.error
+    });
+} else if(action.type=== EDIT_SINGLE_EVENT_REQUEST){
+    return Object.assign({}, state, {
+        isFetching: true
+    });
+
+}else if(action.type === EDIT_SINGLE_EVENT_SUCCESS ){
+    console.log(action.data);
+    return Object.assign({}, state, {
+        isFetching:false,
+        singleEvent: action.data
+    });
+} else if(action.type === EDIT_SINGLE_EVENT_FAILED){
     return Object.assign({}, state, {
         error: action.error
     });

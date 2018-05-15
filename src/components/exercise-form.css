@@ -1,6 +1,8 @@
 .exercise-form-title{
 text-align: center;
+font-family: 'Comfortaa', cursive;
 }
+
 .exercise-form-btn-container{
     width: 100%
 }
@@ -15,7 +17,13 @@ margin-right: 5px;
 background-color: white;
 height: 30px;
 border-radius: 5px;
+font-family: 'Comfortaa', cursive;
+border: 1px solid black;
 }
+.exercise-form-btn-strength:hover, .exercise-form-btn-custom:hover{
+    background-color: rgb(168, 214, 255);
+}
+
 .exercise-form-btn-custom-container >img {
     height: 200px;
     width: auto;
@@ -46,6 +54,20 @@ text-align: center;
 width: 100%;
 text-align: center;
 
+}
+.exercise-form-cancel{
+    font-family: 'Comfortaa', cursive;
+    font-size: 15px;
+    margin-top: 10px;
+    border-radius: 10px;
+    height: 30px;
+    color: white;
+    width: 80px;
+    background-color: rgb(228, 78, 78);
+}
+.exercise-form-cancel:hover{
+    transform: scale(1.1);
+background-color: rgb(80, 19, 19);
 }
 @media only screen and (max-width: 500px) {
     .exercise-form-btn-custom-container >img {

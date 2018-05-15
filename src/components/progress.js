@@ -1,54 +1,116 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import { Line } from "react-chartjs-2";
+import { Line, Bar } from "react-chartjs-2";
 import { connect } from "react-redux";
 import requiresLogin from "./requires-login";
 import { fetchWeightBmi } from "../actions/weightbmi";
+import { PulseLoader} from 'react-spinners';
+import { fetchAllWaterDates } from "../actions/water";
+import './progress.css';
 export class Progress extends React.Component {
-  componentDidMount() {
-    this.props.dispatch(fetchWeightBmi(this.props.id));
-  }
-  render() {
-    const userWeightBmiData = this.props.weightBmi;
-    const weight = userWeightBmiData.map(a => a.month);
-    const month = userWeightBmiData.map(a => a.weight);
-    console.log(month);
-    console.log(weight);
+ constructor(props){
+   super(props);
+   
+   this.state= {
+     weight:  null,
+     month:  null,
+     dates: null,
+     water: null
+   }
+ }
+ componentWillMount() {
+  this.props.dispatch(fetchWeightBmi(this.props.id))
+  .then(()=> this.setState({
+    weight: this.props.weightBmi.map(a => a.weight),
+    month: this.props.weightBmi.map(a => a.month)
+  }));
+  this.props.dispatch(fetchAllWaterDates(this.props.id))
+  .then(()=>this.setState({
+    dates: this.props.allWaterData.map(a => a.date),
+    water: this.props.allWaterData.map(a => a.waterIntake)
+  }))
+}
 
+
+  render(){
+    if(this.state.weight && this.state.month && this.state.dates && this.state.water !== null){
     const data = {
-      labels: [0],
+      labels: this.state.month,
       datasets: [
         {
           label: "Your Weight Progress",
           fill: false,
           lineTension: 0.1,
-          backgroundColor: "rgba(75,192,192,0.4)",
-          borderColor: "rgba(75,192,192,1)",
+          backgroundColor: "#C96A52",
+          borderColor: "#C96A52",
           borderCapStyle: "butt",
           borderDash: [],
           borderDashOffset: 0.0,
           borderJoinStyle: "miter",
-          pointBorderColor: "rgba(75,192,192,1)",
+          pointBorderColor: "#C96A52",
           pointBackgroundColor: "#fff",
           pointBorderWidth: 1,
           pointHoverRadius: 5,
-          pointHoverBackgroundColor: "rgba(75,192,192,1)",
-          pointHoverBorderColor: "rgba(220,220,220,1)",
+          pointHoverBackgroundColor: "#C96A52",
+          pointHoverBorderColor: "#C96A52",
           pointHoverBorderWidth: 2,
           pointRadius: 1,
           pointHitRadius: 10,
-          data: [0]
+          data: this.state.weight
         }
-      ]
+      ],
+      options: {
+        responsive: true,
+        maintainAspectRatio: false
+      }
     };
 
-    return (
-      <div>
-        <Line data={data} />
-      </div>
+ const data2 = {
+  labels: this.state.dates,
+  datasets: [
+    {
+      label: "Your Water Intake Progress",
+      fill: false,
+      lineTension: 0.1,
+      backgroundColor: "#48C4E2",
+      borderColor: "rgba(75,192,192,1)",
+      borderCapStyle: "butt",
+      borderDash: [],
+      borderDashOffset: 0.0,
+      borderJoinStyle: "miter",
+      pointBorderColor: "rgba(75,192,192,1)",
+      pointBackgroundColor: "#fff",
+      pointBorderWidth: 1,
+      pointHoverRadius: 5,
+      pointHoverBackgroundColor: "rgba(75,192,192,1)",
+      pointHoverBorderColor: "rgba(220,220,220,1)",
+      pointHoverBorderWidth: 2,
+      pointRadius: 1,
+      pointHitRadius: 10,
+      data: this.state.water
+    }
+  ],
+  options: {
+    responsive: true,
+    maintainAspectRatio: false
+  }
+};
+   
+    return(
+      <div className="chart-container">
+      <Line data={data} />
+      <Line data={data2} />
+    </div>
     );
   }
+  return<div className='sweet-loading'>
+  <PulseLoader
+    color={'#123abc'} 
+  />
+</div>; 
+  }
 }
+    
 
 const mapStateToProps = state => {
   const { currentUser } = state.auth;
@@ -58,7 +120,8 @@ const mapStateToProps = state => {
     id: `${currentUser.id}`,
     weightBmi: state.weightBmi.data,
     isDeleting: state.weightBmi.isDeleting,
-    isFetching: state.weightBmi.isFetching
+    isFetching: state.weightBmi.isFetching,
+    allWaterData: state.water.allWaterData
   };
 };
 

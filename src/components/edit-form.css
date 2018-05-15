@@ -1,0 +1,14 @@
+.exercise-details-from-state{
+border: 1px solid black;
+background-color: rgba(202, 245, 231, 0.632);
+width: 50%;
+min-width: 300px;
+margin: 0 auto;
+}
+.exercise-form-container{
+    text-align: center;
+    font-family: 'Comfortaa', cursive;
+}
+.exercise-form{
+    margin-top: 10px;
+}

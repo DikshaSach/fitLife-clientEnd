@@ -1,0 +1,12 @@
+.water-intake-form--editcontainer{
+   text-align: center;
+}
+.water-intake-form-edit  select{
+    width: 200px;
+    height: 20px;
+    background-color: white;
+    border: 1px solid black;
+}
+.water-intake-form-edit{
+    padding-bottom: 20px;
+}

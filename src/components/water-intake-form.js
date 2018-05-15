@@ -19,9 +19,10 @@ export class WaterIntakeForm extends React.Component {
       mm = "0" + mm;
     }
     let waterDate = mm + "" + dd + "" + yyyy;
+    let date = mm + "/" + dd + "/" + yyyy; 
     const { waterIntake } = values;
     let id = creator + waterDate;
-    const waterObj = { waterIntake, waterDate, creator, id };
+    const waterObj = { waterIntake, waterDate, creator, id, date };
     this.props.dispatch(addWater(waterObj));
   }
 
@@ -50,16 +51,14 @@ export class WaterIntakeForm extends React.Component {
             name="waterIntake"
             component={Select}
             options={{
-              "1 cup": "1 cup",
-              "2 cups": "2 cups",
-              "3 cups": "3 cups",
-              "4 cups": "4 cups",
-              "5 cups": "5 cups",
-              "6 cups": "6 cups",
-              "7 cups": "7 cups",
-              "8 cups": "8 cups",
-              "9 cups": "9 cups",
-              "10 cups": "10 cups"
+              "1": "1 cup",
+              "2": "2 cups",
+              "3": "3 cups",
+              "4": "4 cups",
+              "5": "5 cups",
+              "6": "6 cups",
+              "7": "7 cups",
+              "8": "8 cups"
             }}
             valueField="value"
           />

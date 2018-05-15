@@ -5,6 +5,7 @@ import { login } from "../actions/auth";
 import { Link } from "react-router-dom";
 import Input from "./input";
 import Select from "./select";
+import './registration-form.css';
 import { required, nonEmpty, matches, length, isTrimmed } from "../validators";
 const passwordLength = length({ min: 10, max: 72 });
 const matchesPassword = matches("password");
@@ -21,7 +22,7 @@ export class RegistrationForm extends React.Component {
   render() {
     return (
       <form
-        className="login-form"
+        className="register-form"
         onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}
       >
         <div className="links-container">

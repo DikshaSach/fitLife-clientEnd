@@ -1,5 +1,6 @@
 import { normalizeResponseErrors } from "../actions/utils";
 import {SubmissionError} from 'redux-form';
+import {API_BASE_URL} from '../config';
 // ALL OF THE EVENTS
 export const FETCH_EVENTS_REQUEST = 'FETCH_EVENTS_DATA_REQUEST';
 export const fetchEventsRequest = () =>({
@@ -48,7 +49,7 @@ export const editSingleEventRequest = () => ({
 });
 export const EDIT_SINGLE_EVENT_SUCCESS = 'EDIT_SINGLE_EVENT_SUCCESS';
 export const editSingleEventSuccess = data => ({
-    tyep: EDIT_SINGLE_EVENT_SUCCESS,
+    type: EDIT_SINGLE_EVENT_SUCCESS,
     data
 });
 export const EDIT_SINGLE_EVENT_FAILED = 'EDIT_SINGLE_EVENT_FAILED';
@@ -73,8 +74,7 @@ export const deleteSingleEventFailed = error => ({
 
 // POST ENDPOINT FOR ADDING AN EXERCISE EVENT
 export const addEventsData = (exercise) => dispatch =>{
-    console.log(exercise);
-    return fetch('http://localhost:8080/exercise/add/exercise', {
+    return fetch(`${API_BASE_URL}/exercise/add/exercise`, {
         method: 'POST',
         body: JSON.stringify(exercise),
         headers: {
@@ -90,7 +90,7 @@ export const addEventsData = (exercise) => dispatch =>{
     // GET ENDPOINT FOR GETTING ALL EVENTS
     export const fetchEventsData = (id) => (dispatch)  => {
     dispatch(fetchEventsRequest());
-    return fetch('http://localhost:8080/exercise/' + id, {
+    return fetch(`${API_BASE_URL}/exercise/` + id, {
         method: 'GET'
     })
         .then(res => res.json())
@@ -101,9 +101,8 @@ export const addEventsData = (exercise) => dispatch =>{
     };
     
     export const fetchEventById = (eventId) => (dispatch) => {
-        console.log('in fetch event for single event');
         dispatch(fetchSingleEventRequest());
-            return fetch('http://localhost:8080/exercise/singleExercise/' + eventId,{
+            return fetch(`${API_BASE_URL}/exercise/singleExercise/` + eventId,{
                 method: 'GET'
     
             })
@@ -117,9 +116,8 @@ export const addEventsData = (exercise) => dispatch =>{
     };
     
     export const deleteSingleEvent = (id) => dispatch => {
-    console.log(id);
     dispatch(deleteSingleEventRequest());
-    return fetch('http://localhost:8080/exercise/delete/' + id, {
+    return fetch(`${API_BASE_URL}/exercise/delete/` + id, {
         method: 'DELETE'
     })
     .then (dispatch(deleteSingleEventSuccess(id)))
@@ -127,31 +125,17 @@ export const addEventsData = (exercise) => dispatch =>{
     };
     
     
-    export const editEventsData = (id) => dispatch => {
-    console.log(dispatch);
-    console.log('in edit function');
+    export const editEventsData = (id, exerciseobj) => dispatch => {
     dispatch(editSingleEventRequest());
-    return fetch('http://localhost:8080/exercise/edit/' + id,{
+    return fetch(`${API_BASE_URL}/exercise/edit/` + id,{
         method: 'PUT',
-        body: JSON.stringify(dispatch),
+        body: JSON.stringify(exerciseobj),
         headers: {
             'content-type': 'application/json'
         }
     })
-    .then(res => normalizeResponseErrors(res))
-    .then(res => res.json())
-    .catch(err => {
-        const {reason, message, location} = err;
-        if (reason === 'ValidationError') {
-            // Convert ValidationErrors into SubmissionErrors for Redux Form
-            return Promise.reject(
-                new SubmissionError({
-                    [location]: message
-                })
-            );
-            }
-             console.log(err)
-        });
+    .then(dispatch(editSingleEventSuccess(exerciseobj)))
+    .catch(err => dispatch(editSingleEventFailed(err)))
     };
 
 

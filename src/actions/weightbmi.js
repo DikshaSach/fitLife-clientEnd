@@ -1,4 +1,5 @@
 import { normalizeResponseErrors } from "../actions/utils";
+import {API_BASE_URL} from '../config';
 export const FETCH_WEIGHTBMI_REQUEST = 'FETCH_WEIGHTBMI_REQUEST';
 export const fetchWeightBmiRequest = () => ({
     type: FETCH_WEIGHTBMI_REQUEST
@@ -40,7 +41,7 @@ export const deleteWeightBmiFailed = error =>({
 
 export const deleteWeightBmi = (id) => dispatch => {
     console.log(id);
-    return fetch ('http://localhost:8080/weightandbmi/delete/' + id, {
+    return fetch (`${API_BASE_URL}/weightandbmi/delete/` + id, {
         method: 'DELETE'
     })
     .then (dispatch(deleteWeightBmiSuccess(id)))
@@ -50,7 +51,7 @@ export const deleteWeightBmi = (id) => dispatch => {
 };
 export const fetchWeightBmi = (id) => dispatch => {
     dispatch(fetchWeightBmiRequest());
-    return fetch('http://localhost:8080/weightandbmi/' + id, {
+    return fetch(`${API_BASE_URL}/weightandbmi/` + id, {
         method: 'GET'
     })
     .then(res => res.json())
@@ -62,8 +63,7 @@ export const fetchWeightBmi = (id) => dispatch => {
 };
 
 export const addWeightBmi = (weightbmi) => dispatch => {
-    console.log(weightbmi);
-    return fetch('http://localhost:8080/weightandbmi/add/weightbmi', {
+    return fetch(`${API_BASE_URL}/weightandbmi/add/weightbmi`, {
         method: 'POST',
         body: JSON.stringify(weightbmi),
         headers: {

@@ -3,18 +3,20 @@ import exercise from "../images/exercise.png";
 import hydration from "../images/hydration.png";
 import weight from "../images/weight.png";
 import Footer from "./footer";
+import testing from "../images/testingthis.png";
 import "./homepage-info.css";
 export class HomepageInfo extends React.Component {
   render() {
     return (
       <div className="homepage-info">
+      
         <div className="keys-to-success">
           <h1>
             Track and log your workouts , water-intake and weight to make sure
             you make the best of today
           </h1>
         </div>
-
+        <div><img src={testing} width="100%" height="auto"/></div>
         <div className="container-for-info-divs">
           <div className="first-container">
             <h1>Hydration</h1>

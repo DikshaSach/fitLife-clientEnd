@@ -8,7 +8,6 @@ import { editWater } from "../actions/water";
 import "./water-intake-form-edit.css";
 export class WaterIntakeFormEdit extends React.Component {
   onSubmit(values) {
-    console.log(values.waterIntake);
     this.props.dispatch(editWater(values.waterIntake));
   }
 
@@ -33,21 +32,20 @@ export class WaterIntakeFormEdit extends React.Component {
             How many glasses of water did you drink so far?
           </label>
           <Field
+          className="waterIntake-select"
             type="text"
             id="waterIntake"
             name="waterIntake"
             component={Select}
             options={{
-              "1 cup": "1 cup",
-              "2 cups": "2 cups",
-              "3 cups": "3 cups",
-              "4 cups": "4 cups",
-              "5 cups": "5 cups",
-              "6 cups": "6 cups",
-              "7 cups": "7 cups",
-              "8 cups": "8 cups",
-              "9 cups": "9 cups",
-              "10 cups": "10 cups"
+              "1": "1 cup",
+              "2": "2 cups",
+              "3": "3 cups",
+              "4": "4 cups",
+              "5": "5 cups",
+              "6": "6 cups",
+              "7": "7 cups",
+              "8": "8 cups"
             }}
             valueField="value"
           />
