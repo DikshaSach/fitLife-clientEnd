@@ -15,7 +15,6 @@ export class StrengthTrainingForm extends React.Component {
     this.state = {
       counter: 1
     };
-   
   }
   onSubmit(values) {
     const creator = this.props.id;
@@ -38,11 +37,6 @@ export class StrengthTrainingForm extends React.Component {
   addmorefields() {
     this.setState({ counter: this.state.counter + 1 });
   }
- 
- deleteElement(i){
-   console.log(i);
-
- }
 
   render() {
     let error;
@@ -53,14 +47,15 @@ export class StrengthTrainingForm extends React.Component {
         </div>
       );
     }
- 
+
     let count = this.state.counter;
     let duplicatedFields = [];
     for (let i = 1; i < count; i++) {
       duplicatedFields.push(
         <div className="duplicated-fields" key={i}>
-        <button onClick={() => this.deleteElement(i) }> Cancel Adding</button>
-          <label htmlFor="strengthExercisetitle">Strength Exercise Name #{i}</label>
+          <label htmlFor="strengthExercisetitle">
+            Strength Exercise Name #{i}
+          </label>
           <Field
             component={Input}
             type="text"
@@ -111,7 +106,12 @@ export class StrengthTrainingForm extends React.Component {
     return (
       <div className="exercise-form-container-strength">
         <h1>Enter the details for your Strength Exercise:</h1>
-        <button className="add-more-fields" onClick={() => this.addmorefields()}>Add More Exercises</button>
+        <button
+          className="add-more-fields"
+          onClick={() => this.addmorefields()}
+        >
+          Add More Exercises
+        </button>
 
         <form
           className="strengthexercise"
@@ -142,7 +142,7 @@ export class StrengthTrainingForm extends React.Component {
             id="start"
             validate={[required, nonEmpty]}
           />
-          
+
           {duplicatedFields}
           <button disabled={this.props.pristine || this.props.submitting}>
             submitting
