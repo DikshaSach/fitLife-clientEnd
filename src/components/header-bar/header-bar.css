@@ -29,7 +29,7 @@ button:focus {outline:0;}
     font-weight: 600;
     text-transform: uppercase;
     transition: color 0.1s,background-color 0.1s,padding 0.2s ease-in;
-    color: rgb(75, 122, 223);
+    color: rgb(0, 0, 0);
 }
 .wideDiv > button::before {
     content: '';
