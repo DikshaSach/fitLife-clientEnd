@@ -67,6 +67,7 @@ export class EditForm extends React.Component {
 
       let timespent = null;
       let addMore = null;
+      let titleOfExercise = null;
       let duplicatedFields = [];
       if (this.state.data.strengthExercise.length > 0) {
         addMore = (
@@ -77,6 +78,23 @@ export class EditForm extends React.Component {
             Add More Exercises
           </button>
         );
+        titleOfExercise = <div> <label>Day</label>
+        <Field
+          type="text"
+          id="title"
+          name="title"
+          component={Select}
+          options={{
+            "Shoulder Day": "Shoulder Day",
+            "Back Day": "Back Day",
+            "Legs Day": "Legs Day",
+            "Abs Day": "Abs Day",
+            "Arms Day": "Arms Day"
+          }}
+          valueField="value"
+          validate={[required, nonEmpty]}
+        />
+        </div>;
         let count = this.state.counter;
 
         for (let i = 1; i < count; i++) {
@@ -134,6 +152,19 @@ export class EditForm extends React.Component {
         }
       } else {
         addMore = null;
+        titleOfExercise = <div>
+      <label htmlFor="title">Title</label>
+            <Field
+              component={Input}
+              type="text"
+              name="title"
+              id="title"
+              validate={[required, nonEmpty]}
+            />
+          
+        </div>
+
+
         timespent = (
           <div>
             <label>Time Spent</label>
@@ -176,14 +207,7 @@ export class EditForm extends React.Component {
 
             <br />
             {error}
-            <label htmlFor="title">Title</label>
-            <Field
-              component={Input}
-              type="text"
-              name="title"
-              id="title"
-              validate={[required, nonEmpty]}
-            />
+            {titleOfExercise}
             {timespent}
 
             <label htmlFor="start">start</label>

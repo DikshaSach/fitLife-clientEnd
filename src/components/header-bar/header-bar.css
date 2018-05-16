@@ -74,13 +74,13 @@ button:focus {outline:0;}
     padding: 10px;
   }
   .navNarrow{
-    background-color: #8ec9ff;
+    background-color: #73aae9a7;
   }
   nav .navNarrow i {
     float: left;
     cursor: pointer;
    color: black;
-   margin-top: 10px;
+   margin-top: 15px;
     margin-left: 5px;
   }
   nav .navNarrow .narrowLinks {
@@ -98,15 +98,16 @@ button:focus {outline:0;}
     width: 100%;
     text-align: center;
     font-size: 15px;
-    background-color: #8ec8ff69;
+    background-color: #a4c1e2a7;
     border: none;
   }
   nav .navNarrow .narrowLinks{
-    background-color: rgba(70, 131, 180, 0.495);
+    background-color: rgba(62, 77, 89, 0.495);
   }
   nav .navNarrow .narrowLinks button:hover{
+    color: white;
     transform: scale(1.1);
-    background-color: #8ec9ff;
+    background-color: #384b5e83;
   }
   nav .navNarrow .narrowLinks button:after {
     content: '';

@@ -24,6 +24,7 @@ export class Calendar extends React.Component {
   }
 
   render() {
+  
     BigCalendar.setLocalizer(BigCalendar.momentLocalizer(moment));
     return (
       <div style={{ height: 700 }}>

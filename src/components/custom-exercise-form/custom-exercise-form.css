@@ -1,7 +1,67 @@
 .exercise-form-container-custom{
     font-family: 'Comfortaa', cursive;
-    width: 80%;
+    width: 100%;
     min-width: 300px;
     margin: 0 auto;
     padding-bottom: 40px;
 }
+.exercise-form-container-custom h1{
+    font-size: 25px;
+}
+.custom-exercise-form-container{
+    background-color: rgba(163, 242, 237, 0.249);
+    min-height: 100vh;
+}
+.exercise-form{
+    position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 30px;
+  text-align: center;
+    width: 40%;
+    min-width: 300px;
+    margin:0 auto;
+    background-color: white;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.exercise-form label{
+    font-size: 15px;
+font-weight: bolder;
+}
+.exercise-form input {
+    outline: 0;
+    background: #f2f2f2;
+    width: 90%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+  .exercise-form select{
+      border: 1px solid black;
+      width: 90%;
+      height: 30px;
+      padding: 15px;
+  }
+  .exercise-form button {
+    text-transform: uppercase;
+    outline: 0;
+    margin-bottom: 20px;
+    background: rgb(175, 254, 177);
+    width: 90%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+  }
+  .exercise-form button:hover {
+background: rosybrown;
+  }
+  @media only screen and (max-width: 600px) {
+
+
+  }

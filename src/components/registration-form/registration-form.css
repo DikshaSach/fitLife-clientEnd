@@ -1,33 +1,95 @@
 .register-form{ 
+    border-top: 10px solid black;
     font-family: 'Comfortaa', cursive;
-    margin: auto;
-    border-top: 8px solid black;
-    border-radius: 5px;
-    background: rgb(255, 255, 255, 0.8);
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    padding-bottom: 20px;
-    width: 40%;
-    min-width: 300px;
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    text-align: center;
+      width: 50%;
+      min-width: 300px;
+      margin:0 auto;
+      background-color: rgba(255, 255, 255, 0.838);
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
+
+
+.register-form label{
+    font-size: 18px;
+font-weight: bolder;
+}
+
 .register-form h1{
     text-align: center;
+    padding-top: 8px;
     margin: 0;
+}
+
+.register-form input {
+    outline: 0;
+    background: #fffdfd;
+    width: 90%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+  .register-form select{
+      width: 90%;
+      height: 30px;
+      background-color: white;
+  }
+  .register-form .submit-bttn-register {
+    margin-top: 20px;
+    text-transform: uppercase;
+    outline: 0;
+    margin-bottom: 20px;
+    background: #ffff65b2;
+    width: 90%;
+    border: 0;
+    padding: 15px;
+    color: black;
+    font-weight: bold;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+  }
+  .register-form .submit-bttn-register:hover{
+    background: #ffff5ae2;
+  }
+
+  .link-to-register-on-register button{
+    background-color: #ff775582;
+    color: black;
     margin-top: 10px;
+    width: 45%;
+    height: 50px;
+    font-size: 20px;
     padding: 0;
+    border: 0;
 }
-.register-form .form-input{
-    margin-bottom: 5px;
+.link-to-register-on-register button:hover{
+background-color: #ff7755aa;
 }
-.register-form > div.fields-container > label{
-    text-align: left;
+
+.link-to-login button {
+    color: black;
+    background-color:  #ffaa8898;
+    width: 45%;
+    height: 50px;
+    font-size: 20px;
+    padding: 0;
+    border: 0;
 }
-.register-form select{
-    text-align: center;
-    width: 300px;
-    height: 30px;
-    background-color: white;
-    border: 1px solid black;
+.link-to-login button:hover {
+background-color:  #ffaa88c8; 
 }
+
+
+
+
+
 @media only screen and (max-width: 600px) {
     .register-form{
         width: 80%

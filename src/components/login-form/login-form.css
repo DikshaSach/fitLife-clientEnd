@@ -1,62 +1,87 @@
 .login-form{ 
+    border-top: 10px solid black;
     font-family: 'Comfortaa', cursive;
-    margin: auto;
-    border-top: 8px solid black;
-    border-radius: 5px;
-    background: rgb(255, 255, 255, 0.8);
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    padding-bottom: 20px;
- width: 40%;
- min-width: 300px;
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    text-align: center;
+      width: 40%;
+      min-width: 300px;
+      margin:0 auto;
+      background-color: rgba(255, 255, 255, 0.838);
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
-.fields-container{
 
-   text-align: center;
+.login-form label{
+    font-size: 18px;
+font-weight: bolder;
 }
+
 .login-form h1{
     text-align: center;
+    padding-top: 5px;
     margin: 0;
 }
-#username{
+.login-form input {
+    outline: 0;
+    background: #fffdfd;
     width: 90%;
-    height: 30px;
-    border-radius: 5px;
-    text-align: center;
-    font-size: 20px;
-}
-#password{
-    font-size: 20px;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+  .login-form .submit-bttn-login {
+    text-transform: uppercase;
+    outline: 0;
+    margin-bottom: 20px;
+    background: #ffff65b2;
     width: 90%;
-    height: 30px;
-    border-radius: 5px;
-    text-align: center;
-}
+    border: 0;
+    padding: 15px;
+    color: black;
+    font-weight: bold;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+  }
+
+  .login-form .submit-bttn-login:hover{
+    background: #ffff5ae2;
+  }
+
 .links-container{
    width: 100%;
    text-align: center;
 }
 .link-to-login-on-login button{
-    background-color: #ff7755bf;
+    background-color: #ff775582;
     margin-top: 10px;
     width: 45%;
     height: 50px;
     font-size: 20px;
     padding: 0;
     border: 0;
-    color: white;
+    color: black;
+}
+.link-to-login-on-login button:hover{
+    background-color: #ff7755aa;
 }
 .link-to-register button{
-    background-color:  #ffaa88c2;
-    color: white;
+    background-color:  #ffaa8898;
+    color: black;
     width: 45%;
     height: 50px;
     font-size: 20px;
     padding: 0;
     border: 0;
 }
-.login-form .form-input{
-    margin-bottom: 15px;
+.link-to-register button:hover{
+    background-color:  #ffaa88c8; 
 }
+
 
 @media only screen and (max-width: 600px) {
     .login-form{

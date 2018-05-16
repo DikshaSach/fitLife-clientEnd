@@ -121,8 +121,8 @@ export class HeaderBar extends React.Component {
               className="logo-image-narrow"
               alt="logo"
               src={Logo3}
-              height="auto"
-              width="150"
+              height="56"
+              width="auto"
             />
           </div>
           <div className="narrowLinks">

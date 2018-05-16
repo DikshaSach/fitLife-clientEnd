@@ -33,6 +33,7 @@ export class LoginForm extends React.Component {
                 <Link className="link-to-register" to="/register"><button>Register</button></Link>
                 </div>
                 <h1>Login</h1>
+                <br />
                 <div className="fields-container">
                 <label htmlFor="username">Username</label>
                 <Field
@@ -53,7 +54,7 @@ export class LoginForm extends React.Component {
                     id="password"
                     validate={[required, nonEmpty]}
                 />
-                <button disabled={this.props.pristine || this.props.submitting}>
+                <button className="submit-bttn-login" disabled={this.props.pristine || this.props.submitting}>
                     Log in
                 </button>
                 </div>

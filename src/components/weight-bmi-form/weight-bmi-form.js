@@ -40,6 +40,7 @@ export class WeightAndBmiForm extends React.Component {
           onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}
         >
           {error}
+          <br/>
           <label htmlFor="month">Month</label>
           <Field
             type="text"
@@ -62,6 +63,7 @@ export class WeightAndBmiForm extends React.Component {
             }}
             valueField="value"
           />
+          <br/>
           <label htmlFor="weight">Enter your weight</label>
           <Field
             component={Input}

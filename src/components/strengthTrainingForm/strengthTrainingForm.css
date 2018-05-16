@@ -1,6 +1,10 @@
 .exercise-form-container-strength{
     font-family: 'Comfortaa', cursive;
 }
+.strength-exercise-form-container{
+    background-color: rgba(163, 242, 222, 0.249);
+    min-height: 100vh;
+}
 .add-more-fields{
     margin-bottom: 10px;
     font-family: 'Comfortaa', cursive;
@@ -18,3 +22,57 @@
     margin-bottom: 10px;
     margin-top: 10px;
 }
+
+.strength-exercise-form-container h1{
+    font-size: 25px;
+}
+
+.strengthexercise{
+    position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 30px;
+  text-align: center;
+    width: 40%;
+    min-width: 300px;
+    margin:0 auto;
+    background-color: white;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.strengthexercise label{
+    font-size: 15px;
+font-weight: bolder;
+}
+.strengthexercise input {
+    outline: 0;
+    background: #f2f2f2;
+    width: 90%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+  .strengthexercise select{
+      border: 1px solid black;
+      width: 90%;
+      height: 30px;
+      padding: 15px;
+  }
+  .strengthexercise button {
+    text-transform: uppercase;
+    outline: 0;
+    margin-bottom: 20px;
+    background: rgb(175, 254, 177);
+    width: 90%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+  }
+  .strengthexercise button:hover {
+background: rosybrown;
+  }

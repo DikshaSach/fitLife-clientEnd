@@ -1,15 +1,73 @@
 .weight-bmi-form-container{
     font-family: 'Comfortaa', cursive;
     text-align: center;
+    background-color: rgba(163, 205, 242, 0.249);
+    min-height: 100vh;
 }
-.weight-bmi-form-container h1{
-    padding: 0;
-    margin: 0;
-    padding-top: 10px;
-}
+
 .weigthScale-pic{
     margin-top: 50px;
     width: 20vw;
     min-width: 200px;
     height: auto;
 }
+.weight-bmi-form-container h1{
+    font-size: 25px;
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.weight-bmi-form{
+    position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  text-align: center;
+    width: 50%;
+    min-width: 300px;
+    margin:0 auto;
+    background-color: white;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.weight-bmi-form label{
+    font-size: 18px;
+font-weight: bolder;
+}
+.weight-bmi-form input {
+    outline: 0;
+    background: #f2f2f2;
+    width: 90%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+   
+  }
+  .weight-bmi-form div label{
+      margin-top: 10px;
+  }
+ 
+  .weight-bmi-form select{
+      border: 1px solid black;
+      width: 90%;
+      height: 30px;
+      padding: 15px;
+  }
+  .weight-bmi-form button {
+    text-transform: uppercase;
+    outline: 0;
+    margin-bottom: 20px;
+    background: rgb(64, 87, 136);
+    width: 90%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+  }
+  .weight-bmi-form button:hover {
+background: rgb(106, 138, 150);
+  }
