@@ -2,6 +2,11 @@
     font-family: 'Comfortaa', cursive;
     text-align: center;
 }
+.weight-bmi-form-container h1{
+    padding: 0;
+    margin: 0;
+    padding-top: 10px;
+}
 .weigthScale-pic{
     margin-top: 50px;
     width: 20vw;

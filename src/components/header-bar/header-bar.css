@@ -1,7 +1,6 @@
 nav {
-color: black;
     overflow: hidden;
-    border-bottom: 1px solid #000;
+    border-bottom: 2px solid #4b7ba9;;
 }
 button:focus {outline:0;}
 
@@ -30,7 +29,7 @@ button:focus {outline:0;}
     font-weight: 600;
     text-transform: uppercase;
     transition: color 0.1s,background-color 0.1s,padding 0.2s ease-in;
-    color: #99C9ED;
+    color: rgb(75, 122, 223);
 }
 .wideDiv > button::before {
     content: '';
@@ -106,9 +105,29 @@ button:focus {outline:0;}
     background-color: rgba(70, 131, 180, 0.495);
   }
   nav .navNarrow .narrowLinks button:hover{
-    text-decoration: underline;
     transform: scale(1.1);
     background-color: #8ec9ff;
+  }
+  nav .navNarrow .narrowLinks button:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    display: inline-block;
+    height: 1em;
+    width: 100%;
+    border-bottom: 1px solid;
+    margin-top: 10px;
+    opacity: 0;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: scale(0,1);
+    transform: scale(0,1);
+  }
+  
+  nav .navNarrow .narrowLinks button:hover:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
   }
  div.title{
     text-align: center;

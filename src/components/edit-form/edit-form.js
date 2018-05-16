@@ -34,7 +34,20 @@ export class EditForm extends React.Component {
     console.log(start);
     const end = start;
     const { title, time } = values;
-    const exercise = { title, start, end, time };
+    let exercise;
+    if (this.props.singleEvent.strengthExercise.length > 0) {
+      const strengthExercise = [];
+      for (var i = 1; i < this.state.counter; i++) {
+        const name = values["strengthExercisetitle" + i];
+        const reps = values["reps" + i];
+        const sets = values["sets" + i];
+        const titleRepSetObj = { name, reps, sets };
+        strengthExercise.push(titleRepSetObj);
+      }
+      exercise = { title, start, end, strengthExercise };
+    } else {
+      exercise = { title, start, end, time };
+    }
     this.props
       .dispatch(editEventsData(this.props.match.params.id, exercise))
       .then(() => {
@@ -51,10 +64,19 @@ export class EditForm extends React.Component {
           </div>
         );
       }
-      
+
       let timespent = null;
+      let addMore = null;
       let duplicatedFields = [];
-      if (this.props.singleEvent.strengthExercise.length > 0) {
+      if (this.state.data.strengthExercise.length > 0) {
+        addMore = (
+          <button
+            className="add-more-fields"
+            onClick={() => this.addmorefields()}
+          >
+            Add More Exercises
+          </button>
+        );
         let count = this.state.counter;
 
         for (let i = 1; i < count; i++) {
@@ -111,16 +133,24 @@ export class EditForm extends React.Component {
           );
         }
       } else {
-       timespent = (
+        addMore = null;
+        timespent = (
           <div>
-            {" "}
-            <label htmlFor="title">Title</label>
+            <label>Time Spent</label>
             <Field
-              component={Input}
               type="text"
-              name="title"
-              id="title"
-              validate={[required, nonEmpty]}
+              id="time"
+              name="time"
+              component={Select}
+              options={{
+                "10-minutes": "10 minutes",
+                "20-minutes": "20 minutes",
+                "30-minutes": "30 minutes",
+                "40-minutes": "40 minutes",
+                "50-minutes": "50 minutes",
+                "60-minutes": "60 minutes"
+              }}
+              valueField="value"
             />
           </div>
         );
@@ -132,22 +162,18 @@ export class EditForm extends React.Component {
           <div className="exercise-details-from-state">
             Exercise You Saved:
             <br />
-            Name: {this.props.singleEvent.title}
+            Name: {this.state.data.title}
             <br />
-            Time: {this.props.singleEvent.time}
+            Time: {this.state.data.time}
             <br />
-            Date: {this.props.singleEvent.start}
+            Date: {this.state.data.start}
           </div>
           <form
             className="exercise-form"
             onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}
           >
-            <button
-              className="add-more-fields"
-              onClick={() => this.addmorefields()}
-            >
-              Add More Exercises
-            </button>
+            {addMore}
+
             <br />
             {error}
             <label htmlFor="title">Title</label>
@@ -177,8 +203,10 @@ export class EditForm extends React.Component {
       );
     }
     return (
-      <div className="spinner-container"> <HashLoader
-      color={'#CF7553'} /></div>
+      <div className="spinner-container">
+        {" "}
+        <HashLoader color={"#CF7553"} />
+      </div>
     );
   }
 }

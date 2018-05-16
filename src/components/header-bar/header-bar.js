@@ -5,6 +5,7 @@ import { clearAuthToken } from "../../local-storage";
 import requiresLogin from "../requires-login";
 import { withRouter } from "react-router-dom";
 import Logo3 from "../../images/logo.png";
+
 import "./header-bar.css";
 
 export class HeaderBar extends React.Component {

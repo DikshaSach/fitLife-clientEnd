@@ -11,12 +11,13 @@ body {
   width: 100%;
   background-color: white;
   height: 100%;
-  position: absolute;
+  position: fixed;
+  
  
 }
 .spinner-container > div{
   top: 50%;
-    position: absolute;
+  position: fixed;
     left: 47%;
     background-color: white;
     /* height: 100%; */
