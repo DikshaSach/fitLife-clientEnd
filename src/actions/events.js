@@ -1,5 +1,4 @@
 import { normalizeResponseErrors } from "../actions/utils";
-import {SubmissionError} from 'redux-form';
 import {API_BASE_URL} from '../config';
 // ALL OF THE EVENTS
 export const FETCH_EVENTS_REQUEST = 'FETCH_EVENTS_DATA_REQUEST';
