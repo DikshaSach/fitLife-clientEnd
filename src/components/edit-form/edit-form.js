@@ -111,7 +111,7 @@ export class EditForm extends React.Component {
           );
         }
       } else {
-        let timespent = (
+       timespent = (
           <div>
             {" "}
             <label htmlFor="title">Title</label>

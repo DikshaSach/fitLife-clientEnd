@@ -31,17 +31,16 @@ export class HeaderBar extends React.Component {
       Progress;
     if (this.props.loggedIn) {
       logOutButton = (
-        <a className="logout-bttn" href="#" onClick={() => this.logOut()}>
+        <a className="logout-bttn" href="/" onClick={() => this.logOut()}>
           Log out
         </a>
       );
       exerciseForm = (
         <a
           className="exerciseForm-bttn"
-          href="#"
+          href="/exerciseForm"
           onClick={() => {
             this.burgerToggle();
-            this.props.history.push("/exerciseForm");
           }}
         >
           Add Exercise
@@ -50,10 +49,9 @@ export class HeaderBar extends React.Component {
       DisplayWeightBmi = (
         <a
           className="weightBmi-bttn"
-          href="#"
+          href="/display-weight-bmi"
           onClick={() => {
             this.burgerToggle();
-            this.props.history.push("/display-weight-bmi");
           }}
         >
           Display Weight & BMI
@@ -62,10 +60,9 @@ export class HeaderBar extends React.Component {
       WeightBmiForm = (
         <a
           className="weightBmiForm-bttn"
-          href="#"
+          href="/weight-bmi-form"
           onClick={() => {
             this.burgerToggle();
-            this.props.history.push("/weight-bmi-form");
           }}
         >
           {" "}
@@ -75,10 +72,9 @@ export class HeaderBar extends React.Component {
       Progress = (
         <a
           className="progress-page-bttn"
-          href="#"
+          href="/progress"
           onClick={() => {
             this.burgerToggle();
-            this.props.history.push("/progress");
           }}
         >
           Progress
@@ -87,10 +83,9 @@ export class HeaderBar extends React.Component {
       Dashboard = (
         <a
           className="dashboard-bttn"
-          href="#"
+          href="/dashboard"
           onClick={() => {
             this.burgerToggle();
-            this.props.history.push("/dashboard");
           }}
         >
           Home
