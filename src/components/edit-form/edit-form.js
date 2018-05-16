@@ -8,7 +8,7 @@ import { connect } from "react-redux";
 import { fetchEventById } from "../../actions/events";
 import { editEventsData } from "../../actions/events";
 import { makeDateFromISOString } from "../../utils";
-import { PulseLoader } from "react-spinners";
+import { HashLoader } from "react-spinners";
 import "./edit-form.css";
 import Select from "../select";
 export class EditForm extends React.Component {
@@ -177,9 +177,8 @@ export class EditForm extends React.Component {
       );
     }
     return (
-      <div className="sweet-loading">
-        <PulseLoader color={"#123abc"} />
-      </div>
+      <div className="spinner-container"> <HashLoader
+      color={'#CF7553'} /></div>
     );
   }
 }

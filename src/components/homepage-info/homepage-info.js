@@ -3,6 +3,7 @@ import exercise from "../../images/exercise.png";
 import hydration from "../../images/hydration.png";
 import weight from "../../images/weight.png";
 import Footer from "../footer/footer";
+
 import Homepagekettlebell from "../../images/homepagekettlebell.png";
 import "./homepage-info.css";
 export class HomepageInfo extends React.Component {

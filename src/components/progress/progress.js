@@ -4,7 +4,7 @@ import { Line } from "react-chartjs-2";
 import { connect } from "react-redux";
 import requiresLogin from "../requires-login";
 import { fetchWeightBmi } from "../../actions/weightbmi";
-import { PulseLoader} from 'react-spinners';
+import { HashLoader} from 'react-spinners';
 import { fetchAllWaterDates } from "../../actions/water";
 import './progress.css';
 export class Progress extends React.Component {
@@ -103,11 +103,8 @@ export class Progress extends React.Component {
     </div>
     );
   }
-  return<div className='sweet-loading'>
-  <PulseLoader
-    color={'#123abc'} 
-  />
-</div>; 
+  return<div className="spinner-container"> <HashLoader
+  color={'#CF7553'} /></div>;
   }
 }
     

@@ -5,7 +5,7 @@ import './display-event.css';
 import {withRouter} from 'react-router-dom';
 import {fetchEventById} from '../../actions/events';
 import {deleteSingleEvent} from '../../actions/events';
-import { PulseLoader} from 'react-spinners';
+import { HashLoader} from 'react-spinners';
 import MuscleIcon from '../../images/muscleicon.png';
 import MuscleIconRight from '../../images/muscleiconright.png';
 export class DisplayEvent extends React.Component {
@@ -69,11 +69,8 @@ export class DisplayEvent extends React.Component {
             <ul className="strength-exercise-list">{listView}</ul>
             </div>;
         }
-        return<div className='sweet-loading'>
-        <PulseLoader
-          color={'#123abc'} 
-        />
-      </div>; 
+        return<div className="spinner-container"> <HashLoader
+        color={'#CF7553'} /></div>;
      
      
     }

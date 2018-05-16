@@ -1,4 +1,6 @@
 import React from "react";
+import { HashLoader
+} from 'react-spinners';
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 
@@ -6,7 +8,8 @@ export default () => Component => {
   function RequiresLogin(props) {
     const { authenticating, loggedIn, error, ...passThroughProps } = props;
     if (authenticating) {
-      return <div>Logging in...</div>;
+      return <div className="spinner-container"> <HashLoader
+      color={'#CF7553'} /></div>;
     } else if (!loggedIn || error) {
       return <Redirect to="/" />;
     }
