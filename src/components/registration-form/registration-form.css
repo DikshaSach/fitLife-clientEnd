@@ -6,11 +6,20 @@
     background: rgb(255, 255, 255, 0.8);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding-bottom: 20px;
- width: 40%;
- min-width: 300px;
+    width: 40%;
+    min-width: 300px;
 }
 .register-form h1{
     text-align: center;
+    margin: 0;
+    margin-top: 10px;
+    padding: 0;
+}
+.register-form .form-input{
+    margin-bottom: 5px;
+}
+.register-form > div.fields-container > label{
+    text-align: left;
 }
 .register-form select{
     text-align: center;

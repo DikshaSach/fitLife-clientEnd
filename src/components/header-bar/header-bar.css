@@ -2,36 +2,37 @@ nav {
 color: black;
     overflow: hidden;
     border-bottom: 1px solid #000;
-  }
-  nav a {
-    color: #619DCF;
-  }
-  nav a:hover, nav a:focus, nav a:active {
-    color: #99C9ED;
-    text-decoration: none;
+}
+button:focus {outline:0;}
+
+.wideDiv > button:hover{
+  cursor: pointer;
+  color: #99C9ED;
 }
 
-nav a{
-    font-family: Lato, 'Helvetica Neue', Helvetica, sans-serif;
+.wideDiv > button{
+  font-family: 'Comfortaa', cursive;
     font-weight: lighter;
     text-decoration: none;
 
     transition: color 0.1s, background-color 0.1s;
 }
-nav a {
+.wideDiv > button {
+  background:rgba(255,255,255,0.1);
+    border:none;
     position: relative;
     display: block;
     padding: 16px 0;
     margin: 0 12px;
     letter-spacing: 1px;
-    font-size: 12px;
+    font-size: 15px;
     line-height: 16px;
     font-weight: 600;
     text-transform: uppercase;
     transition: color 0.1s,background-color 0.1s,padding 0.2s ease-in;
     color: #99C9ED;
 }
-nav a::before {
+.wideDiv > button::before {
     content: '';
     display: block;
     position: absolute;
@@ -45,18 +46,18 @@ nav a::before {
     transition: color 0.1s,transform 0.2s ease-out;
 }
 
-nav a:active::before {
+.wideDiv > button:active::before {
     background-color: #99C9ED;
 }
 
-nav a:hover::before, nav a:focus::before {
-    transform-origin: left top;
-    transform: scale(1, 1);
-    background-color: #292B2F;
+.wideDiv > button:hover::before, .wideDiv > button:focus::before {
+  transform-origin: left top;
+  transform: scale(1, 1);
+  background-color: rgb(10, 41, 104);
 }
 
-  nav a:visited {
-    color:#021C2B;;
+.wideDiv > button:visited {
+    color:rgb(10, 41, 104);
   }
   nav .navWide {
     display: none;
@@ -68,7 +69,7 @@ nav a:hover::before, nav a:focus::before {
   nav .navWide .wideDiv {
     text-align: center;
   }
-  nav .navWide .wideDiv a {
+  nav .navWide .wideDiv button {
     text-decoration: none;
     display: inline-block;
     padding: 10px;
@@ -86,7 +87,7 @@ nav a:hover::before, nav a:focus::before {
   nav .navNarrow .narrowLinks {
     display: none;
   }
-  nav .navNarrow .narrowLinks a {
+  nav .navNarrow .narrowLinks button {
     text-decoration: none;
     display: block;
     float: left;
@@ -101,6 +102,10 @@ nav a:hover::before, nav a:focus::before {
     font-size: 30px;
  }
 
+ nav .navNarrow .narrowLinks button{
+  cursor: pointer;
+  font-size: 15px;
+}
  
  
   @media (min-width: 600px) {
@@ -109,7 +114,9 @@ nav a:hover::before, nav a:focus::before {
     }
     nav .navNarrow {
       display: none;
+
     }
+    
    
   }
   

@@ -1,6 +1,8 @@
 .dashboard{
-    border: 1px solid black;
+  
     font-family: 'Comfortaa', cursive;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 .rbc-event:hover{
 background-color: pink;

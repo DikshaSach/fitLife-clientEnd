@@ -29,69 +29,69 @@ export class HeaderBar extends React.Component {
       Dashboard,
       WeightBmiForm,
       Progress;
-    if (this.props.loggedIn) {
-      logOutButton = (
-        <a className="logout-bttn" href="/" onClick={() => this.logOut()}>
-          Log out
-        </a>
-      );
-      exerciseForm = (
-        <a
-          className="exerciseForm-bttn"
-          href="/exerciseForm"
-          onClick={() => {
-            this.burgerToggle();
-          }}
-        >
-          Add Exercise
-        </a>
-      );
-      DisplayWeightBmi = (
-        <a
-          className="weightBmi-bttn"
-          href="/display-weight-bmi"
-          onClick={() => {
-            this.burgerToggle();
-          }}
-        >
-          Display Weight & BMI
-        </a>
-      );
-      WeightBmiForm = (
-        <a
-          className="weightBmiForm-bttn"
-          href="/weight-bmi-form"
-          onClick={() => {
-            this.burgerToggle();
-          }}
-        >
-          {" "}
-          Add Weight & BMI
-        </a>
-      );
-      Progress = (
-        <a
-          className="progress-page-bttn"
-          href="/progress"
-          onClick={() => {
-            this.burgerToggle();
-          }}
-        >
-          Progress
-        </a>
-      );
-      Dashboard = (
-        <a
-          className="dashboard-bttn"
-          href="/dashboard"
-          onClick={() => {
-            this.burgerToggle();
-          }}
-        >
-          Home
-        </a>
-      );
-    }
+      if (this.props.loggedIn) {
+        logOutButton = (
+          <button className="logout-bttn" onClick={() => this.logOut()}>
+            Log out
+          </button>
+        );
+        exerciseForm = (
+          <button
+            className="exerciseForm-bttn"
+            onClick={() => {
+              this.burgerToggle();
+              this.props.history.push("/exerciseForm");
+            }}
+          >
+            Add Exercise
+          </button>
+        );
+        DisplayWeightBmi = (
+          <button
+            className="weightBmi-bttn"
+            onClick={() => {
+              this.burgerToggle();
+              this.props.history.push("/display-weight-bmi");
+            }}
+          >
+            Display Weight & BMI
+          </button>
+        );
+        WeightBmiForm = (
+          <button
+            className="weightBmiForm-bttn"
+            onClick={() => {
+              this.burgerToggle();
+              this.props.history.push("/weight-bmi-form");
+            }}
+          >
+            {" "}
+            Add Weight
+          </button>
+        );
+        Progress = (
+          <button
+            className="progress-page-bttn"
+            onClick={() => {
+              this.burgerToggle();
+              this.props.history.push("/progress");
+            }}
+          >
+            Progress
+          </button>
+        );
+        Dashboard = (
+          <button
+            className="dashboard-bttn"
+            onClick={() => {
+              this.burgerToggle();
+              this.props.history.push("/dashboard");
+            }}
+          >
+            Home
+          </button>
+        );
+      }
     return (
       <nav>
         <div className="navWide">
