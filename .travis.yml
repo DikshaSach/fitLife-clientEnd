@@ -1,5 +1,6 @@
 language: node_js
 node_js: "8"
+warnings_are_errors: false
 cache:
   directories:
     - node_modules
@@ -7,7 +8,7 @@ script:
   - npm test
 env:
   - CI=true
-warnings_are_errors: false
+
 before_deploy:
   - npm install netlify-cli -g
   - npm run build
