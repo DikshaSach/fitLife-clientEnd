@@ -71,7 +71,7 @@ export class WeightAndBmiForm extends React.Component {
             validate={[required, nonEmpty]}
           />
           <button disabled={this.props.pristine || this.props.submitting}>
-            submitting
+            Enter
           </button>
         </form>
         <img src={WeightScale} alt="weight scale icon" className="weigthScale-pic" />

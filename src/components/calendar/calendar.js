@@ -32,6 +32,7 @@ export class Calendar extends React.Component {
           events={this.props.eventsData}
           views={["month"]}
           step={60}
+          popup events={this.props.eventsData} 
           culture="en-US"
           showMultiDayTimes
           defaultDate={new Date()}

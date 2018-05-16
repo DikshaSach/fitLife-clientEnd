@@ -145,7 +145,7 @@ export class StrengthTrainingForm extends React.Component {
 
           {duplicatedFields}
           <button disabled={this.props.pristine || this.props.submitting}>
-            submitting
+            Enter
           </button>
         </form>
       </div>
