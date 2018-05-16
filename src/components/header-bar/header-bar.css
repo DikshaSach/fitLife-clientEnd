@@ -88,14 +88,27 @@ button:focus {outline:0;}
     display: none;
   }
   nav .navNarrow .narrowLinks button {
+    font-family: 'Comfortaa', cursive;
     text-decoration: none;
     display: block;
     float: left;
     clear: left;
     padding: 0.5em 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
     width: 100%;
     text-align: center;
-    border-bottom: 1px solid black;
+    font-size: 15px;
+    background-color: #8ec8ff69;
+    border: none;
+  }
+  nav .navNarrow .narrowLinks{
+    background-color: rgba(70, 131, 180, 0.495);
+  }
+  nav .navNarrow .narrowLinks button:hover{
+    text-decoration: underline;
+    transform: scale(1.1);
+    background-color: #8ec9ff;
   }
  div.title{
     text-align: center;
