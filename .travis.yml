@@ -7,7 +7,7 @@ script:
   - npm test
 env:
   - CI=true
-
+warnings_are_errors: false
 before_deploy:
   - npm install netlify-cli -g
   - npm run build
