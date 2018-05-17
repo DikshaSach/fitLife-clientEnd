@@ -59,7 +59,7 @@ background-color: rgb(172, 188, 240);
     font-size: 15px;
 }
 .exercise-event-list-item:hover{
-background-color: rgb(190, 237, 236);
+background-color: rgba(190, 237, 236, 0.447);
 border-radius: 10px;
 }
 .muscle-icon{
@@ -72,5 +72,16 @@ border-radius: 10px;
     font-size: 20px;
     color: rgb(121, 247, 101);
     text-decoration: underline;
+}
+.motivation-text{
+    font-size: 50px;
+    text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .motivation-text{
+        font-size: 30px;
+        text-align: center;
+    }
 }
 
