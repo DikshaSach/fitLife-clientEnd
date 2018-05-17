@@ -14,7 +14,7 @@ export class HomepageInfo extends React.Component {
         <div className="keys-to-success">
           <h1>
             Track and log your workouts , water-intake and weight to make sure
-            you make the best of today
+            you make the best of today. For a better tomorrow!
           </h1>
         </div>
         <div><img src={Homepagekettlebell}  alt="kettlebell icon" width="100%" height="auto"/></div>
