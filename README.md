@@ -11,6 +11,12 @@ Demo Account Credentials:
 **Password:** 1234567890     
 Server Github Repo: https://github.com/DikshaSach/fitLife-backend     
 Client Github Repo: https://github.com/DikshaSach/fitLife-clientEnd   
+## To Run Locally
+ Git Clone this repo  
+ cd into folder  
+`npm install`  
+`npm start`    
+Add .env file with API URL and variable name `REACT_APP_API_BASE_URL`
 ## Technology Stack
 ### Front End
 * React
