@@ -2,6 +2,7 @@
 
 export function makeDateFromISOString(isoDate = (new Date()).toISOString()) {
     const date = isoDate.split("T")[0];
-    const [ year, month, day ] = date.split("-");
-    return new Date(year, month - 1, day).toLocaleDateString();
+    const newDate = (date + 'T14:00:00.000Z')
+    const [ year, month, day ] = date
+    return new Date(newDate);
 }
