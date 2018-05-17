@@ -17,7 +17,4 @@ padding-bottom: 120px;
     .registration-form-container{
         padding-bottom: 80px;
         }
-    #firstName, #lastName, #passwordConfirm{
-        height: 20px;
-    }
 }

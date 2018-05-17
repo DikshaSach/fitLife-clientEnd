@@ -21,3 +21,10 @@ body, html {margin: 0;padding: 0;}
     text-align: center;
 }
 
+@media only screen and (max-width: 500px) {
+    
+    .logo-image-homepage{
+        padding-top: 19px;
+    }
+}
+

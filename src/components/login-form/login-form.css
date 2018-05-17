@@ -98,10 +98,37 @@ font-weight: bolder;
 @media only screen and (max-width: 400px) {
     .login-form{
         width: 80%;
-        height: auto;
+        height: 300px;
     }
+    .login-form .submit-bttn-login {
+        padding: 10px;
+        font-size: 14px;
+
+      }
+      .link-to-login-on-login button{
+        width: 45%;
+        height: 34px;
+        font-size: 18px;
+        
+    }
+    .link-to-register button{
+        height: 34px;
+        font-size: 18px;
+
+    }
+    .login-form input {
+   
+        margin: 0 0 15px;
+        padding: 8px;
+        box-sizing: border-box;
+        font-size: 14px;
+      }
+      
+
     .login-form-container{
         width: 100%;
     padding-bottom: 50px;
     }
 }
+
+
