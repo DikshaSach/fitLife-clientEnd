@@ -74,6 +74,12 @@ font-size: 18px;
     border: 0;
     color: black;
 }
+.testing-acc-info{
+    padding-bottom: 10px;
+}
+.testing-acc-info > span{
+    font-weight: bolder;
+}
 .link-to-login-on-login button:hover{
     background-color: #ff7755aa;
 }
