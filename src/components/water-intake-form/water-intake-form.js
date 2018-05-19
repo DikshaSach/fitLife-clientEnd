@@ -4,6 +4,7 @@ import { Field, reduxForm, focus } from "redux-form";
 import { addWater } from "../../actions/water";
 import requiresLogin from "../requires-login";
 import { connect } from "react-redux";
+import {waterFormSubmitted} from '../../actions/water';
 import Select from "../select";
 import './water-intake-form.css';
 export class WaterIntakeForm extends React.Component {
@@ -25,6 +26,7 @@ export class WaterIntakeForm extends React.Component {
     let id = creator + waterDate;
     const waterObj = { waterIntake, waterDate, creator, id, date };
     this.props.dispatch(addWater(waterObj));
+    this.props.dispatch(waterFormSubmitted());
   }
 
   render() {
@@ -39,7 +41,6 @@ export class WaterIntakeForm extends React.Component {
 
     return (
       <div className="water-intake-form-container">
-        <h1>Enter water</h1>
         <form
           className="water-intake-form"
           onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}

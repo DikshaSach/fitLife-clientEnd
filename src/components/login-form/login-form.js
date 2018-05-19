@@ -29,8 +29,8 @@ export class LoginForm extends React.Component {
                 )}>
                 {error}
                 <div className="links-container">
-                <Link className="link-to-login-on-login" to="/"><button>Login</button></Link>
-                <Link className="link-to-register" to="/register"><button>Register</button></Link>
+                <Link className="link-to-login-on-login" to="/"><button type="button">Login</button></Link>
+                <Link className="link-to-register" to="/register"><button type="button">Register</button></Link>
                 </div>
                 <h1>Login</h1>
                 <br />
@@ -54,8 +54,8 @@ export class LoginForm extends React.Component {
                     id="password"
                     validate={[required, nonEmpty]}
                 />
-                <button className="submit-bttn-login" disabled={this.props.pristine || this.props.submitting}>
-                    Log in
+                <button className="submit-bttn-login" type="submit" disabled={this.props.pristine || this.props.submitting}>
+                Login
                 </button>
                 </div>
             </form>

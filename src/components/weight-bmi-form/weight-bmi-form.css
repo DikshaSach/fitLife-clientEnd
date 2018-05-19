@@ -19,11 +19,12 @@
 }
 
 .weight-bmi-form{
+    padding-top: 20px;
     position: relative;
   z-index: 1;
   background: #FFFFFF;
   text-align: center;
-    width: 50%;
+    width: 40%;
     min-width: 300px;
     margin:0 auto;
     background-color: white;
@@ -31,7 +32,16 @@
 }
 .weight-bmi-form label{
     font-size: 18px;
+padding-left:30px;
 font-weight: bolder;
+font-size: 18px;
+display: block;
+text-align: center;
+line-height: 150%;
+text-align: left;
+font-weight: bolder;
+width: 80%;
+text-align: left;
 }
 .weight-bmi-form input {
     text-align: center;
@@ -58,9 +68,8 @@ font-weight: bolder;
   .weight-bmi-form button {
     text-transform: uppercase;
     outline: 0;
-    margin-bottom: 20px;
     background: rgb(64, 87, 136);
-    width: 90%;
+    width: 100%;
     border: 0;
     padding: 15px;
     color: #FFFFFF;

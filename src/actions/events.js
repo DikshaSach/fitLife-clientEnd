@@ -71,6 +71,7 @@ export const deleteSingleEventFailed = error => ({
     error
 });
 
+
 // POST ENDPOINT FOR ADDING AN EXERCISE EVENT
 export const addEventsData = (exercise) => dispatch =>{
     return fetch(`${API_BASE_URL}/exercise/add/exercise`, {

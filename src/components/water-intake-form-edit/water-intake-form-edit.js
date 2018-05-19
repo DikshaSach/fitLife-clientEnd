@@ -6,9 +6,11 @@ import { connect } from "react-redux";
 import Select from "../select";
 import { editWater } from "../../actions/water";
 import "./water-intake-form-edit.css";
+import {waterFormSubmitted} from '../../actions/water';
 export class WaterIntakeFormEdit extends React.Component {
   onSubmit(values) {
     this.props.dispatch(editWater(values.waterIntake));
+    this.props.dispatch(waterFormSubmitted());
   }
 
   render() {

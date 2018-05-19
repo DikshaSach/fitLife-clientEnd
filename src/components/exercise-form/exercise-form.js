@@ -1,5 +1,5 @@
 import React from "react";
-
+import Back from '../../images/back.png';
 import requiresLogin from "../requires-login";
 import { connect } from "react-redux";
 import StrengthTrainingForm from "../strengthTrainingForm/strengthTrainingForm";

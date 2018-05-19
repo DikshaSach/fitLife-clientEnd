@@ -27,10 +27,10 @@ export class RegistrationForm extends React.Component {
       >
         <div className="links-container">
           <Link className="link-to-register-on-register" to="/register">
-            <button>Register</button>
+            <button type="button">Register</button>
           </Link>
           <Link className="link-to-login" to="/">
-            <button>Login</button>
+            <button type="button">Login</button>
           </Link>
         </div>
         <h1>Register</h1>
@@ -40,7 +40,6 @@ export class RegistrationForm extends React.Component {
             component={Input}
             type="text"
             name="firstName"
-            id="firstName"
           />
           <label htmlFor="lastName">Last name</label>
           <Field component={Input} type="text" name="lastName" id="lastName" />
@@ -63,14 +62,12 @@ export class RegistrationForm extends React.Component {
             component={Input}
             type="password"
             name="passwordConfirm"
-            id="passwordConfirm"
             validate={[required, nonEmpty, matchesPassword]}
           />
           <label htmlFor="height">Enter Height</label>
           <Field
             type="height"
             name="height"
-            id="height"
             component={Select}
             options={{
               "53": `4'5`,

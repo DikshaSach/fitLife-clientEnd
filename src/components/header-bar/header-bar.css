@@ -3,11 +3,15 @@ nav {
     border-bottom: 2px solid #4b7ba9;;
 }
 button:focus {outline:0;}
+.logo-image{
+cursor: pointer;
+}
 
 .wideDiv > button:hover{
   cursor: pointer;
   color: #99C9ED;
 }
+
 
 .wideDiv > button{
   font-family: 'Comfortaa', cursive;

@@ -73,7 +73,7 @@ export class CustomExerciseForm extends React.Component {
             id="start"
             validate={[required, nonEmpty]}
           />
-          <button className="custom-exercise-form-submit"disabled={this.props.pristine || this.props.submitting}>
+          <button className="custom-exercise-form-submit" disabled={this.props.pristine || this.props.submitting}>
             Enter
           </button>
         </form>

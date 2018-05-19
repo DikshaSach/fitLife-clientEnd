@@ -7,14 +7,17 @@ import {FETCH_WATER_REQUEST,
         ADD_WATER_SUCCESSFUL,
         ADD_WATER_FAILED,
         EDIT_WATER_SUCCESSFUL,
-        EDIT_WATER_FAILED,} from '../actions/water';
+        EDIT_WATER_FAILED,
+        CLICKED_ON_WATER_FORM,
+        WATER_FORM_SUBMITTED} from '../actions/water';
 
         const initialState = {
             data: [],
             error: null,
             singleDayIntake: null,
             WaterDataForDayExists: false,
-            allWaterData: []
+            allWaterData: [],
+            waterFormSubmitting: true/false
         };
 
 export default function reducer(state = initialState, action) {
@@ -63,6 +66,14 @@ export default function reducer(state = initialState, action) {
         return Object.assign({}, state, {
           error: action.error  
         });
+    } else if(action.type === CLICKED_ON_WATER_FORM){
+        return Object.assign({}, state, {
+            waterFormSubmitting: true
+        })
+    }else if(action.type === WATER_FORM_SUBMITTED){
+        return Object.assign({}, state, {
+            waterFormSubmitting: false
+        })
     }
 return state;
 }

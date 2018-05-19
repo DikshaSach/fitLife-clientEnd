@@ -56,9 +56,11 @@ br{
 
 }
 .addwater-button{
+    padding-right: 15px;
     margin-top: 4px;
     background-color: white;
     border: none;
+    float: right;
 }
 .addwater-button:hover{
     border: 2px solid rgba(85, 157, 220, 0.708);
@@ -79,4 +81,5 @@ br{
     text-align: right;
     margin-right: 20px;
     margin-top: -5px;
+    padding-right: 50px;
 }

@@ -53,6 +53,15 @@ export const editWaterFailed = error => ({
     type: EDIT_WATER_FAILED,
     error
 });
+export const CLICKED_ON_WATER_FORM = "CLICKED_ON_WATER_FORM";
+export const clickedOnWaterForm = ()=>  ({
+    type: CLICKED_ON_WATER_FORM
+});
+export const WATER_FORM_SUBMITTED = "WATER_FORM_SUBMITTED";
+export const waterFormSubmitted = ()=> ({
+    type: WATER_FORM_SUBMITTED
+})
+
 export const fetchAllWaterDates = (id) => dispatch => {
     dispatch(fetchAllWaterRequest());
     return fetch(`${API_BASE_URL}/water/waterintake/all/` + id , {
@@ -80,6 +89,7 @@ export const fetchWater = (idDate) => dispatch => {
 };
 
 export const addWater = (water) => dispatch => {
+    dispatch(clickedOnWaterForm());
     return fetch(`${API_BASE_URL}/water/add`, {
         method: 'POST',
         body: JSON.stringify(water),
@@ -89,11 +99,12 @@ export const addWater = (water) => dispatch => {
     })
         .then(res => res.json())
         .then(data => dispatch(addWaterSuccessful(data)))
+        .then(dispatch(waterFormSubmitted()))
         .catch(err => dispatch(addWaterFailed(err)))
 
 }
 export const editWater = (water) => dispatch => {
-    console.log(dispatch);
+    dispatch(clickedOnWaterForm());
     var today = new Date();
     var dd = today.getDate();
     var mm = today.getMonth()+1;//January is 0!`    
@@ -111,5 +122,6 @@ export const editWater = (water) => dispatch => {
     }
     })
     .then(dispatch(editWaterSuccessful(water)))
+    .then(dispatch(waterFormSubmitted()))
     .catch(err => dispatch(editWaterFailed(err)))
 }

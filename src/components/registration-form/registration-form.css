@@ -14,8 +14,17 @@
 
 
 .register-form label{
+        padding-left:30px;
+        font-size: 18px;
+    font-weight: bolder;
     font-size: 18px;
-font-weight: bolder;
+        display: block;
+        text-align: center;
+        line-height: 150%;
+        text-align: left;
+        font-weight: bolder;
+        width: 80%;
+        text-align: left;
 }
 
 .register-form h1{
@@ -25,7 +34,7 @@ font-weight: bolder;
 }
 
 .register-form input {
-    text-align: center;
+
     outline: 0;
     background: #fffdfd;
     width: 90%;
@@ -44,9 +53,8 @@ font-weight: bolder;
     margin-top: 20px;
     text-transform: uppercase;
     outline: 0;
-    margin-bottom: 20px;
     background: #ffff65b2;
-    width: 90%;
+    width: 100%;
     border: 0;
     padding: 15px;
     color: black;

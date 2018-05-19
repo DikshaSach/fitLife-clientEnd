@@ -13,8 +13,17 @@
 }
 
 .login-form label{
+    padding-left:30px;
     font-size: 18px;
 font-weight: bolder;
+font-size: 18px;
+    display: block;
+    text-align: center;
+    line-height: 150%;
+    text-align: left;
+    font-weight: bolder;
+    width: 80%;
+    text-align: left;
 }
 
 .login-form h1{
@@ -23,7 +32,6 @@ font-weight: bolder;
     margin: 0;
 }
 .login-form input {
-    text-align: center;
     outline: 0;
     background: #fffdfd;
     width: 90%;
@@ -36,9 +44,8 @@ font-weight: bolder;
   .login-form .submit-bttn-login {
     text-transform: uppercase;
     outline: 0;
-    margin-bottom: 20px;
     background: #ffff65b2;
-    width: 90%;
+    width: 100%;
     border: 0;
     padding: 15px;
     color: black;

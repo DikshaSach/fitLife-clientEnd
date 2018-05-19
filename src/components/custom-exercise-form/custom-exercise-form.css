@@ -13,10 +13,10 @@
     min-height: 100vh;
 }
 .exercise-form{
+    padding-top: 20px;
     position: relative;
   z-index: 1;
   background: #FFFFFF;
-  max-width: 30px;
   text-align: center;
     width: 40%;
     min-width: 300px;
@@ -26,7 +26,16 @@
 }
 .exercise-form label{
     font-size: 15px;
-font-weight: bolder;
+    padding-left:30px;
+    font-weight: bolder;
+    font-size: 18px;
+    display: block;
+    text-align: center;
+    line-height: 150%;
+    text-align: left;
+    font-weight: bolder;
+    width: 80%;
+    text-align: left;
 }
 .exercise-form input {
     outline: 0;
@@ -44,12 +53,11 @@ font-weight: bolder;
       height: 30px;
       padding: 15px;
   }
-  .exercise-form .custom-exercise-form-submit button {
+  .exercise-form .custom-exercise-form-submit {
     text-transform: uppercase;
     outline: 0;
-    margin-bottom: 20px;
     background: rgb(175, 254, 177);
-    width: 90%;
+    width: 100%;
     border: 0;
     padding: 15px;
     color: #FFFFFF;

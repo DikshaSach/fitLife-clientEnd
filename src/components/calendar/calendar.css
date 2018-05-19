@@ -1,7 +1,4 @@
-.rbc-date-cell:hover, .rbc-date-cell:focus, .rbc-date-cell:active {
-    color: #99C9ED;
-    text-decoration: none;
-}
+
 .rbc-event-content:hover{
     transform: scale(1.1);
 }
@@ -17,51 +14,22 @@
     transition: color 0.1s, background-color 0.1s;
 }
 .rbc-date-cell {
-    position: relative;
-    display: block;
     padding: 16px 0;
-    margin: 0 12px;
-    letter-spacing: 1px;
-    font-size: 12px;
-    line-height: 16px;
-    font-weight: 600;
-    text-transform: uppercase;
-    transition: color 0.1s,background-color 0.1s,padding 0.2s ease-in;
-    color: #99C9ED;
-}
-.rbc-date-cell::before {
-    content: '';
-    display: block;
-    position: absolute;
-    bottom: 3px;
-    left: 0;
-    height: 3px;
-    width: 100%;
-    background-color: #99C9ED;
-    transform-origin: right top;
-    transform: scale(0, 1);
-    transition: color 0.1s,transform 0.2s ease-out;
-}
-
-.rbc-date-cell:active::before {
-    background-color: #99C9ED;
-}
-
-.rbc-date-cell:hover::before, .rbc-date-cell:focus::before {
-    transform-origin: left top;
-    transform: scale(1, 1);
-    background-color: #292B2F;
-}
-
-.rbc-toolbar-label{
-    color: rgb(39, 35, 92);
-    font-size: 25px;
-    
-}
-.rbc-date-cell {
+    margin: 0 12px; 
+    font-weight: bold;
     color: black;
     font-size: 18px;
+ 
+    font-family: 'Comfortaa', cursive;
 }
+.rbc-day-bg:hover{
+border: 3px solid rgba(58, 132, 182, 0.447) !important;
+
+}
+.rbc-toolbar .rbc-toolbar-label{
+    font-size: 30px;
+}
+
 div.popup-overlay > div{
     font-size: 18px;
     width: 300px !important;

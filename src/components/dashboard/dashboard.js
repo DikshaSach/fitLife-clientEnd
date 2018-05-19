@@ -11,92 +11,56 @@ import WaterIntakeFormEdit from "../water-intake-form-edit/water-intake-form-edi
 import { fetchWeightBmi } from "../../actions/weightbmi";
 import AddWater from "../../images/addwater.png";
 import { fetchAllWaterDates } from "../../actions/water";
+import {clickedOnWaterForm} from '../../actions/water';
 export class Dashboard extends React.Component {
+  constructor(props){
+    super(props);
+    this.onWaterFormClicked = this.onWaterFormClicked.bind(this);
+  }
 
   componentWillMount() {
     this.props.dispatch(fetchWeightBmi(this.props.id));
     this.props.dispatch(fetchAllWaterDates(this.props.id))
   }
-
+  onWaterFormClicked(){
+    this.props.dispatch(clickedOnWaterForm());
+  }
   render() {
     let waterExists = null;
-    console.log(this.props.WaterDataForDayExists);
     if(this.props.WaterDataForDayExists === false){
-     waterExists =   <Popup
-            trigger={
-              <button className="addwater-button">
-                {" "}
-                <img
-                  src={AddWater}
-                  alt="add water"
-                  height="35px"
-                  width="auto"
-                />{" "}
-              </button>
-            }
-            modal
-          >
-            {close => (
-              <div className="modal">
-                <button
-                    className="close-button-water-intake-form"
-                    onClick={() => {
-                      console.log("modal closed ");
-                      close();
-                    }}
-                  >
-                  Close
-                  </button>
+     waterExists = 
+          <div>
                 <div className="content">
                     <WaterIntakeForm />
                 </div>
-                <div className="actions">
-                 
-                </div>
-              </div>
-            )}
-          </Popup>;
+            </div>
+
     } else{
-    waterExists  =    <Popup
-            trigger={
-              <button className="addwater-button">
-                {" "}
-                <img
-                  src={AddWater}
-                  alt="add water"
-                  height="35px"
-                  width="auto"
-                />{" "}
-              </button>
-            }
-            modal
-          >
-            {close => (
-              <div className="modal">
-                <button
-                    className="close-button-water-intake-form"
-                    onClick={() => {
-                      console.log("modal closed ");
-                      close();
-                    }}
-                  >
-                  Close
-                  </button>
+    waterExists  =    
+            <div>
                 <div className="content">
                     <WaterIntakeFormEdit />
                 </div>
-                <div className="actions">
-                 
-                </div>
-              </div>
-            )}
-          </Popup>
+            </div>
+
     }
     return (
       <div className="dashboard">
         <div className="today-text">Today</div>
         <div className="waterintakeformedit-bttn-div">
-        {waterExists}
+        <button className="addwater-button"
+              onClick={() => this.onWaterFormClicked()}>
+                {" "}
+                <img
+                  src={AddWater}
+                  onClick={() => this.onWaterFormClicked()}
+                  alt="add water"
+                  height="35px"
+                  width="auto"
+                />{" "}
+                </button>
+        {this.props.waterFormSubmitting === true ? waterExists : null}
+       
           <DisplayWater />
         </div>
         <br />
@@ -112,7 +76,8 @@ const mapStateToProps = state => {
     username: state.auth.currentUser.username,
     name: `${currentUser.firstName} ${currentUser.lastName}`,
     id: `${currentUser.id}`,
-    WaterDataForDayExists: state.water.WaterDataForDayExists
+    WaterDataForDayExists: state.water.WaterDataForDayExists,
+    waterFormSubmitting: state.water.waterFormSubmitting
   };
 };
 

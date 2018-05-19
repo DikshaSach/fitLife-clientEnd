@@ -9,9 +9,16 @@ import Logo3 from "../../images/logo.png";
 import "./header-bar.css";
 
 export class HeaderBar extends React.Component {
+  constructor(props){
+    super(props);
+    this.onClickLogo = this.onClickLogo.bind(this);
+  }
   logOut() {
     this.props.dispatch(clearAuth());
     clearAuthToken();
+  }
+  onClickLogo(){
+    this.props.history.push(`/dashboard`);
   }
 
   burgerToggle() {
@@ -103,6 +110,7 @@ export class HeaderBar extends React.Component {
               src={Logo3}
               height="auto"
               width="500"
+              onClick={this.onClickLogo}
             />
           </div>
           <div className="wideDiv">
