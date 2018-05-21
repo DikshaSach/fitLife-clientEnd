@@ -26,7 +26,7 @@ export class RegistrationForm extends React.Component {
         onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}
       >
         <div className="links-container">
-          <Link className="link-to-register-on-register" to="/register">
+        <Link className="link-to-register-on-register" to="/register">
             <button type="button">Register</button>
           </Link>
           <Link className="link-to-login" to="/">
@@ -117,7 +117,6 @@ export class RegistrationForm extends React.Component {
     );
   }
 }
-
 export default reduxForm({
   form: "registration",
   onSubmitFail: (errors, dispatch) =>

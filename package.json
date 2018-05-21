@@ -43,6 +43,7 @@
     "redux-persist": "^5.9.1",
     "redux-thunk": "^2.2.0",
     "semantic-ui-react": "^0.80.0",
+    "sinon": "^5.0.7",
     "watchman": "^1.0.0"
   },
   "scripts": {

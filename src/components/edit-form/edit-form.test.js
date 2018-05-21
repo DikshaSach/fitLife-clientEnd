@@ -1,5 +1,5 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import {shallow, mount} from 'enzyme';
 import EditForm from './edit-form';
 import { Provider } from "react-redux";
 import configureMockStore from "redux-mock-store";
@@ -14,4 +14,6 @@ describe("Edit Form Component", () => {
             )
    
 )});
+
+
 });
