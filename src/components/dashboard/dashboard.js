@@ -2,7 +2,6 @@ import React from "react";
 import { connect } from "react-redux";
 import requiresLogin from "../requires-login";
 import Calendar from "../calendar/calendar";
-import Popup from "reactjs-popup";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import "./dashboard.css";
 import WaterIntakeForm from "../water-intake-form/water-intake-form";
