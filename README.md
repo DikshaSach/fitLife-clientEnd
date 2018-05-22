@@ -32,12 +32,7 @@ Add .env file with API URL and variable name `REACT_APP_API_BASE_URL`
 * MongoDB
 * Mocha
 * Chai
-## Screenshots
-![My image](https://github.com/DikshaSach/fitLife-clientEnd/blob/master/src/images/Screenshot1.png) 
-![My image](https://github.com/DikshaSach/fitLife-clientEnd/blob/master/src/images/Screenshot2.png) 
-![My image](https://github.com/DikshaSach/fitLife-clientEnd/blob/master/src/images/Screenshot3.png) 
-![My image](https://github.com/DikshaSach/fitLife-clientEnd/blob/master/src/images/Screenshot4.png) 
-![My image](https://github.com/DikshaSach/fitLife-clientEnd/blob/master/src/images/Screenshot5.png) 
+
 
 
 
