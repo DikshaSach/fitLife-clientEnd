@@ -31,7 +31,6 @@ export class EditForm extends React.Component {
   }
   onSubmit(values) {
     const start = makeDateFromISOString(new Date(values.start).toISOString());
-    console.log(start);
     const end = start;
     const { title, time } = values;
     let exercise;

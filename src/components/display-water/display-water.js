@@ -26,7 +26,6 @@ export class DisplayWater extends React.Component {
       mm = "0" + mm;
     }
     let todaysDate = mm + "" + dd + "" + yyyy;
-    console.log(todaysDate);
     this.props.dispatch(fetchWater(this.props.id + todaysDate));
   }
   render() {

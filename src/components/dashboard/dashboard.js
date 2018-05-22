@@ -11,6 +11,7 @@ import { fetchWeightBmi } from "../../actions/weightbmi";
 import AddWater from "../../images/addwater.png";
 import { fetchAllWaterDates } from "../../actions/water";
 import {clickedOnWaterForm} from '../../actions/water';
+import Footer from '../footer/footer';
 export class Dashboard extends React.Component {
   constructor(props){
     super(props);
@@ -64,6 +65,7 @@ export class Dashboard extends React.Component {
         </div>
         <br />
         <Calendar />
+        <Footer/>
       </div>
     );
   }

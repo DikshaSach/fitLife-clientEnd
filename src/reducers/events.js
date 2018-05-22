@@ -97,7 +97,6 @@ return Object.assign({}, state, {
     });
 
 }else if(action.type === EDIT_SINGLE_EVENT_SUCCESS ){
-    console.log(action.data);
     return Object.assign({}, state, {
         isFetching:false,
         singleEvent: action.data

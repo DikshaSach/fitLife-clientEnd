@@ -47,7 +47,7 @@ export class DisplayEvent extends React.Component {
       const strengthExercise = this.props.eventsData.singleEvent["0"]
         .strengthExercise;
       const listView = strengthExercise.map((itm, index) => (
-        <li className="exercise-event-list-item" key={itm.index}>
+        <li className="exercise-event-list-item" key={index}>
           <div className="muscle-icon-container">
             <img
               className="muscle-icon"

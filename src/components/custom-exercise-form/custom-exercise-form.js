@@ -13,7 +13,6 @@ export class CustomExerciseForm extends React.Component {
   onSubmit(values) {
     const creator = this.props.id;
     let start = makeDateFromISOString(new Date(values.start).toISOString());
-    console.log(start);
     const end = start;
     const { title, time } = values;
     const exercise = { title, creator, start, end, time };

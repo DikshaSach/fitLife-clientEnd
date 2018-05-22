@@ -5,7 +5,8 @@
     z-index: 1;
     background: #FFFFFF;
     text-align: center;
-      width: 40%;
+    max-width: 800px;
+      width: 50%;
       min-width: 300px;
       margin:0 auto;
       background-color: rgba(255, 255, 255, 0.838);
@@ -13,7 +14,7 @@
 }
 
 .login-form label{
-    padding-left:30px;
+    padding-left: 5%;
     font-size: 18px;
 font-weight: bolder;
 font-size: 18px;
@@ -97,22 +98,10 @@ font-size: 18px;
 }
 
 
-@media only screen and (max-width: 600px) {
-    .login-form{
-        width: 80%
-    }
-}
-@media only screen and (max-width: 500px) {
-    
-    .login-form-container{
-    padding-bottom: 100px;
-    }
-}
+
+
 @media only screen and (max-width: 400px) {
-    .login-form{
-        width: 80%;
-        height: 300px;
-    }
+    
     .login-form .submit-bttn-login {
         padding: 10px;
         font-size: 14px;
@@ -138,10 +127,7 @@ font-size: 18px;
       }
       
 
-    .login-form-container{
-        width: 100%;
-    padding-bottom: 50px;
-    }
+  
 }
 
 

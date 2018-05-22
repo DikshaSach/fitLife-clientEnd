@@ -35,7 +35,7 @@ export class Calendar extends React.Component {
           events={this.props.eventsData}
           views={["month"]}
           step={60}
-          popup events={this.props.eventsData} 
+          popup={true} 
           culture="en-US"
           showMultiDayTimes
           defaultDate={new Date()}
@@ -43,7 +43,6 @@ export class Calendar extends React.Component {
           eventPropGetter={event => ({ className: event.title.toLowerCase() })}
           onSelectSlot={this.onDateSelected}
           selectable={true}
-          allDayAccessor={true}
         />
       </div>
     );

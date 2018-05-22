@@ -68,6 +68,7 @@ export class ExerciseForm extends React.Component {
               Cardio/Custom Exercise
             </button>
           </div>
+         
           <div className="exercise-form-btn-strength-container">
             <img src={StrengthImage} alt="strength logo" />
             <br />

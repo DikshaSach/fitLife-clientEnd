@@ -1,8 +1,17 @@
 .footer-text{
+    font-family: 'Comfortaa', cursive;
     text-align: center;
     margin: 0;
     color: #ffaa88;
     padding-bottom: 20px;
     margin-top: 20px;
-    background-color: #FBFAFA;
+
+}
+.github-logo{
+    height: 20px;
+    width: auto;
+}
+.footer-text a{
+    color: black;
+    text-decoration: none;
 }

@@ -40,7 +40,6 @@ export const deleteWeightBmiFailed = error =>({
 });
 
 export const deleteWeightBmi = (id) => dispatch => {
-    console.log(id);
     return fetch (`${API_BASE_URL}/weightandbmi/delete/` + id, {
         method: 'DELETE'
     })
