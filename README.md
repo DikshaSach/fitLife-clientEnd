@@ -46,6 +46,7 @@ Add .env file with API URL and variable name `REACT_APP_API_BASE_URL`
 
 ![My image](https://github.com/DikshaSach/fitLife-clientEnd/blob/master/src/images/Screenshot5.png) 
 
-
+### Images 
+Vectors graphics and icons designed by Freepik
 
 
