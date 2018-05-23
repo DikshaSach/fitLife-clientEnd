@@ -1,3 +1,5 @@
+### Status
+[![Build Status](https://travis-ci.org/DikshaSach/fitLife-clientEnd.svg?branch=master)](https://travis-ci.org/DikshaSach/fitLife-clientEnd)
 # FitLife
 Track and log your workouts , water-intake and weight to make sure you make the best of today. For a better tomorrow!
 * Allows Users to add their workouts for the day.
