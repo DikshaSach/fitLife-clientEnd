@@ -1,0 +1,27 @@
+.water-intake-form-container {
+    text-align: center;
+}
+.water-intake-form-container h1{
+    margin: 0;
+    padding-bottom: 10px;
+}
+.water-intake-form select{
+    margin-top: 10px;
+    width: 150px;
+    height: 30px;
+    background-color: white;
+}
+.water-intake-form button{
+    background-color: #3514f0cc;
+    margin-top: 10px;
+    width: 150px;
+    height: 30px;
+    font-size: 20px;
+    padding: 0;
+    border: 0;
+    color: black;
+}
+.water-intake-form button:hover{
+background-color: #0d0054c8;
+color: white;
+}

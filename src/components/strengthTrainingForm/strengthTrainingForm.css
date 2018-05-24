@@ -6,6 +6,7 @@
     min-height: 100vh;
 }
 .add-more-fields{
+    margin-top: 20px;
     margin-bottom: 10px;
     font-family: 'Comfortaa', cursive;
     background-color: rgb(133, 171, 169);
@@ -44,6 +45,7 @@
 font-weight: bolder;
 }
 .strengthexercise input {
+    text-align: center;
     outline: 0;
     background: #f2f2f2;
     width: 90%;

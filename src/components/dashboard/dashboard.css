@@ -75,3 +75,8 @@ br{
     background-color: rgb(147, 55, 39);
     transform: scale(1.1);
 }
+.today-text{
+    text-align: right;
+    margin-right: 20px;
+    margin-top: -5px;
+}

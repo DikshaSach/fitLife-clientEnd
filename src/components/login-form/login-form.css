@@ -23,6 +23,7 @@ font-weight: bolder;
     margin: 0;
 }
 .login-form input {
+    text-align: center;
     outline: 0;
     background: #fffdfd;
     width: 90%;

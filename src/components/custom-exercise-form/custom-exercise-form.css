@@ -44,7 +44,7 @@ font-weight: bolder;
       height: 30px;
       padding: 15px;
   }
-  .exercise-form button {
+  .exercise-form .custom-exercise-form-submit button {
     text-transform: uppercase;
     outline: 0;
     margin-bottom: 20px;
@@ -58,9 +58,11 @@ font-weight: bolder;
     transition: all 0.3 ease;
     cursor: pointer;
   }
-  .exercise-form button:hover {
+  .exercise-form .custom-exercise-form-submit:hover {
 background: rosybrown;
   }
+
+
   @media only screen and (max-width: 600px) {
 
 

@@ -5,6 +5,7 @@ import { addWater } from "../../actions/water";
 import requiresLogin from "../requires-login";
 import { connect } from "react-redux";
 import Select from "../select";
+import './water-intake-form.css';
 export class WaterIntakeForm extends React.Component {
   onSubmit(values) {
     const creator = this.props.id;

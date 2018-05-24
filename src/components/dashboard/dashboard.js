@@ -12,16 +12,17 @@ import { fetchWeightBmi } from "../../actions/weightbmi";
 import AddWater from "../../images/addwater.png";
 import { fetchAllWaterDates } from "../../actions/water";
 export class Dashboard extends React.Component {
+
   componentWillMount() {
     this.props.dispatch(fetchWeightBmi(this.props.id));
     this.props.dispatch(fetchAllWaterDates(this.props.id))
   }
 
   render() {
-    return (
-      <div className="dashboard">
-        <div className="waterintakeformedit-bttn-div">
-          <Popup
+    let waterExists = null;
+    console.log(this.props.WaterDataForDayExists);
+    if(this.props.WaterDataForDayExists === false){
+     waterExists =   <Popup
             trigger={
               <button className="addwater-button">
                 {" "}
@@ -47,11 +48,42 @@ export class Dashboard extends React.Component {
                   Close
                   </button>
                 <div className="content">
-                  {this.props.WaterDataForDayExists === true ? (
-                    <WaterIntakeFormEdit />
-                  ) : (
                     <WaterIntakeForm />
-                  )}
+                </div>
+                <div className="actions">
+                 
+                </div>
+              </div>
+            )}
+          </Popup>;
+    } else{
+    waterExists  =    <Popup
+            trigger={
+              <button className="addwater-button">
+                {" "}
+                <img
+                  src={AddWater}
+                  alt="add water"
+                  height="35px"
+                  width="auto"
+                />{" "}
+              </button>
+            }
+            modal
+          >
+            {close => (
+              <div className="modal">
+                <button
+                    className="close-button-water-intake-form"
+                    onClick={() => {
+                      console.log("modal closed ");
+                      close();
+                    }}
+                  >
+                  Close
+                  </button>
+                <div className="content">
+                    <WaterIntakeFormEdit />
                 </div>
                 <div className="actions">
                  
@@ -59,6 +91,12 @@ export class Dashboard extends React.Component {
               </div>
             )}
           </Popup>
+    }
+    return (
+      <div className="dashboard">
+        <div className="today-text">Today</div>
+        <div className="waterintakeformedit-bttn-div">
+        {waterExists}
           <DisplayWater />
         </div>
         <br />

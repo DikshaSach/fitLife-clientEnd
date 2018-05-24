@@ -65,6 +65,7 @@ export class EditForm extends React.Component {
         );
       }
 
+      let FormattedDatInfo = this.state.data.start.split("T")[0];
       let timespent = null;
       let addMore = null;
       let titleOfExercise = null;
@@ -197,7 +198,7 @@ export class EditForm extends React.Component {
             <br />
             Time: {this.state.data.time}
             <br />
-            Date: {this.state.data.start}
+            Date: {FormattedDatInfo}
           </div>
           <form
             className="exercise-form"
@@ -219,7 +220,7 @@ export class EditForm extends React.Component {
               validate={[required, nonEmpty]}
             />
             {duplicatedFields}
-            <button disabled={this.props.pristine || this.props.submitting}>
+            <button className="edit-form-submit" disabled={this.props.pristine || this.props.submitting}>
               Enter
             </button>
           </form>

@@ -25,6 +25,7 @@ font-weight: bolder;
 }
 
 .register-form input {
+    text-align: center;
     outline: 0;
     background: #fffdfd;
     width: 90%;

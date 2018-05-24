@@ -49,7 +49,7 @@ export class WaterIntakeFormEdit extends React.Component {
             }}
             valueField="value"
           />
-          <button disabled={this.props.pristine || this.props.submitting}>
+          <button className="water-intake-form-edit-submit" disabled={this.props.pristine || this.props.submitting}>
             Enter
           </button>
         </form>

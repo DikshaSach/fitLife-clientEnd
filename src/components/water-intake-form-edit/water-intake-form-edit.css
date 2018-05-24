@@ -10,3 +10,16 @@
 .water-intake-form-edit{
     padding-bottom: 20px;
 }
+.water-intake-form-edit-submit{
+    margin-top: 10px;
+    background-color: white;
+    border-radius: 10px;
+    height: 30px;
+    width: 100px;
+    color: black;
+    border: 1px solid black;
+}
+.water-intake-form-edit-submit:hover{
+    background-color: black;
+    color: white;
+}
