@@ -20,6 +20,7 @@ Client Github Repo: https://github.com/DikshaSach/fitLife-clientEnd
 `npm start`    
 Add .env file with API URL and variable name `REACT_APP_API_BASE_URL`
 ## API 
+I built my own RESTful API which will allow users to add, delete, get and update all exercise events, water intake and the users weight an bmi.
 RESTful API endpoints    
 ### GET   
 All Exercies ````...exercise/:id````    
