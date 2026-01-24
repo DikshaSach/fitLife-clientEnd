@@ -20,7 +20,7 @@
     "fetch-mock": "^6.4.2",
     "globalize": "^1.3.0",
     "jwt-decode": "^2.2.0",
-    "lodash": "^4.17.10",
+    "lodash": "^4.17.23",
     "mdbreact": "^4.3.0",
     "moment": "^2.22.1",
     "moment-timezone": "^0.5.16",
